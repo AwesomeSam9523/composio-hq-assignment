@@ -1,0 +1,31 @@
+{
+  "id": 34,
+  "app": "GoHighLevel",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "highlevel.stoplight.io",
+  "one_line_description": "All-in-one agency marketing/CRM platform (funnels, pipelines, calendars, SMS/email) with a v2 developer API and app marketplace.",
+  "auth_methods": [
+    "OAuth2",
+    "Private app token"
+  ],
+  "auth_summary": "API v2 supports OAuth2 authorization code flow for marketplace apps, and Private Integration Tokens (PIT) — static scoped bearer tokens created per sub-account/agency — for internal single-account integrations. Legacy v1 API keys are deprecated.",
+  "access_model": "self_serve",
+  "access_notes": "Developer portal (marketplace.gohighlevel.com) signup is self-serve for creating OAuth apps; Private Integration Tokens are generated directly in a HighLevel account's settings. Testing requires a HighLevel account (paid SaaS, no free tier beyond trial), and public marketplace listing involves an app review.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "v2 REST API covers contacts, conversations, opportunities/pipelines, calendars, campaigns/workflows, payments, custom fields/values, locations, and more, with webhooks for events.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://marketplace.gohighlevel.com/docs/other/mcp/index.html",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0/index.html",
+    "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/",
+    "https://marketplace.gohighlevel.com/docs/other/mcp/index.html",
+    "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-use-the-highlevel-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "HighLevel ships an official MCP server (authenticated with a Private Integration Token + location ID) exposing contacts, conversations, calendars, opportunities, payments. Note the official MCP is reportedly bundled free only on Unlimited/SaaS Pro plans. Docs now live at marketplace.gohighlevel.com/docs (the stoplight.io hint is the older doc host). Users need paid GHL accounts, but that's true of their customer base by definition.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,32 @@
+{
+  "id": 14,
+  "app": "Front",
+  "category": "Support and Helpdesk",
+  "website_hint": "front.com",
+  "one_line_description": "Shared inbox and customer operations platform combining email, chat, and team collaboration.",
+  "auth_methods": [
+    "API key",
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "API tokens generated from Front settings (sent as Authorization: Bearer) for single-instance integrations, plus OAuth2 which is required for public integrations distributed to all Front customers unless Front grants an exception.",
+  "access_model": "self_serve",
+  "access_notes": "Free self-serve developer account at dev.frontapp.com provides a sandbox environment for building and testing; API tokens are generated from account settings. Publishing to the Front App Store requires building in a developer account and going through Front's partner/review process.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Core REST API covers conversations, messages, contacts, accounts, inboxes, channels, tags, comments, teammates, rules, and analytics.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/zqushair/frontapp-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://dev.frontapp.com/docs/authentication",
+    "https://dev.frontapp.com/docs/welcome",
+    "https://dev.frontapp.com/docs/partnering-with-front",
+    "https://github.com/zqushair/frontapp-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "No official MCP; Front staff acknowledged longer-term interest on their community forum but have not prioritized it. OAuth app distribution to all customers is tied to Front's app/partner review, though building and testing OAuth apps in a free developer sandbox is self-serve.",
+  "verified": false,
+  "verification_notes": ""
+}

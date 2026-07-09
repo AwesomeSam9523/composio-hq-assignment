@@ -1,0 +1,31 @@
+{
+  "id": 1,
+  "app": "Salesforce",
+  "category": "CRM and Sales",
+  "website_hint": "salesforce.com",
+  "one_line_description": "Market-leading cloud CRM platform for sales, service, and marketing, with an extensible app platform (objects, flows, Apex).",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "Salesforce REST/GraphQL APIs authorize via OAuth 2.0 through External Client Apps (recommended) or Connected Apps (legacy; new creation restricted as of Spring '26). Multiple OAuth 2.0 flows are offered; token is sent as a Bearer header.",
+  "access_model": "self_serve",
+  "access_notes": "Developers can sign up for a free Developer Edition org, which has API access enabled by default, and create an External Client App / Connected App to get OAuth credentials. However, customer orgs need Enterprise, Performance, Unlimited, or Developer Edition; Professional Edition requires a paid API add-on, and users need the 'API Enabled' permission.",
+  "api_surface_type": "REST_and_GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Very broad surface: REST API over all standard and custom objects (CRUD, SOQL query, search, describe), plus GraphQL API, Bulk, Metadata, and Connect REST APIs covering essentially the whole platform.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/salesforcecli/mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "End-user orgs must be on API-enabled editions (Enterprise+/Developer; Professional needs a paid add-on), and legacy Connected App creation is being restricted in favor of External Client Apps.",
+  "evidence_urls": [
+    "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm",
+    "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest_compatible_editions.htm",
+    "https://developer.salesforce.com/docs/platform/graphql/overview",
+    "https://github.com/salesforcecli/mcp",
+    "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official REST API docs confirm OAuth 2.0 only (via external client apps / connected apps); Salesforce offers several OAuth 2.0 flows (including a JWT bearer flow, which is still OAuth2). Notable shift: connected app creation is restricted as of Spring '26 in favor of External Client Apps, which any Composio integration setup docs should reflect. Salesforce also ships official MCP support broadly (DX MCP server on GitHub, plus Salesforce-hosted MCP servers GA for Enterprise Edition and above).",
+  "verified": false,
+  "verification_notes": ""
+}

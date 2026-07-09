@@ -1,0 +1,31 @@
+{
+  "id": 22,
+  "app": "Twilio",
+  "category": "Communications and Messaging",
+  "website_hint": "twilio.com",
+  "one_line_description": "CPaaS platform for programmable SMS, voice, WhatsApp, email, and verification via APIs.",
+  "auth_methods": [
+    "Basic auth",
+    "API key"
+  ],
+  "auth_summary": "REST APIs authenticate with HTTP Basic auth using Account SID + Auth Token, or (preferred for production) API keys (Main/Standard/Restricted) used as Basic auth credentials.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve signup with a free trial account; trial has restrictions (verified numbers, trial message watermark). Full sending requires funding the account and, for some channels, regulatory/sender registration (e.g. A2P 10DLC).",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST APIs over HTTPS covering messaging, voice calls, phone number lookup/provisioning, verification, and more, with official SDKs in many languages.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/twilio-labs/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://www.twilio.com/docs/usage/api",
+    "https://www.twilio.com/docs/iam/api-keys",
+    "https://github.com/twilio-labs/mcp",
+    "https://www.twilio.com/en-us/blog/introducing-twilio-alpha-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official docs confirm API keys are the preferred auth. Twilio Labs publishes an official (alpha) MCP server exposing 1,400+ endpoints generated from OpenAPI specs. Carrier/regulatory registration affects real-world SMS sending but not API buildability.",
+  "verified": false,
+  "verification_notes": ""
+}

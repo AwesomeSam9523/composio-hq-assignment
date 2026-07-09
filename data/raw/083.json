@@ -1,0 +1,31 @@
+{
+  "id": 83,
+  "app": "Binance",
+  "category": "Finance and Fintech",
+  "website_hint": "binance-docs.github.io",
+  "one_line_description": "World's largest cryptocurrency exchange offering spot, margin, and derivatives trading plus wallet and earn products.",
+  "auth_methods": [
+    "API key",
+    "HMAC signature"
+  ],
+  "auth_summary": "Secure endpoints require an API key (X-MBX-APIKEY header) created on the account's API Management page; SIGNED endpoints additionally require a request signature — HMAC-SHA256 over the query string/body using the secret key (docs also describe asymmetric key signing options). Public market-data endpoints need no auth.",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve: create a Binance account (KYC verification required) and generate API keys from the API Management page; a spot testnet exists for development. No partner program needed, but geographic restrictions apply (e.g., Binance.com unavailable in the US; Binance.US is a separate API at docs.binance.us).",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Very broad REST (plus WebSocket) surface across spot, margin, USDS-M/COIN-M futures, wallet, sub-accounts, staking/earn, convert, and more, now documented at developers.binance.com (binance-docs.github.io is the legacy location).",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/AnalyticAce/binance-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+    "https://developers.binance.com/docs/derivatives/usds-margined-futures/general-info",
+    "https://docs.binance.us/",
+    "https://github.com/AnalyticAce/binance-mcp-server"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Auth and API surface confirmed from official developers.binance.com pages via search; I did not fetch the full docs pages directly. Many community MCP servers exist (ethancod1ng, AnalyticAce, nirholas, TermiX, etc.) but no official Binance MCP was found. Real caveats for an agent toolkit: HMAC request signing must be implemented, KYC needed for keys, and regional entity split (Binance.com vs Binance.US vs regional exchanges).",
+  "verified": false,
+  "verification_notes": ""
+}

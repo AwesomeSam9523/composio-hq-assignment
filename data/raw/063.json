@@ -1,0 +1,32 @@
+{
+  "id": 63,
+  "app": "Netlify",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "docs.netlify.com/api",
+  "one_line_description": "Web hosting and deployment platform for static sites and serverless functions with build automation and edge services.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "The Netlify API (open-API/REST) accepts personal access tokens generated in user settings, sent as 'Authorization: Bearer <token>'. Public/third-party integrations must use OAuth2 (authorize endpoint at app.netlify.com/authorize).",
+  "access_model": "self_serve",
+  "access_notes": "Free-tier Netlify accounts can create personal access tokens under Applications > Personal access tokens instantly; OAuth apps are also self-registered.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API covers sites, deploys, builds, DNS/domains, environment variables, forms, and account/team management — the full hosting control plane, though narrower in scope than hyperscaler APIs.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/netlify/netlify-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "https://developers.netlify.com/guides/generating-personal-access-tokens-with-netlify-oauth/",
+    "https://github.com/netlify/netlify-mcp",
+    "https://docs.netlify.com/build/build-with-ai/netlify-mcp-server/"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official MCP (@netlify/mcp) wraps both API and CLI capabilities (deploys, env vars, extensions). API is described by an OpenAPI spec, which makes toolkit generation easy.",
+  "verified": false,
+  "verification_notes": ""
+}

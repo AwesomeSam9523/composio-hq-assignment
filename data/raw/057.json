@@ -1,0 +1,30 @@
+{
+  "id": 57,
+  "app": "Bright Data",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "brightdata.com",
+  "one_line_description": "Web data platform offering proxies, Web Unlocker, SERP API, scraper APIs, and prebuilt datasets.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "API key (secure hashed token, auto-created on account creation; admins can mint more with permission levels and expiry) sent as a Bearer token for REST APIs. Separately, native proxy access uses proxy username/password credentials rather than the API key.",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve signup; a default API key is created automatically and keys are managed in account settings. Pay-as-you-go pricing per product; the official MCP has a free tier (~5,000 credits/month, no credit card). Some products (e.g., residential proxies) involve KYC/compliance steps.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Broad REST API surface at docs.brightdata.com: Web Unlocker, SERP API, Web Scraper APIs, dataset/marketplace endpoints, and proxy/account management.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/brightdata/brightdata-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.brightdata.com/api-reference/authentication",
+    "https://docs.brightdata.com/general/account/api-token",
+    "https://github.com/brightdata/brightdata-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official vendor MCP (@brightdata/mcp on npm) with a genuinely free monthly tier. The product line is large, so a Composio toolkit would need scoping (Unlocker + SERP + scraper APIs are the natural core). Proxy user/pass auth is separate from the API-key path.",
+  "verified": false,
+  "verification_notes": ""
+}

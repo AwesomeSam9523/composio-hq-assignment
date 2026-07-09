@@ -1,0 +1,29 @@
+{
+  "id": 18,
+  "app": "Help Scout",
+  "category": "Support and Helpdesk",
+  "website_hint": "helpscout.com",
+  "one_line_description": "Email-based shared inbox and knowledge base platform for customer support teams.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "Mailbox API 2.0 is OAuth2-only: Authorization Code flow for integrations used by other Help Scout users, and Client Credentials flow for internal integrations; all requests use a Bearer access token tied to an active user.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve: any user creates an OAuth2 app under Your Profile > My Apps ('Create My App'); account signup is self-serve with a free trial/free tier.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "Mailbox API 2.0 (REST) covers conversations, threads, customers, mailboxes/inboxes, users, teams, tags, workflows, and reports; a separate Docs API covers knowledge base content.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://mcpservers.org/servers/drewburchfield/help-scout-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+    "https://mcpservers.org/servers/drewburchfield/help-scout-mcp-server",
+    "https://www.stackone.com/connectors/helpscout/mcp/"
+  ],
+  "confidence": "high",
+  "agent_notes": "No official Help Scout MCP found; community servers (drewburchfield/help-scout-mcp-server) and aggregator MCPs (StackOne, 36 actions) exist. Note access token lengths change over time per docs, and all credentials must map to an active invited user in the account.",
+  "verified": false,
+  "verification_notes": ""
+}

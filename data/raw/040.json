@@ -1,0 +1,31 @@
+{
+  "id": 40,
+  "app": "SendGrid",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "sendgrid.com",
+  "one_line_description": "Twilio's email delivery platform (transactional + marketing email) with the widely used v3 Web API.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "v3 API authenticates with self-generated API keys sent as 'Authorization: Bearer <API_KEY>'; keys support scoped permissions (Full Access, Restricted/Custom, Billing). API keys replaced legacy username/password Basic auth.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Sign up self-serve and create API keys immediately, but SendGrid discontinued its permanent free tier as of July 26, 2025 — new accounts get a 60-day free trial (100 emails/day), after which paid plans start around $19.95/month.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "v3 REST API covers mail send, dynamic templates, contacts/lists/segments, marketing campaigns (Single Sends), suppressions, domain/sender authentication, webhooks, and statistics.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/Garoth/sendgrid-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys",
+    "https://www.twilio.com/en-us/changelog/sendgrid-free-plan",
+    "https://github.com/Garoth/sendgrid-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "No official Twilio/SendGrid MCP found, though Twilio's own blog publishes a tutorial on building one; multiple community MCPs exist. Simplest auth model in this batch (single bearer API key). The 2025 removal of the permanent free tier only affects testing cost, not buildability.",
+  "verified": false,
+  "verification_notes": ""
+}

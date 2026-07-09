@@ -1,0 +1,31 @@
+{
+  "id": 48,
+  "app": "Gumroad",
+  "category": "Ecommerce",
+  "website_hint": "gumroad.com/api",
+  "one_line_description": "Platform for creators to sell digital products, memberships, and licenses directly to audiences.",
+  "auth_methods": [
+    "OAuth2",
+    "Personal access token"
+  ],
+  "auth_summary": "The v2 API uses OAuth2 (create an application, exchange code at api.gumroad.com/oauth/token) for multi-account apps; for your own account you can self-generate a non-expiring access token from the application settings and send it with each request.",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve: any Gumroad user can create an application in their account settings and generate an access token immediately; no review process for API access.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "Seller-focused REST API covering products, sales, subscribers, offer codes, custom fields, license verification, and resource subscriptions (webhooks); no buyer/checkout-creation API.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/rmarescu/gumroad-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://gumroad.com/api",
+    "https://gumroad.com/help/article/280-create-application-api",
+    "https://github.com/rmarescu/gumroad-mcp",
+    "https://github.com/keithah/gumroad-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Simple, stable, self-serve API but a small surface (mostly read/analytics plus license verification and webhooks). Multiple community MCP servers exist; no official Gumroad MCP found.",
+  "verified": false,
+  "verification_notes": ""
+}

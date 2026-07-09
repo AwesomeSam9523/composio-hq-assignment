@@ -1,0 +1,30 @@
+{
+  "id": 69,
+  "app": "Datadog",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "docs.datadoghq.com/api",
+  "one_line_description": "Observability and security platform for metrics, logs, traces, monitors, and dashboards across cloud infrastructure.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "API requests authenticate with an org-level API key in the DD-API-KEY header; read/management endpoints additionally require a user-scoped Application key in DD-APPLICATION-KEY. OAuth2 exists for published marketplace integrations but was not verified here as a general API auth path.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve signup (free tier and 14-day trial); API and application keys are generated instantly under Organization Settings. Full product value generally requires paid plans, but credentials themselves are self-serve.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API (v1/v2) spans metrics, logs, monitors, dashboards, events, incidents, users, security signals, and key management — nearly the whole platform.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.datadoghq.com/mcp_server/",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.datadoghq.com/account_management/api-app-keys/",
+    "https://docs.datadoghq.com/api/latest/authentication/",
+    "https://docs.datadoghq.com/mcp_server/",
+    "https://github.com/shelfio/datadog-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official remote MCP Server is documented at docs.datadoghq.com/mcp_server/ (query APM, logs, metrics, monitors, dashboards); numerous community MCP servers also exist. Multi-region sites (datadoghq.com, datadoghq.eu, us3/us5, ap1) mean the API base URL must be configurable per customer. The two-key model (API key + app key) must be modeled as a paired credential.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,30 @@
+{
+  "id": 98,
+  "app": "Mermaid CLI",
+  "category": "AI, Research and Media-native",
+  "website_hint": "github.com/mermaid-js/mermaid-cli",
+  "one_line_description": "Open-source command-line tool (mmdc) that renders Mermaid diagram definitions to SVG/PNG/PDF.",
+  "auth_methods": [
+    "None found"
+  ],
+  "auth_summary": "Not a SaaS — a local open-source CLI with no accounts, credentials, or auth of any kind; install via npm/npx and run locally.",
+  "access_model": "self_serve",
+  "access_notes": "Free open source: `npx -p @mermaid-js/mermaid-cli mmdc` or npm install; no signup or credentials required.",
+  "api_surface_type": "CLI",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "Single-purpose CLI: takes a .mmd (or markdown) input and outputs SVG/PNG/PDF with theme/background/CSS options and stdin piping; no network API.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/hustcc/mcp-mermaid",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none (execution-environment consideration only: rendering uses a headless Chromium/Puppeteer, so a toolkit must run it in a sandbox rather than call a remote API)",
+  "evidence_urls": [
+    "https://github.com/mermaid-js/mermaid-cli",
+    "https://github.com/mermaid-js/mermaid-cli/blob/master/README.md",
+    "https://github.com/hustcc/mcp-mermaid",
+    "https://github.com/peng-shawn/mermaid-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Recorded honestly per instructions: OSS CLI, no auth, no SaaS API. Many community MCP servers wrap Mermaid rendering (hustcc/mcp-mermaid, peng-shawn/mermaid-mcp-server, etc.); none are 'official' from mermaid-js.",
+  "verified": false,
+  "verification_notes": ""
+}

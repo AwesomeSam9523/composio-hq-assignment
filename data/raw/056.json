@@ -1,0 +1,30 @@
+{
+  "id": 56,
+  "app": "Firecrawl",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "firecrawl.dev",
+  "one_line_description": "API to scrape, crawl, map, search, and extract structured data from websites in LLM-ready formats.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "API key (prefix 'fc-') from the Firecrawl dashboard, sent as 'Authorization: Bearer fc-YOUR-API-KEY'.",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve signup at firecrawl.dev; API key visible in the dashboard immediately, with a free credit tier and paid credit plans. Also open source (AGPL core) and self-hostable.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "Focused REST API (v2): /scrape, /crawl, /map, /search, /extract endpoints returning markdown/structured JSON, plus official SDKs. Deep in scraping but a deliberately narrow domain.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/firecrawl/firecrawl-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.firecrawl.dev/api-reference/v2-introduction",
+    "https://github.com/firecrawl/firecrawl-mcp-server",
+    "https://github.com/firecrawl/firecrawl"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official MCP server maintained under the firecrawl GitHub org. Auth and endpoints confirmed from official docs domain via search; very standard Bearer API-key model. Usage consumes credits beyond the free tier.",
+  "verified": false,
+  "verification_notes": ""
+}

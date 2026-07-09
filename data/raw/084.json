@@ -1,0 +1,30 @@
+{
+  "id": 84,
+  "app": "Paygent Connect",
+  "category": "Finance and Fintech",
+  "website_hint": "paygent / NMI-powered",
+  "one_line_description": "Payment connection service of Paygent Co., Ltd., a Japanese payment gateway (Mitsubishi UFJ NICOS / NTT DATA joint venture) supporting cards, convenience-store, carrier, and QR payments.",
+  "auth_methods": [
+    "unclear"
+  ],
+  "auth_summary": "Public plugin source code (WooCommerce/Magento/Go libraries) shows integrations authenticate with a Merchant ID plus 'Connect ID' and 'Connect Password' (and a hash key for some flows) sent with each request — a proprietary credential scheme, not standard OAuth2/API-key. I could not access official auth docs to confirm details.",
+  "access_model": "contact_sales",
+  "access_notes": "No self-serve developer portal found. Credentials (Merchant ID, Connect ID/Password) are issued by Paygent after a merchant contract; official technical documentation appears to be distributed to contracted merchants rather than published openly. No public sandbox signup found.",
+  "api_surface_type": "unclear",
+  "api_surface_breadth": "unclear",
+  "api_surface_summary": "Third-party integration code indicates an HTTP POST 'telegram'-style transaction API plus hosted payment pages, covering credit card, convenience store, Pay-easy, net banking, carrier billing, and QR wallets, but no public official API reference was found.",
+  "mcp_status": "no_mcp_found",
+  "existing_mcp_url": null,
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "No public developer docs or self-serve credentials; requires a Japanese merchant contract with Paygent, and the product's exact identity is ambiguous",
+  "evidence_urls": [
+    "https://altstack.jp/en/services/payment-providers/paygent/",
+    "https://documentation.ixopay.com/adapters/paygent",
+    "https://github.com/wp-plugins/woocommerce-for-paygent-payment-main/blob/master/includes/gateways/paygent/class-wc-gateway-paygent-cc.php",
+    "https://pkg.go.dev/github.com/qor/gomerchant/gateways/paygent"
+  ],
+  "confidence": "low",
+  "agent_notes": "Identity is ambiguous as warned. I found the Japanese gateway Paygent (paygent.co.jp), whose integration credentials are literally named 'Connect ID/Connect Password' — likely the source of the 'Paygent Connect' name. I found NO evidence of an NMI-powered product called 'Paygent Connect'; searches combining 'Paygent Connect' with NMI returned only generic NMI docs. There is also an unrelated paygent.ai. All auth/API claims here come from third-party plugin source and integrator docs, not official Paygent documentation. Do not treat this as a clean buildable target.",
+  "verified": false,
+  "verification_notes": ""
+}

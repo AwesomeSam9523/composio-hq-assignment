@@ -1,0 +1,31 @@
+{
+  "id": 47,
+  "app": "Ecwid",
+  "category": "Ecommerce",
+  "website_hint": "api-docs.ecwid.com",
+  "one_line_description": "Embeddable ecommerce platform (Ecwid by Lightspeed) that adds a store to any website, with a REST API.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "Public apps use OAuth2 (code exchanged via POST to my.ecwid.com/api/oauth/token) to obtain access tokens; every app also has non-expiring private (read/write) and public (read-only) access tokens, sent as Bearer tokens. Store owners integrating their own store can skip the OAuth flow and use the token directly.",
+  "access_model": "self_serve",
+  "access_notes": "Developers register an app via the Ecwid developer portal and get tokens self-serve; installing on your own store yields an access token immediately. REST API access generally requires the store to be on a paid Ecwid plan.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covers products, categories, orders, customers, discount coupons, store profile/settings, and webhooks.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/ever-works/awesome-mcp-servers/blob/master/details/ecwid-mcp-server.md",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.ecwid.com/api-reference",
+    "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+    "https://developers.ecwid.com/api-documentation/authentication",
+    "https://docs.ecwid.com/get-started/make-your-first-api-request"
+  ],
+  "confidence": "high",
+  "agent_notes": "Docs have migrated from api-docs.ecwid.com to docs.ecwid.com. Only community MCP presence found (a Pipedream-powered Ecwid MCP listed in an awesome-mcp-servers registry); no vendor MCP. The paid-plan requirement for API access is a common caveat I could not re-confirm from the current official docs in this pass — flagging as minor uncertainty.",
+  "verified": false,
+  "verification_notes": ""
+}

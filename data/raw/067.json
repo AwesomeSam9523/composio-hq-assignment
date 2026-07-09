@@ -1,0 +1,33 @@
+{
+  "id": 67,
+  "app": "Snowflake",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "docs.snowflake.com",
+  "one_line_description": "Cloud data warehouse/platform for SQL analytics, data sharing, and AI (Cortex) workloads.",
+  "auth_methods": [
+    "OAuth2",
+    "JWT",
+    "Personal access token",
+    "Bearer token"
+  ],
+  "auth_summary": "The SQL REST API and Snowflake REST APIs authenticate with OAuth2 tokens, key-pair authentication (self-signed JWT generated from an RSA key registered to the user), or programmatic access tokens (PATs), all passed as Bearer tokens with an X-Snowflake-Authorization-Token-Type header.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve 30-day free trial with credits; beyond that Snowflake is a paid, consumption-billed platform. Credentials (key-pair, PAT, OAuth integration) are set up by the account user/admin — no vendor approval, but you need an account with appropriate role grants.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "SQL API executes arbitrary SQL statements over HTTPS (account-specific endpoint), and the newer Snowflake REST APIs manage objects (databases, warehouses, users, tasks); Cortex adds AI endpoints. Capability is broad since SQL reaches everything.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Paid consumption-based platform after the 30-day trial, account-specific API hostnames, and comparatively heavy credential setup (key-pair/JWT or admin-configured OAuth integration).",
+  "evidence_urls": [
+    "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+    "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+    "https://github.com/Snowflake-Labs/mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Snowflake-managed MCP server (Cortex Analyst/Search/Agents + SQL execution) went GA Nov 4, 2025 and runs inside Snowflake; Snowflake-Labs/mcp is the open-source variant. The HTTP data-plane story is real (SQL API), unlike many warehouses, but every customer has a unique account URL and PAT usage can be restricted by network policies — worth flagging for a hosted toolkit.",
+  "verified": false,
+  "verification_notes": ""
+}

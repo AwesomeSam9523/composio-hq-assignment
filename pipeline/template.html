@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic API Buildability Research Across 100 Apps</title>
+<style>
+:root{
+  --bg:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+  --blue:#2a78d6; --blue-soft:#cde2fb;
+  --v-now:#2a78d6; --v-limits:#eda100; --v-partner:#eb6834; --v-not:#e34948; --v-unclear:#898781;
+  --good:#006300; --bad:#d03b3b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+    --blue:#3987e5; --blue-soft:#104281;
+    --v-now:#3987e5; --v-limits:#c98500; --v-partner:#d95926; --v-not:#e66767; --v-unclear:#898781;
+    --good:#0ca30c; --bad:#e66767;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 10px}
+h2{font-size:22px;margin:0 0 4px}
+h3{font-size:16px;margin:0 0 8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:44px 0 8px}
+.kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.sub{color:var(--ink2);max-width:70ch;margin:0 0 20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px}
+.grid{display:grid;gap:14px}
+
+/* sticky header */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.topbar .wrap{display:flex;align-items:center;gap:18px;height:52px}
+.topbar .brand{font-weight:700;font-size:14px;white-space:nowrap}
+.topbar nav{display:flex;gap:14px;overflow-x:auto;font-size:13px}
+.topbar nav a{color:var(--ink2);white-space:nowrap}
+.topbar .mini{margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap}
+
+/* hero */
+.hero{padding:56px 0 12px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.cta{display:inline-block;padding:9px 16px;border-radius:8px;border:1px solid var(--border);
+     background:var(--surface);color:var(--ink);font-size:13.5px;font-weight:600}
+.cta:hover{text-decoration:none;border-color:var(--blue)}
+.cta-primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.cta-primary:hover{filter:brightness(1.06);border-color:var(--blue)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:26px}
+.kpi .label{font-size:12.5px;color:var(--ink2)}
+.kpi .value{font-size:34px;font-weight:650;margin:2px 0}
+.kpi .note{font-size:12px;color:var(--muted)}
+
+/* headline bullets */
+.bullets{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.bullets li{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 16px}
+.bullets b{font-weight:650}
+
+/* charts */
+.charts{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.chart h3{margin-bottom:2px}
+.chart .desc{font-size:12.5px;color:var(--muted);margin:0 0 14px}
+.hbar{display:grid;grid-template-columns:minmax(110px,150px) 1fr 44px;align-items:center;gap:10px;padding:3.5px 0}
+.hbar .lbl{font-size:12.5px;color:var(--ink2);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hbar .track{height:16px;position:relative}
+.hbar .fill{position:absolute;inset:0 auto 0 0;background:var(--blue);border-radius:0 4px 4px 0;min-width:2px}
+.hbar .val{font-size:12.5px;color:var(--ink);font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink2);margin:0 0 12px}
+.legend .key{display:inline-flex;align-items:center;gap:6px}
+.swatch{width:10px;height:10px;border-radius:3px;display:inline-block}
+.stackrow{display:grid;grid-template-columns:minmax(120px,170px) 1fr 40px;align-items:center;gap:10px;padding:4px 0}
+.stackrow .lbl{font-size:12.5px;color:var(--ink2);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stackrow .val{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stack{display:flex;gap:2px;height:18px}
+.stack .seg{border-radius:4px;min-width:3px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:600}
+
+/* badges */
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:1.5px 9px 1.5px 7px;font-size:11.5px;color:var(--ink2);background:var(--surface);white-space:nowrap}
+.badge .dot{width:7px;height:7px;border-radius:50%;flex:none}
+.chip{display:inline-block;border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:2px 10px;font-size:12px;color:var(--ink2);margin:2px 3px 2px 0}
+
+/* priorities */
+.prio{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.prio .card{border-top:3px solid var(--blue)}
+.prio ol{margin:8px 0 0;padding-left:18px;font-size:13.5px}
+.prio li{margin:5px 0;color:var(--ink2)}
+.prio li b{color:var(--ink);font-weight:600}
+
+/* workflow */
+.steps{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));counter-reset:step}
+.step{position:relative;padding-top:16px}
+.step .num{position:absolute;top:-13px;left:14px;background:var(--blue);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.step h3{font-size:14px;margin:4px 0 6px}
+.step p{font-size:12.5px;color:var(--ink2);margin:0}
+.twocol{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.twocol ul{margin:8px 0 0;padding-left:18px;font-size:13.5px;color:var(--ink2)}
+.twocol li{margin:5px 0}
+
+/* tables */
+.tablewrap{overflow:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface);max-height:640px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+thead th{position:sticky;top:0;background:var(--surface);z-index:2;text-align:left;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:10px 10px;border-bottom:1px solid var(--grid);white-space:nowrap}
+tbody td{padding:8px 10px;border-bottom:1px solid var(--grid);vertical-align:top}
+tbody tr:hover{background:color-mix(in srgb,var(--blue) 5%,transparent)}
+tbody tr.expander-row:hover{background:none}
+td.num{color:var(--muted);font-variant-numeric:tabular-nums}
+.appname{font-weight:600;cursor:pointer}
+.appname:hover{color:var(--blue)}
+.evlinks a{margin-right:5px;font-variant-numeric:tabular-nums}
+.detail{background:color-mix(in srgb,var(--blue) 4%,transparent);font-size:12.5px;color:var(--ink2)}
+.detail .inner{padding:4px 2px 8px;max-width:110ch}
+.detail b{color:var(--ink)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px;align-items:center}
+.controls input[type=search],.controls select{background:var(--surface);color:var(--ink);border:1px solid var(--border);border-radius:8px;padding:7px 10px;font-size:13px}
+.controls input[type=search]{min-width:220px}
+.count{font-size:12.5px;color:var(--muted);margin-left:auto}
+.ok{color:var(--good);font-weight:700}
+.err{color:var(--bad);font-weight:700}
+.toggle{font-size:12.5px;color:var(--ink2);display:inline-flex;gap:6px;align-items:center;cursor:pointer;user-select:none}
+
+/* verification callouts */
+.miss{border-left:3px solid var(--v-partner);padding:10px 14px;background:var(--surface);border-radius:0 8px 8px 0;font-size:13.5px;color:var(--ink2);margin:8px 0}
+.miss b{color:var(--ink)}
+
+/* repo */
+pre.cmd{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;overflow:auto;line-height:1.7;margin:0}
+.todo{border:1px dashed var(--baseline);border-radius:8px;padding:8px 12px;font-size:13px;color:var(--muted);display:inline-block;margin:4px 8px 4px 0}
+
+/* tooltip */
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);padding:7px 10px;border-radius:8px;font-size:12.5px;max-width:340px;z-index:99;opacity:0;transition:opacity .08s;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+#tip b{font-size:13px}
+footer{padding:36px 0 48px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--border);margin-top:44px}
+@media (max-width:640px){ .hbar{grid-template-columns:96px 1fr 40px} .topbar .mini{display:none} }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="brand">API Buildability &times; 100</span>
+  <nav>
+    <a href="#findings">Findings</a><a href="#patterns">Patterns</a><a href="#priorities">Priorities</a>
+    <a href="#workflow">Agent workflow</a><a href="#proof">Live app</a><a href="#verification">Verification</a><a href="#table">All 100 apps</a><a href="#repo">Run it</a>
+  </nav>
+  <span class="mini" id="ministats"></span>
+</div></div>
+
+<header class="hero wrap">
+  <div class="kicker">A Composio-style product-ops case study &middot; researched July 9, 2026</div>
+  <h1>Agentic API Buildability Research Across 100 Apps</h1>
+  <p class="sub">An AI research agent investigated 100 apps across 10 categories — auth methods, developer access,
+  API surface, MCP readiness, and whether an agent-callable toolkit can be built today — then a verification loop
+  (automated evidence checks + a 20-app human QA sample) tested whether the results can be trusted.</p>
+  <div class="cta-row">
+    <a class="cta cta-primary" href="__LIVE_DEMO_URL__" target="_blank" rel="noopener">▶ Try the live agent</a>
+    <a class="cta" href="#proof">See how it works</a>
+    <a class="cta" href="__REPO_URL__" target="_blank" rel="noopener">Source repo</a>
+  </div>
+  <div class="kpis" id="kpis"></div>
+</header>
+
+<section id="findings" class="wrap">
+  <div class="kicker">Executive headline</div>
+  <h2>What we learned</h2>
+  <p class="sub">Five takeaways, computed from the verified dataset below.</p>
+  <ul class="bullets" id="bullets"></ul>
+</section>
+
+<section id="patterns" class="wrap">
+  <div class="kicker">Pattern dashboard</div>
+  <h2>Patterns across the 100 apps</h2>
+  <p class="sub">Hover any bar for details. Every number is also in the <a href="#table">full table</a>.</p>
+  <div class="grid charts">
+    <div class="card chart" id="c-verdict"></div>
+    <div class="card chart" id="c-access"></div>
+    <div class="card chart" id="c-auth"></div>
+    <div class="card chart" id="c-mcp"></div>
+    <div class="card chart" id="c-blockers"></div>
+    <div class="card chart" id="c-breadth"></div>
+  </div>
+  <div class="card chart" id="c-matrix" style="margin-top:14px"></div>
+</section>
+
+<section id="priorities" class="wrap">
+  <div class="kicker">Prioritization matrix</div>
+  <h2>What Composio should build first</h2>
+  <p class="sub">Judgment applied on top of the data: verdicts and access models from the dataset, ordering by
+  ecosystem pull (API breadth, agent demand, credential friction).</p>
+  <div class="grid prio" id="prio"></div>
+</section>
+
+<section id="workflow" class="wrap">
+  <div class="kicker">Agent workflow</div>
+  <h2>How the agent did the research</h2>
+  <p class="sub">Category-parallel research agents with live web search + page fetching, a JSON-schema contract,
+  and a two-stage verification loop. The whole run is reproducible from the repo.</p>
+  <div class="grid steps" id="steps" style="margin-top:22px"></div>
+  <div class="grid twocol" style="margin-top:18px">
+    <div class="card"><h3>Automated</h3><ul>
+      <li>Official-docs discovery via web search (auth pages, API references, pricing/partner pages) — <b>Gemini</b> reasons over Composio's own no-auth <b>COMPOSIO_SEARCH</b> toolkit (web/Tavily/news search + URL fetch) via the Composio SDK</li>
+      <li>MCP hunting: "&lt;app&gt; MCP server" / "Model Context Protocol" across vendor docs + GitHub</li>
+      <li>Normalization into a strict JSON Schema (enums for auth, access, surface, verdict) with validation</li>
+      <li>Evidence pass: HTTP-checking all 381 evidence URLs, flagging dead links and off-domain evidence</li>
+      <li>Aggregation, pattern analysis, and generation of this page</li>
+    </ul></div>
+    <div class="card"><h3>Needed human judgment</h3><ul>
+      <li><b>Ambiguous identities</b> — "Paygent Connect" (Japanese gateway vs claimed NMI product), iPayX vs unrelated "iPay" brands, Consensus vs goConsensus, Clay vs clay.earth</li>
+      <li><b>Boundary calls</b> — self_serve vs trial-gated vs paid-plan; "official" vs community MCP when vendors ship betas/EAPs</li>
+      <li><b>Adjudicating QA disputes</b> — deciding when a first-pass answer was substantively wrong vs merely worded loosely</li>
+      <li><b>Blocker taxonomy &amp; prioritization</b> — bucketing free-text blockers into themes; choosing the build-first list</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="proof" class="wrap">
+  <div class="kicker">Proof &middot; runnable trigger</div>
+  <h2>Run the same agent live, on any app</h2>
+  <p class="sub">The findings above are a point-in-time batch. This is the same pipeline wired to run for
+  <b>one app on demand</b>: type an app, watch <b>Gemini</b> drive <b>Composio's COMPOSIO_SEARCH</b> tools in an
+  agentic loop (every search and page-fetch streamed live), get the same schema-validated row, then a pass-2
+  evidence check on its URLs. For any of the 100 apps it also diffs the live answer against the committed dataset.</p>
+  <div class="grid twocol" style="margin-top:8px">
+    <div class="card">
+      <h3>What you see when it runs</h3>
+      <ul>
+        <li>Each Gemini turn and the exact Composio tool call it chose (web / Tavily / news / fetch)</li>
+        <li>The final row: auth, self-serve vs gated, API surface, MCP status, buildability verdict, confidence</li>
+        <li>Evidence URLs with a live 🟢 / bot-blocked 🟡 / dead 🔴 status from the verification pass</li>
+        <li>A field-by-field diff against the study's committed answer (for the 100 seed apps)</li>
+      </ul>
+      <p style="margin-top:14px">
+        <a class="cta cta-primary" href="__LIVE_DEMO_URL__" target="_blank" rel="noopener">▶ Open the live app</a>
+      </p>
+      <p style="font-size:12.5px;color:var(--muted);margin-top:10px">Runs on a free Gemini tier, so a run takes
+      ~30–90s and may pause briefly for rate limits or fall back to the committed row — that's expected and shown honestly.</p>
+    </div>
+    <div class="card">
+      <h3>Same code, one app</h3>
+      <p class="sub" style="margin-bottom:10px">The live app (<code>app.py</code>, Streamlit) calls
+      <code>pipeline/live_research.py</code>, which reuses the batch agent's prompt contract, JSON Schema, and
+      validator — so a live row is identical in shape to a committed one.</p>
+      <pre class="cmd">streamlit run app.py            # local
+# or deploy app.py on Railway (see README)
+
+python pipeline/live_research.py "Notion"   # same flow, CLI</pre>
+    </div>
+  </div>
+</section>
+
+<section id="verification" class="wrap">
+  <div class="kicker">Verification</div>
+  <h2>Why you can trust (most of) this data</h2>
+  <p class="sub">Pass 1: agent research. Pass 2: automated evidence validation of every URL. Pass 3: a stratified
+  human-QA sample — 20 apps (2 per category, biased toward low-confidence rows), 6 fields each, re-verified
+  against official docs by independent verifier agents and adjudicated by hand.</p>
+  <div class="kpis" id="vkpis" style="margin-bottom:22px"></div>
+  <h3>Honest misses — what the first pass got wrong</h3>
+  <div id="misses"></div>
+  <div class="controls" style="margin-top:20px">
+    <h3 style="margin:0">QA sample: 120 field checks</h3>
+    <label class="toggle"><input type="checkbox" id="qa-errors-only" checked> show corrections only</label>
+    <span class="count" id="qa-count"></span>
+  </div>
+  <div class="tablewrap" style="max-height:420px"><table id="qa-table">
+    <thead><tr><th>App</th><th>Field checked</th><th>Original answer</th><th>Verified answer</th><th>Correct?</th><th>Correction</th><th>Evidence</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div class="grid twocol" style="margin-top:18px">
+    <div class="card"><h3>Evidence pass (automated)</h3><ul id="evsum" style="margin:8px 0 0;padding-left:18px;font-size:13.5px;color:var(--ink2)"></ul></div>
+    <div class="card"><h3>Known limitations</h3><ul style="margin:8px 0 0;padding-left:18px;font-size:13.5px;color:var(--ink2)">
+      <li>Point-in-time snapshot (July 2026). MCP status is the fastest-moving field — expect churn within months.</li>
+      <li>QA covered 20 of 100 apps (120 field checks); unsampled rows carry first-pass accuracy (~94% by extrapolation), flagged via the <b>confidence</b> column.</li>
+      <li>Some rows rely on official-doc snippets surfaced in search rather than full page fetches — those are marked <b>medium</b> confidence with the gap named in agent notes.</li>
+      <li>URL checks can misread bot-blocked sites (Meta/Facebook, some help centers) as dead; flags are inputs to QA, not verdicts.</li>
+      <li>Pricing/plan gates come from vendor pages, not purchase attempts — no paid accounts were created for any app.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="table" class="wrap">
+  <div class="kicker">Full dataset</div>
+  <h2>All 100 apps</h2>
+  <p class="sub">Click an app name for the agent's notes and summaries. Evidence links are numbered per row.</p>
+  <div class="controls">
+    <input type="search" id="f-search" placeholder="Search apps, blockers, notes&hellip;">
+    <select id="f-category"><option value="">All categories</option></select>
+    <select id="f-verdict"><option value="">All verdicts</option></select>
+    <select id="f-access"><option value="">All access models</option></select>
+    <select id="f-mcp"><option value="">All MCP statuses</option></select>
+    <span class="count" id="f-count"></span>
+  </div>
+  <div class="tablewrap"><table id="apps-table">
+    <thead><tr>
+      <th>#</th><th>App</th><th>Category</th><th>Auth</th><th>Access</th><th>API surface</th>
+      <th>MCP</th><th>Buildability</th><th>Main blocker</th><th>Conf.</th><th>QA</th><th>Evidence</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table></div>
+</section>
+
+<section id="repo" class="wrap">
+  <div class="kicker">Repo &amp; reproducibility</div>
+  <h2>Run the agent yourself</h2>
+  <p class="sub">Python pipeline; resumable (per-app cache in <code>data/raw/</code>), schema-validated, honest about
+  uncertainty by contract. <b>Gemini</b> reasons; the research agent's search/fetch tools are served by <b>Composio's
+  COMPOSIO_SEARCH toolkit</b> via the Composio SDK (free keys, no per-app auth needed).</p>
+  <pre class="cmd">pip install -r requirements.txt
+cp .env.example .env            # GEMINI_API_KEY + COMPOSIO_API_KEY (both free tiers work)
+
+python pipeline/research_agent.py     # pass 1 — research all 100 apps (resumes if interrupted)
+python pipeline/verify_evidence.py    # pass 2 — HTTP-check every evidence URL, flag weak rows
+python pipeline/qa_sample.py          # pass 3 — emit the stratified 20-app QA worksheet
+python pipeline/qa_sample.py --apply  #          apply human corrections + compute accuracy
+python pipeline/analyze.py            # pattern analysis -> data/insights.json
+python pipeline/build_page.py         # regenerate this page</pre>
+  <p style="margin-top:14px">
+    <a class="cta cta-primary" href="__LIVE_DEMO_URL__" target="_blank" rel="noopener">▶ Live app</a>
+    <a class="cta" href="__REPO_URL__" target="_blank" rel="noopener">Source repo</a>
+  </p>
+</section>
+
+<footer><div class="wrap">
+  Built as a take-home case study for an AI Product Ops role at Composio &middot; data researched &amp; verified July 9, 2026 &middot;
+  outputs: <code>data/results.json</code>, <code>data/results.csv</code>, <code>data/verification.json</code>, <code>data/evidence_report.json</code>.
+</div></footer>
+
+<div id="tip"></div>
+
+<script id="payload" type="application/json">__DATA_JSON__</script>
+<script>
+const DATA = JSON.parse(document.getElementById('payload').textContent);
+const rows = DATA.rows, INS = DATA.insights, VER = DATA.verification, EV = DATA.evidence_summary;
+const $ = (s, el=document) => el.querySelector(s);
+const esc = null; // reminder: build DOM with textContent, never innerHTML for data strings
+
+const VERDICT = {
+  build_now:            {label:'Build now',            color:'var(--v-now)'},
+  build_with_limits:    {label:'Build with limits',    color:'var(--v-limits)'},
+  needs_partner_or_paid_access:{label:'Needs partner / paid', color:'var(--v-partner)'},
+  not_buildable_today:  {label:'Not buildable today',  color:'var(--v-not)'},
+  unclear:              {label:'Unclear',              color:'var(--v-unclear)'},
+};
+const ACCESS = {
+  self_serve:'Self-serve', trial_or_free_but_limited:'Trial / free-limited', paid_plan_required:'Paid plan required',
+  admin_approval_required:'Approval required', partner_gated:'Partner-gated', contact_sales:'Contact sales', unclear:'Unclear',
+};
+const MCP = {official_mcp:'Official MCP', community_mcp:'Community MCP', no_mcp_found:'No MCP found', unclear:'Unclear'};
+
+/* ---------- tooltip ---------- */
+const tip = $('#tip');
+function bindTip(el, html){ // html is built from trusted literals + textContent-safe strings
+  el.addEventListener('pointermove', e => {
+    tip.replaceChildren(...html());
+    tip.style.opacity = 1;
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    tip.style.left = Math.min(e.clientX + 14, innerWidth - w - 8) + 'px';
+    tip.style.top  = (e.clientY + 14 + h > innerHeight ? e.clientY - h - 10 : e.clientY + 14) + 'px';
+  });
+  el.addEventListener('pointerleave', () => tip.style.opacity = 0);
+}
+const tt = (strong, rest) => { // helper -> array of nodes
+  const b = document.createElement('b'); b.textContent = strong;
+  const d = document.createElement('div'); d.textContent = rest;
+  return [b, d];
+};
+
+/* ---------- KPI tiles ---------- */
+function kpi(label, value, note){
+  const d = document.createElement('div'); d.className = 'kpi card';
+  const l = document.createElement('div'); l.className='label'; l.textContent = label;
+  const v = document.createElement('div'); v.className='value'; v.textContent = value;
+  const n = document.createElement('div'); n.className='note'; n.textContent = note || '';
+  d.append(l,v,n); return d;
+}
+const T = INS.totals, M = VER.metrics;
+$('#kpis').append(
+  kpi('Apps researched', '100', '10 categories, 3 evidence URLs+ per app'),
+  kpi('Buildable today', T.buildable_pct + '%', T.build_now + ' build-now + ' + T.build_with_limits + ' with limits'),
+  kpi('Self-serve credentials', T.self_serve_pct + '%', T.gated_pct + '% gated (paid / partner / sales)'),
+  kpi('Official MCP servers', String(T.official_mcp), 'published or endorsed by the vendor'),
+  kpi('First-pass accuracy', (M.first_pass_accuracy*100).toFixed(1) + '%', M.field_checks + ' field checks on ' + M.sampled_apps + '-app QA sample'),
+  kpi('Final verified accuracy', (M.final_pass_accuracy*100).toFixed(0) + '%', M.corrections_made + ' corrections applied'),
+);
+$('#ministats').textContent = `100 apps · ${T.buildable_pct}% buildable · ${(M.first_pass_accuracy*100).toFixed(1)}% → ${(M.final_pass_accuracy*100).toFixed(0)}% verified`;
+
+/* ---------- executive bullets ---------- */
+const bullets = [
+  ['85 of 100 apps are buildable today.', ` ${T.build_now} are clean build-now targets and ${T.build_with_limits} work with real but manageable limits — the agent-toolkit opportunity is mostly unblocked, and only 15 apps truly need a partner, contract, or paid gate opened first.`],
+  ['Official MCP servers are no longer a differentiator — they are table stakes.', ` ${T.official_mcp} of 100 vendors now ship an official MCP server (even Podio, systeme.io, and Copper's CRM peers). The gap Composio fills is breadth, auth brokering, and multi-app orchestration, not MCP existence.`],
+  ['OAuth2 and API keys split the world.', ' OAuth2 (60 apps) dominates user-data SaaS — CRM, support, productivity — while API keys/PATs (55) dominate developer, data, and scraping APIs. Fintech does both: instant sandbox keys, gated production.'],
+  ['Gating concentrates in ads, financial data, and enterprise suites.', ' Every ads API (Google, Meta, LinkedIn, Pinterest) sits behind an approval or access-tier review; financial-data products (PitchBook, DealCloud, Plaid production) and enterprise support tools (Gladly, Pylon) are contract-gated. Nothing in dev-infra or ecommerce core is.'],
+  ['Verification changed answers.', ` First-pass accuracy on the QA sample was ${(M.first_pass_accuracy*100).toFixed(1)}%: the sweep missed Otter AI's newly launched public API (recorded "no public API"), and Coda's MCP had gone official under the community label. Fast-moving vendors need re-verification, not one-shot research.`],
+];
+for (const [b, rest] of bullets){
+  const li = document.createElement('li');
+  const bb = document.createElement('b'); bb.textContent = b;
+  li.append(bb, document.createTextNode(rest));
+  $('#bullets').append(li);
+}
+
+/* ---------- bar charts ---------- */
+function barChart(el, title, desc, entries, labelMap){
+  const h = document.createElement('h3'); h.textContent = title;
+  const p = document.createElement('p'); p.className = 'desc'; p.textContent = desc;
+  el.append(h, p);
+  const max = Math.max(...entries.map(e => e[1]));
+  for (const [key, val] of entries){
+    const row = document.createElement('div'); row.className = 'hbar';
+    const lbl = document.createElement('div'); lbl.className='lbl'; lbl.textContent = (labelMap && labelMap[key]) || key;
+    const track = document.createElement('div'); track.className='track';
+    const fill = document.createElement('div'); fill.className='fill'; fill.style.width = (val/max*100) + '%';
+    track.append(fill);
+    const v = document.createElement('div'); v.className='val'; v.textContent = val;
+    row.append(lbl, track, v);
+    bindTip(row, () => tt(`${val} of 100 apps`, (labelMap && labelMap[key]) || key));
+    el.append(row);
+  }
+}
+barChart($('#c-verdict'), 'Buildability verdict', 'Can Composio ship a toolkit today?',
+  Object.entries(INS.distributions.buildability_verdict), Object.fromEntries(Object.entries(VERDICT).map(([k,v])=>[k,v.label])));
+// color verdict bars by class
+[...$('#c-verdict').querySelectorAll('.hbar')].forEach((r,i)=>{
+  const key = Object.keys(INS.distributions.buildability_verdict)[i];
+  r.querySelector('.fill').style.background = VERDICT[key].color;
+});
+barChart($('#c-access'), 'Developer access model', 'How a developer gets credentials.',
+  Object.entries(INS.distributions.access_model), ACCESS);
+barChart($('#c-auth'), 'Auth method frequency', 'Methods per app (multi-select — sums exceed 100).',
+  Object.entries(INS.distributions.auth_methods).slice(0,9));
+barChart($('#c-mcp'), 'MCP server status', 'Does an MCP server already exist?',
+  Object.entries(INS.distributions.mcp_status), MCP);
+barChart($('#c-blockers'), 'Most common blockers', 'Free-text blockers bucketed into themes (34 apps have one).',
+  Object.entries(INS.blocker_themes));
+barChart($('#c-breadth'), 'API surface breadth', 'How much of the product the API covers.',
+  Object.entries(INS.distributions.api_surface_breadth));
+
+/* ---------- category x buildability matrix ---------- */
+(function(){
+  const el = $('#c-matrix');
+  const h = document.createElement('h3'); h.textContent = 'Category × buildability matrix';
+  const p = document.createElement('p'); p.className='desc';
+  p.textContent = 'Each row is one category of 10 apps. Developer-infra and productivity are all-green; finance, data-intel and AI-native carry the gates.';
+  el.append(h, p);
+  const legend = document.createElement('div'); legend.className='legend';
+  for (const k of ['build_now','build_with_limits','needs_partner_or_paid_access']){
+    const key = document.createElement('span'); key.className='key';
+    const sw = document.createElement('span'); sw.className='swatch'; sw.style.background = VERDICT[k].color;
+    const t = document.createElement('span'); t.textContent = VERDICT[k].label;
+    key.append(sw, t); legend.append(key);
+  }
+  el.append(legend);
+  const cats = Object.entries(INS.category_matrix);
+  cats.sort((a,b) => (b[1].buildability.build_now||0) - (a[1].buildability.build_now||0));
+  for (const [cat, m] of cats){
+    const row = document.createElement('div'); row.className='stackrow';
+    const lbl = document.createElement('div'); lbl.className='lbl'; lbl.textContent = cat;
+    const stack = document.createElement('div'); stack.className='stack';
+    for (const k of ['build_now','build_with_limits','needs_partner_or_paid_access','not_buildable_today','unclear']){
+      const n = m.buildability[k] || 0; if (!n) continue;
+      const seg = document.createElement('div'); seg.className='seg';
+      seg.style.background = VERDICT[k].color; seg.style.flex = String(n);
+      if (n >= 2) seg.textContent = n;
+      bindTip(seg, () => tt(`${n} of ${m.total} · ${VERDICT[k].label}`, cat));
+      stack.append(seg);
+    }
+    const v = document.createElement('div'); v.className='val'; v.textContent = m.total;
+    row.append(lbl, stack, v);
+    el.append(row);
+  }
+})();
+
+/* ---------- priorities ---------- */
+const PRIO = [
+  {title:'Easy wins — build first', color:'var(--v-now)', note:'Self-serve credentials, broad documented APIs, huge agent demand. Verified high-confidence.',
+   items:[
+    ['GitHub','broadest dev API; PAT + OAuth + GitHub Apps; the reference official MCP'],
+    ['Stripe','self-serve scoped keys; giant REST surface; official hosted MCP'],
+    ['Slack','the default agent messaging surface; OAuth bot tokens; official MCP'],
+    ['Notion','free self-serve tokens + OAuth; official hosted + OSS MCP'],
+    ['HubSpot','free CRM tier; private-app tokens + OAuth; official remote MCP'],
+    ['Shopify','partner dev stores; GraphQL Admin API; official MCP family'],
+    ['Jira (Atlassian)','self-serve API tokens + OAuth 3LO; Rovo MCP covers the suite'],
+    ['Linear','clean GraphQL API; API key or OAuth; polished official MCP'],
+    ['Airtable','PAT + OAuth (legacy keys dead); official hosted MCP'],
+    ['Apify','one token unlocks thousands of scrapers; official MCP; free tier'],
+   ]},
+  {title:'Build with limits — ship, but document the gate', color:'var(--v-limits)', note:'Buildable today; users hit an approval tier, plan gate, or narrow surface.',
+   items:[
+    ['Google Ads','works instantly on test accounts; Basic/Standard token approval for scale'],
+    ['Meta Ads','dev-mode immediate; App Review + business verification for external accounts'],
+    ['WhatsApp Business','free test number; templates + business verification gate production'],
+    ['Plaid','instant sandbox; production needs product approval'],
+    ['Xero','self-serve OAuth2; 25-connection cap until partner certification'],
+    ['Salesforce','free dev org; customer orgs need API-enabled editions'],
+    ['Snowflake','30-day trial; per-account hostnames and heavy credential setup'],
+    ['Monday.com','solid GraphQL API; no API on free plan'],
+    ['Squarespace','API keys need the top commerce plan; OAuth registration reviewed'],
+    ['Devin','strong API + official MCP; usage-billed, enterprise tier gated'],
+   ]},
+  {title:'Needs outreach — start the conversation', color:'var(--v-partner)', note:'Technology is fine; access is contractual. A partnerships motion, not an engineering one.',
+   items:[
+    ['PitchBook','API sold as a separate enterprise contract'],
+    ['DealCloud (Intapp)','credentials only exist inside paid customer sites'],
+    ['Gladly','enterprise sales-led; unscoped basic-auth tokens'],
+    ['Pylon','no trial or self-serve tier; OAuth MCP exists — good sign'],
+    ['Salesforce Commerce Cloud','licensed-instance credentials via Account Manager'],
+    ['Amazon Selling Partner','developer-profile approval via Professional seller account'],
+    ['LinkedIn Ads','use-case review, weeks-long; no self-serve production'],
+    ['Aircall','OAuth requires the technology-partner program'],
+    ['Clay','real API is Enterprise-only; official MCP shows agent intent'],
+    ['Ahrefs','keys require a paid plan; metered API units'],
+   ]},
+  {title:'Watch / unclear for now', color:'var(--v-unclear)', note:'Ambiguous identity, thin docs, pre-GA APIs, or no hosted API — re-check next quarter.',
+   items:[
+    ['Paygent Connect','identity ambiguous; no public docs (low confidence)'],
+    ['iPayX','young vendor, partly broken docs, narrow FX-audit API'],
+    ['Waterfall.io','real docs but unverified credential path and no public pricing'],
+    ['fanbasis','public API found (a surprise) but portal login-gated'],
+    ['NotebookLM','enterprise-only v1alpha API; consumer product has none'],
+    ['Otter AI','public API discovered in QA — Enterprise-gated; recheck as it matures'],
+    ['Sherlock / Mermaid CLI','OSS CLIs — need sandboxed execution, not an API toolkit'],
+    ['systeme.io','official MCP + API, but docs lag actual surface'],
+   ]},
+];
+for (const bucket of PRIO){
+  const card = document.createElement('div'); card.className='card';
+  card.style.borderTop = '3px solid ' + bucket.color;
+  const h = document.createElement('h3'); h.textContent = bucket.title;
+  const p = document.createElement('p'); p.className='desc'; p.style.cssText='font-size:12.5px;color:var(--muted);margin:0 0 4px'; p.textContent = bucket.note;
+  const ol = document.createElement('ol');
+  for (const [name, why] of bucket.items){
+    const li = document.createElement('li');
+    const b = document.createElement('b'); b.textContent = name;
+    li.append(b, document.createTextNode(' — ' + why));
+    ol.append(li);
+  }
+  card.append(h, p, ol); $('#prio').append(card);
+}
+
+/* ---------- workflow steps ---------- */
+const STEPS = [
+  ['Seed the app list','100 apps × 10 categories loaded from pipeline/apps.json with id, name, and website hint.'],
+  ['Discover official docs','Gemini reasons over live web search per app via Composio\'s COMPOSIO_SEARCH toolkit, preferring developer docs over blogs; auth pages and API references fetched directly.'],
+  ['Extract & classify','Auth methods (10 distinct types), access model, API surface + breadth, MCP status with URL, buildability verdict, blockers.'],
+  ['Normalize to schema','Every row validated against a JSON Schema — strict enums, required evidence URLs, confidence grades. Uncertainty marked "unclear", never guessed.'],
+  ['Validate evidence','Pass 2: every one of 381 evidence URLs HTTP-checked; dead links and off-domain evidence flagged for QA (14 rows flagged).'],
+  ['Human QA sample','Pass 3: 20 apps re-verified field-by-field against official docs; 7 errors found and corrected; accuracy tracked before/after.'],
+  ['Generate the case study','Pattern analysis (distributions, category matrix, blocker themes) baked into this static page.'],
+];
+STEPS.forEach(([t, d], i) => {
+  const s = document.createElement('div'); s.className='card step';
+  const n = document.createElement('div'); n.className='num'; n.textContent = i+1;
+  const h = document.createElement('h3'); h.textContent = t;
+  const p = document.createElement('p'); p.textContent = d;
+  s.append(n, h, p); $('#steps').append(s);
+});
+
+/* ---------- verification ---------- */
+$('#vkpis').append(
+  kpi('Field checks', String(M.field_checks), M.sampled_apps + ' apps × 6 fields, stratified 2 per category'),
+  kpi('First-pass accuracy', (M.first_pass_accuracy*100).toFixed(1) + '%', (M.field_checks - M.first_pass_correct) + ' of ' + M.field_checks + ' answers wrong'),
+  kpi('Corrections applied', String(M.corrections_made), 'across rows: Otter AI, Consensus, Coda, systeme.io'),
+  kpi('Final accuracy', (M.final_pass_accuracy*100).toFixed(0) + '%', 'on sampled fields, after corrections'),
+  kpi('Evidence URLs checked', String(EV.total_urls_checked), EV.dead_urls + ' dead links · ' + EV.rows_flagged + ' rows flagged for QA'),
+);
+const MISSES = [
+  ['Otter AI — the biggest miss.', ' First pass recorded "No public API found". QA found Otter\'s official Public API help article (API keys, REST endpoints, webhooks — launched 2026, Enterprise-gated). Four fields corrected; verdict moved from not_buildable_today to needs_partner_or_paid_access. Lesson: for fast-moving AI vendors, absence of evidence went stale within months.'],
+  ['Coda — MCP status churn.', ' First pass found only community MCP servers. QA found Coda\'s own help-center article for an official first-party MCP (beta). Corrected community_mcp → official_mcp. MCP status is the most perishable field in the dataset.'],
+  ['Consensus — under-claimed.', ' First pass marked auth "unclear". QA found docs showing API-key Bearer auth. The access gate (application-only) was right; the auth answer was lazier than the evidence allowed.'],
+  ['systeme.io — blocker overstated.', ' First pass said the API is "mainly contacts/tags". The official endpoint index actually lists ~10 resource groups (funnels, courses, payments…). The verdict (build_with_limits) survived; the reasoning needed fixing.'],
+];
+for (const [b, rest] of MISSES){
+  const d = document.createElement('div'); d.className='miss';
+  const bb = document.createElement('b'); bb.textContent = b;
+  d.append(bb, document.createTextNode(rest));
+  $('#misses').append(d);
+}
+const evs = [
+  `${EV.total_urls_checked} evidence URLs checked with real HTTP requests; ${EV.dead_urls} dead or unreachable (3.4%).`,
+  `${EV.rows_flagged} rows flagged (dead links or no official-domain evidence) and prioritized in the QA sample — 5 of the 14 flagged apps were manually re-verified.`,
+  'Off-domain flags were mostly benign: docs living on a different official domain (SendGrid→twilio.com, Coda→docs.superhuman.com, Binance→developers.binance.com).',
+  'Bot-blocked responses (403/429 from Meta, some help centers) are counted reachable-but-blocked, not dead.',
+];
+for (const s of evs){ const li = document.createElement('li'); li.textContent = s; $('#evsum').append(li); }
+
+/* QA table */
+function renderQA(){
+  const only = $('#qa-errors-only').checked;
+  const body = $('#qa-table tbody'); body.replaceChildren();
+  const items = VER.qa_table.filter(c => !only || !c.correct);
+  for (const c of items){
+    const tr = document.createElement('tr');
+    const cells = [
+      c.app, c.field.replace(/_/g,' '),
+      Array.isArray(c.original) ? c.original.join(', ') : String(c.original),
+      Array.isArray(c.verified_value) ? c.verified_value.join(', ') : String(c.verified_value),
+    ];
+    for (const v of cells){ const td = document.createElement('td'); td.textContent = v; tr.append(td); }
+    const ok = document.createElement('td'); ok.innerHTML=''; ok.className = c.correct ? '' : '';
+    const okSpan = document.createElement('span'); okSpan.className = c.correct ? 'ok' : 'err'; okSpan.textContent = c.correct ? '✓' : '✗';
+    ok.append(okSpan); tr.append(ok);
+    const corr = document.createElement('td'); corr.textContent = c.correction_made ? 'corrected' : (c.correct ? '—' : 'noted'); tr.append(corr);
+    const ev = document.createElement('td');
+    if (c.evidence){ const a = document.createElement('a'); a.href=c.evidence; a.target='_blank'; a.rel='noopener'; a.textContent='source'; ev.append(a); }
+    tr.append(ev);
+    bindTip(tr, () => tt(c.app + ' · ' + c.field, c.notes || ''));
+    body.append(tr);
+  }
+  $('#qa-count').textContent = `${items.length} of ${VER.qa_table.length} checks shown`;
+}
+$('#qa-errors-only').addEventListener('change', renderQA);
+renderQA();
+
+/* ---------- full table ---------- */
+const fmtConf = {high:'H', medium:'M', low:'L'};
+function badge(text, color){
+  const s = document.createElement('span'); s.className='badge';
+  const d = document.createElement('span'); d.className='dot'; d.style.background = color || 'var(--muted)';
+  const t = document.createElement('span'); t.textContent = text;
+  s.append(d, t); return s;
+}
+const selects = {category:'#f-category', buildability_verdict:'#f-verdict', access_model:'#f-access', mcp_status:'#f-mcp'};
+(function fillFilters(){
+  const uniq = (key) => [...new Set(rows.map(r => r[key]))];
+  for (const c of uniq('category')) addOpt('#f-category', c, c);
+  for (const v of Object.keys(INS.distributions.buildability_verdict)) addOpt('#f-verdict', v, VERDICT[v].label);
+  for (const a of Object.keys(INS.distributions.access_model)) addOpt('#f-access', a, ACCESS[a]);
+  for (const m of Object.keys(INS.distributions.mcp_status)) addOpt('#f-mcp', m, MCP[m]);
+  function addOpt(sel, val, label){ const o = document.createElement('option'); o.value = val; o.textContent = label; $(sel).append(o); }
+})();
+
+function renderTable(){
+  const q = $('#f-search').value.trim().toLowerCase();
+  const fCat = $('#f-category').value, fV = $('#f-verdict').value, fA = $('#f-access').value, fM = $('#f-mcp').value;
+  const body = $('#apps-table tbody'); body.replaceChildren();
+  let shown = 0;
+  for (const r of rows){
+    if (fCat && r.category !== fCat) continue;
+    if (fV && r.buildability_verdict !== fV) continue;
+    if (fA && r.access_model !== fA) continue;
+    if (fM && r.mcp_status !== fM) continue;
+    if (q){
+      const hay = [r.app, r.category, r.main_blocker, r.agent_notes, r.auth_summary, r.access_notes,
+                   r.api_surface_summary, r.one_line_description].join(' ').toLowerCase();
+      if (!hay.includes(q)) continue;
+    }
+    shown++;
+    const tr = document.createElement('tr');
+    const td = (v, cls) => { const d = document.createElement('td'); if (cls) d.className = cls; if (v != null) d.textContent = v; return d; };
+
+    tr.append(td(r.id, 'num'));
+    const appTd = td(null); const nm = document.createElement('span'); nm.className='appname'; nm.textContent = r.app; appTd.append(nm); tr.append(appTd);
+    tr.append(td(r.category.replace(' and ',' & ')));
+    tr.append(td(r.auth_methods.join(', ')));
+    const acc = td(null); acc.append(badge(ACCESS[r.access_model], r.access_model==='self_serve' ? 'var(--v-now)' : (r.access_model==='trial_or_free_but_limited' ? 'var(--v-limits)' : 'var(--v-partner)'))); tr.append(acc);
+    tr.append(td(r.api_surface_type.replace(/_/g,' ') + ' · ' + r.api_surface_breadth));
+    const mc = td(null); mc.append(badge(MCP[r.mcp_status], r.mcp_status==='official_mcp' ? 'var(--v-now)' : (r.mcp_status==='community_mcp' ? 'var(--v-limits)' : 'var(--muted)'))); tr.append(mc);
+    const vd = td(null); vd.append(badge(VERDICT[r.buildability_verdict].label, VERDICT[r.buildability_verdict].color)); tr.append(vd);
+    const blk = td(r.main_blocker === 'none' || r.main_blocker.startsWith('none') ? '—' : r.main_blocker);
+    blk.style.cssText = 'max-width:260px;font-size:12.5px;color:var(--ink2)'; tr.append(blk);
+    tr.append(td(fmtConf[r.confidence]));
+    tr.append(td(r.verified ? '✓' : ''));
+    const ev = td(null); ev.className = 'evlinks';
+    r.evidence_urls.forEach((u, i) => { const a = document.createElement('a'); a.href = u; a.target = '_blank'; a.rel='noopener'; a.textContent = '[' + (i+1) + ']'; a.title = u; ev.append(a); });
+    tr.append(ev);
+
+    nm.addEventListener('click', () => toggleDetail(tr, r));
+    body.append(tr);
+  }
+  $('#f-count').textContent = shown + ' of 100 apps';
+}
+function toggleDetail(tr, r){
+  if (tr.nextSibling && tr.nextSibling.classList && tr.nextSibling.classList.contains('detail')){ tr.nextSibling.remove(); return; }
+  const dtr = document.createElement('tr'); dtr.className = 'detail expander-row';
+  const dtd = document.createElement('td'); dtd.colSpan = 12;
+  const inner = document.createElement('div'); inner.className='inner';
+  const parts = [
+    ['What it does', r.one_line_description],
+    ['Auth', r.auth_summary],
+    ['Access', r.access_notes],
+    ['API surface', r.api_surface_summary],
+    ['Agent notes', r.agent_notes],
+  ];
+  if (r.existing_mcp_url) parts.push(['MCP', r.existing_mcp_url]);
+  if (r.verification_notes) parts.push(['Verification', r.verification_notes]);
+  for (const [k, v] of parts){
+    if (!v) continue;
+    const p = document.createElement('p'); p.style.margin = '4px 0';
+    const b = document.createElement('b'); b.textContent = k + ': ';
+    p.append(b, document.createTextNode(v));
+    inner.append(p);
+  }
+  dtd.append(inner); dtr.append(dtd);
+  tr.after(dtr);
+}
+for (const sel of ['#f-search','#f-category','#f-verdict','#f-access','#f-mcp']){
+  $(sel).addEventListener('input', renderTable);
+}
+renderTable();
+</script>
+</body>
+</html>

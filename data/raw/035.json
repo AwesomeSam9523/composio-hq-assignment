@@ -1,0 +1,33 @@
+{
+  "id": 35,
+  "app": "Mailchimp",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "mailchimp.com/developer",
+  "one_line_description": "Email marketing platform with APIs for audiences, campaigns, automations, and transactional email (Mandrill).",
+  "auth_methods": [
+    "API key",
+    "OAuth2",
+    "Basic auth",
+    "Bearer token"
+  ],
+  "auth_summary": "Marketing API accepts a self-generated API key (sent via HTTP Basic or Bearer) for your own account, or OAuth2 authorization-code flow for accessing other users' accounts; OAuth access tokens do not expire. Requests are routed to a per-account server prefix (e.g. us19).",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve: create an API key in account settings, or register an OAuth app in the developer section. Free Mailchimp tier exists for testing. No approval process found.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Marketing API covers audiences/lists, members, segments, tags, campaigns, templates, automations, reports, and e-commerce; separate Transactional (Mandrill) API for transactional sending.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp/",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+    "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/",
+    "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp/",
+    "https://github.com/damientilman/mailchimp-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Mailchimp's official MCP (https://mandrillapp.com/mcp) covers only the Transactional Messaging (Mandrill) API, not the main Marketing API; Marketing API coverage exists via multiple community MCPs (e.g. damientilman/mailchimp-mcp-server with 112+ tools). Straightforward build.",
+  "verified": false,
+  "verification_notes": ""
+}

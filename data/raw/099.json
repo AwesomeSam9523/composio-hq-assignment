@@ -1,0 +1,30 @@
+{
+  "id": 99,
+  "app": "YouTube Transcript",
+  "category": "AI, Research and Media-native",
+  "website_hint": "transcriptapi.com",
+  "one_line_description": "Third-party REST API for extracting YouTube video transcripts plus video/channel/playlist search and browsing.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "REST API authenticates with an API key sent as a Bearer token in the Authorization header (keys from the dashboard). Their MCP integration for Claude/ChatGPT supports OAuth so end users avoid manual key handling.",
+  "access_model": "self_serve",
+  "access_notes": "Sign up on transcriptapi.com and generate an API key from the API Keys dashboard; getting-started docs don't clearly state free-credit vs paid terms.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "Endpoints for video transcripts (with/without timestamps), YouTube search with continuation tokens, channel video search/listing, playlist browsing, and channel-handle resolution; interactive Swagger UI provided.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://transcriptapi.com/docs/mcp/",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none (small vendor; pricing/free-tier limits unclear, and it depends on scraping-adjacent access to YouTube data)",
+  "evidence_urls": [
+    "https://transcriptapi.com/docs/api/",
+    "https://transcriptapi.com/docs/getting-started/",
+    "https://transcriptapi.com/docs/mcp/"
+  ],
+  "confidence": "medium",
+  "agent_notes": "This is a third-party service, not YouTube/Google. Docs confirm Bearer/API-key auth and an official MCP integration page. Fetched the getting-started page, which was thin on pricing details; treat rate limits/free tier as unverified. Not to be confused with the open-source python youtube-transcript-api library.",
+  "verified": false,
+  "verification_notes": ""
+}

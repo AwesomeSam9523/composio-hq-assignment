@@ -1,0 +1,31 @@
+{
+  "id": 8,
+  "app": "Close",
+  "category": "CRM and Sales",
+  "website_hint": "close.com",
+  "one_line_description": "Close is a sales-focused CRM with built-in calling, email, and SMS for inside sales teams.",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "auth_summary": "Close supports API keys ('for scripts') created self-serve under Settings > Developer > API Keys, and OAuth 2.0 for user-facing integrations (including OAuth 2.0 Dynamic Client Registration on its MCP server). The MCP server also accepts a Close-API-Key header with a Close-Scope header (mcp.read / mcp.write_safe / mcp.write_destructive).",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "API keys are self-serve from account settings (Settings > Developer > API Keys), but Close is a paid product with a free trial and no permanent free tier; docs mention creating OAuth apps and getting listed, and direct some partner/API inquiries to support@close.com.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covering leads, contacts, opportunities, activities (calls/emails/SMS), custom fields/objects, sequences, bulk email/SMS actions, webhooks, event logs, and reporting metrics.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developer.close.com/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.close.com/",
+    "https://developer.close.com/mcp",
+    "https://help.close.com/docs/api-keys-oauth",
+    "https://help.close.com/docs/mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official remote MCP server at https://mcp.close.com/mcp (HTTP Streamable, OAuth 2.0 DCR, officially supported in the Claude ecosystem) with tiered write scopes - a strong signal for agent-readiness. One gap: docs I fetched did not state the exact wire format for API keys on the core REST API (widely known to be HTTP Basic auth with the key as username, but I could not confirm from an official page I saw, so Basic auth is not listed as a distinct method). Plan-level API access restrictions were not specified in fetched docs.",
+  "verified": false,
+  "verification_notes": ""
+}

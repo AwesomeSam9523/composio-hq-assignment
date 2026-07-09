@@ -1,0 +1,30 @@
+{
+  "id": 86,
+  "app": "QuickBooks",
+  "category": "Finance and Fintech",
+  "website_hint": "developer.intuit.com",
+  "one_line_description": "Intuit's small-business accounting platform (QuickBooks Online) covering invoicing, expenses, payroll, and financial reporting.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "QuickBooks Online API uses OAuth 2.0 authorization-code flow (client ID/secret from the Intuit Developer portal); access tokens are passed as 'Authorization: Bearer' and expire in 60 minutes with refresh tokens for renewal. OpenID Connect is available on top of OAuth2 for identity.",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve: free Intuit Developer account gives Development keys plus a sandbox QBO company immediately; Production keys are obtained from the app's Production 'Keys & OAuth' section (marketplace listing requires additional app review, but private/internal production use is self-serve).",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST (QBO v3 Accounting API) covering invoices, customers, vendors, bills, payments, items, journal entries and other entities plus financial reports; separate Payments and Payroll APIs also exist.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/intuit/quickbooks-online-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0",
+    "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/faq",
+    "https://github.com/intuit/quickbooks-online-mcp-server",
+    "https://blogs.intuit.com/2025/10/21/experiment-with-intuits-local-mcp-server-early-preview/"
+  ],
+  "confidence": "high",
+  "agent_notes": "Intuit ships an official open-source QuickBooks Online MCP server (local stdio, OAuth2 to one QBO company, early preview per Intuit's Oct 2025 blog). OAuth2 app + sandbox is straightforward; the main operational nuisance is Intuit's token/realmId handling and marketplace review only if publicly listing the app.",
+  "verified": false,
+  "verification_notes": ""
+}

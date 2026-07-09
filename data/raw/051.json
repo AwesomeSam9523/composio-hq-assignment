@@ -1,0 +1,29 @@
+{
+  "id": 51,
+  "app": "DataForSEO",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "docs.dataforseo.com",
+  "one_line_description": "Pay-as-you-go SEO data APIs covering SERPs, keywords, backlinks, on-page audits, and domain analytics.",
+  "auth_methods": [
+    "Basic auth"
+  ],
+  "auth_summary": "Basic authentication only: API login (account email) plus an auto-generated API password, Base64-encoded in the Authorization header. Docs explicitly state Basic auth is the only way to access the API and credentials cannot be passed as URL parameters.",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve registration; API credentials (login + auto-generated API password) are issued with the account. Usage is billed via a pay-as-you-go credit balance rather than a subscription.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API v3 with many modules: SERP, Keywords Data, Backlinks, OnPage, DataForSEO Labs, Business Data, Domain Analytics, Content Analysis, AI Optimization, and Merchant.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/dataforseo/mcp-server-typescript",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.dataforseo.com/v3/auth/",
+    "https://dataforseo.com/model-context-protocol",
+    "https://github.com/dataforseo/mcp-server-typescript"
+  ],
+  "confidence": "high",
+  "agent_notes": "Very clean target: single documented auth method, broad documented REST surface, official vendor MCP (npm dataforseo-mcp-server plus hosted endpoint mcp.dataforseo.com/mcp). Only real caveat is that all calls consume paid credits.",
+  "verified": false,
+  "verification_notes": ""
+}

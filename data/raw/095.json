@@ -1,0 +1,30 @@
+{
+  "id": 95,
+  "app": "Reducto",
+  "category": "AI, Research and Media-native",
+  "website_hint": "reducto.ai document parsing",
+  "one_line_description": "Document ingestion platform that parses, extracts, splits, and classifies complex documents (PDFs, scans, tables) for AI pipelines.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "API key auth: create keys self-serve in Reducto Studio (studio.reducto.ai > API Keys), used via REDUCTO_API_KEY env var or client config in the official Python/Node SDKs; the MCP server uses a browser-based login that saves the key to ~/.reducto/config.yaml.",
+  "access_model": "self_serve",
+  "access_notes": "Sign up at studio.reducto.ai and create an API key from the sidebar; official Python (reductoai on PyPI) and Node SDKs are public.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API (docs.reducto.ai) for document upload, parse (structured text/tables/figures), structured extraction against a JSON schema, split, and classify — a focused but complete document-processing surface.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.reducto.ai/quickstart",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.reducto.ai/quickstart",
+    "https://github.com/reductoai/reducto-python-sdk",
+    "https://github.com/reductoai/reducto-node-sdk",
+    "https://www.piwheels.org/project/mcp-server-reducto/"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Straightforward API-key SaaS with official SDKs and a vendor-published MCP package (mcp-server-reducto with tools upload_file/parse_document/extract_data/split_document/classify_document). I did not confirm free-tier limits/pricing for API usage; production volume is presumably paid.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,31 @@
+{
+  "id": 77,
+  "app": "ClickUp",
+  "category": "Productivity and Project Management",
+  "website_hint": "clickup.com/api",
+  "one_line_description": "All-in-one productivity platform for tasks, docs, goals, and time tracking.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2"
+  ],
+  "auth_summary": "REST API supports non-expiring personal API tokens (pk_ prefix, generated in Settings > Apps) and OAuth 2.0 authorization-code flow for multi-user apps.",
+  "access_model": "self_serve",
+  "access_notes": "Personal tokens are self-serve for any user in Settings > Apps; OAuth apps are created self-serve by workspace owners/admins, which issues a client_id and secret.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covering tasks, lists, folders, spaces, docs, comments, custom fields, goals, time tracking, and webhooks.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.clickup.com/docs/authentication",
+    "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+    "https://help.clickup.com/hc/en-us/articles/33335772678423-What-is-ClickUp-MCP",
+    "https://github.com/taazkareem/clickup-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "ClickUp now has a first-party hosted MCP server (https://mcp.clickup.com/mcp), OAuth-only, available on all plans but described as public beta in help docs. Mature community servers (e.g., taazkareem/clickup-mcp-server) also exist.",
+  "verified": false,
+  "verification_notes": ""
+}

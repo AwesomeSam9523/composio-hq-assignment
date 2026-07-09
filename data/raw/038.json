@@ -1,0 +1,30 @@
+{
+  "id": 38,
+  "app": "Pinterest",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "developers.pinterest.com",
+  "one_line_description": "Visual discovery platform whose API v5 covers pins, boards, ads, catalogs, and analytics.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "API v5 uses OAuth2: authorization code flow (with refresh tokens) for user-context access to the full API, plus client credentials grant for app-own-behalf/machine-to-machine cases. No plain API key.",
+  "access_model": "admin_approval_required",
+  "access_notes": "Register an app on developers.pinterest.com, then request Trial Access (limited rate limits); full-scope Standard/production access requires an approval process including demonstrating a working interactive OAuth login flow to Pinterest.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API v5 covering pins, boards, user account data, ads (campaigns/ad groups/ads/reporting), audiences, catalogs/shopping, and conversions API.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/collactivelabs/pinterest-mcp-server",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Trial access has limited rate limits and standard access requires Pinterest's review/approval process",
+  "evidence_urls": [
+    "https://developers.pinterest.com/docs/api/v5/oauth-token/",
+    "https://developer.pinterest.com/docs/getting-started/set-up-authentication-and-authorization/",
+    "https://github.com/pinterest/api-quickstart",
+    "https://github.com/collactivelabs/pinterest-mcp-server"
+  ],
+  "confidence": "medium",
+  "agent_notes": "No official Pinterest MCP found — only community servers (some, like terryso/mcp-pinterest, scrape rather than use the API; collactivelabs' uses the real API). Pinterest maintains an official api-quickstart repo on GitHub. Trial-vs-standard access details came from official docs surfaced in search; I did not fetch the access-request page itself.",
+  "verified": false,
+  "verification_notes": ""
+}

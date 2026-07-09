@@ -1,0 +1,32 @@
+{
+  "id": 71,
+  "app": "Notion",
+  "category": "Productivity and Project Management",
+  "website_hint": "developers.notion.com",
+  "one_line_description": "Connected workspace for docs, wikis, and databases used for notes and project management.",
+  "auth_methods": [
+    "API key",
+    "Personal access token",
+    "OAuth2"
+  ],
+  "auth_summary": "Internal connections use a static integration token (API key), user-scoped Personal Access Tokens are available for scripts, and public multi-workspace integrations use OAuth 2.0 with access/refresh tokens.",
+  "access_model": "self_serve",
+  "access_notes": "All credential types are self-serve via Notion's developer portal; internal tokens/PATs are issued immediately, OAuth client ID/secret issued after creating a public connection. Workspace-owner role needed to create an internal connection, and pages must be shared with the integration.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covering pages, databases, blocks, comments, users, files, and search, subject to Notion's page-sharing permission model.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developers.notion.com/guides/mcp/overview",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.notion.com/docs/authorization",
+    "https://developers.notion.com/guides/mcp/overview",
+    "https://github.com/makenotion/notion-mcp-server",
+    "https://www.notion.com/help/notion-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Notion has both an official hosted MCP (mcp.notion.com, OAuth-based) and an official open-source server (makenotion/notion-mcp-server). Integration only sees pages explicitly shared with it, which agents must account for.",
+  "verified": false,
+  "verification_notes": ""
+}

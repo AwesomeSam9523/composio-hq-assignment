@@ -1,0 +1,31 @@
+{
+  "id": 53,
+  "app": "Ahrefs",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "ahrefs.com/api",
+  "one_line_description": "SEO toolset whose API v3 exposes backlink, keyword, rank-tracking, and site-audit data.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "API keys are created in Account settings (workspace owners/admins only, up to 1,000 keys, 1-year lifetime) and sent as 'Authorization: Bearer YOUR_API_KEY'.",
+  "access_model": "paid_plan_required",
+  "access_notes": "Historically API v3 was Enterprise-only; multiple 2026 sources report API access with monthly API-unit allocations now included on Lite/Standard/Advanced paid plans (Starter and free excluded). Either way, a paid subscription is required to obtain a key.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API v3 at docs.ahrefs.com covering the core Ahrefs dataset (Site Explorer/backlinks, keywords, rank tracker, site audit, management endpoints), metered in API units.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "API keys are gated behind a paid Ahrefs subscription (formerly Enterprise-only; now reportedly Lite+), and usage consumes paid API units.",
+  "evidence_urls": [
+    "https://docs.ahrefs.com/docs/api/reference/api-keys-creation-and-management",
+    "https://docs.ahrefs.com/docs/api/reference/introduction",
+    "https://help.ahrefs.com/en/articles/6559232-about-api-v3-for-enterprise-plan",
+    "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Auth mechanics confirmed from official docs via search. The exact plan threshold is in flux: official help center still frames API v3 around Enterprise, while 2026 third-party reports say all paid plans (Lite+) now get API units. Did not fetch the official pricing/plan matrix directly, so plan-gating details carry some uncertainty. Official Ahrefs MCP exists per their help center.",
+  "verified": false,
+  "verification_notes": ""
+}

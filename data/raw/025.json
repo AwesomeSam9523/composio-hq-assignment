@@ -1,0 +1,29 @@
+{
+  "id": 25,
+  "app": "Pumble",
+  "category": "Communications and Messaging",
+  "website_hint": "pumble.com",
+  "one_line_description": "Free team chat app (by CAKE.com) with channels, threads, and calls, positioned as a Slack alternative.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "API access is via an API-keys addon: after installing the addon in a workspace, users generate personal API keys with the /api-keys generate command and pass them to the HTTP API.",
+  "access_model": "self_serve",
+  "access_notes": "Free self-serve: sign up for Pumble, install the API addon from the addon marketplace, then generate API keys in-app. No OAuth app registration flow documented for the public API.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "Swagger-documented HTTP API for sending messages, replies, reactions, and listing/managing channels and users; rate limited to ~1000 requests/min per user. There is also a pumble-sdk for building bot-style apps.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://lobehub.com/mcp/shoutkol-pumble-mcp-server",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Narrow addon-based API with per-user API keys and no OAuth app model",
+  "evidence_urls": [
+    "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+    "https://pumble-api-keys.addons.marketplace.cake.com/api-docs/",
+    "https://www.npmjs.com/package/pumble-sdk"
+  ],
+  "confidence": "medium",
+  "agent_notes": "API is delivered as a marketplace addon rather than a first-class platform API; docs are thin. Only community MCP listings found (e.g. shoutkol pumble-mcp-server on LobeHub); no official Pumble MCP. Auth is API-key only per evidence found.",
+  "verified": false,
+  "verification_notes": ""
+}

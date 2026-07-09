@@ -1,0 +1,32 @@
+{
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "website_hint": "developer.salesforce.com/docs/commerce",
+  "one_line_description": "Enterprise B2C/B2B commerce platform (formerly Demandware) with the Salesforce Commerce API (SCAPI).",
+  "auth_methods": [
+    "OAuth2",
+    "JWT"
+  ],
+  "auth_summary": "Admin SCAPI endpoints are secured via OAuth2 client credentials issued through Account Manager; Shopper APIs use SLAS (Shopper Login and API Access Service), which issues JWT shopper access tokens (~30 min validity) via OAuth2-style grant flows, including trusted-system tokens.",
+  "access_model": "partner_gated",
+  "access_notes": "There is no self-serve signup for a Commerce Cloud instance: you need a licensed B2C Commerce instance (enterprise contract) or partner-program sandbox access, then an admin with Account Manager roles must create API clients and SLAS clients for you. Legacy OCAPI also exists behind the same instance requirement.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "SCAPI covers shopper flows (search, baskets, checkout, login) and admin resources (products, catalogs, orders, customers, pricing, promotions), alongside the older OCAPI REST API.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/taurgis/sfcc-dev-mcp",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "Credentials require a licensed B2C Commerce instance and Account Manager/SLAS admin setup; no self-serve developer sandbox.",
+  "evidence_urls": [
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/slas.html",
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+    "https://developer.salesforce.com/docs/commerce/account-manager/guide/custom-api-authentication.html",
+    "https://github.com/taurgis/sfcc-dev-mcp",
+    "https://github.com/BrinsilElias/commercecloud-mcp-server"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Docs are public and detailed, but I could not confirm any self-serve path to an instance; access model is inferred from Account Manager role requirements and Salesforce's enterprise sales motion. Salesforce announced MCP support across Salesforce (June 2025), but Commerce Cloud-specific MCP servers found are community-built (sfcc-dev-mcp is docs/logs-focused; commercecloud-mcp-server uses OCAPI).",
+  "verified": false,
+  "verification_notes": ""
+}

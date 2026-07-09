@@ -1,0 +1,32 @@
+{
+  "id": 31,
+  "app": "Google Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "developers.google.com/google-ads",
+  "one_line_description": "Google's advertising platform for search, display, YouTube and shopping campaigns, managed programmatically via the Google Ads API.",
+  "auth_methods": [
+    "OAuth2",
+    "Service account"
+  ],
+  "auth_summary": "All API calls require OAuth2 (user consent flow or service account/domain-wide delegation with scope https://www.googleapis.com/auth/adwords) PLUS a Google Ads developer token attached to a manager (MCC) account. OAuth alone is not sufficient.",
+  "access_model": "admin_approval_required",
+  "access_notes": "Developer token is issued instantly but starts at Test Account Access (test accounts only). Google may auto-upgrade to Explorer Access (limited production ops/day); Basic Access (15k ops/day) and Standard Access (unlimited) require an application form review with business justification and API policy compliance.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Full campaign lifecycle: accounts, campaigns, ad groups, ads, budgets, bidding, audiences, keywords, conversions, and reporting via GAQL query language. Available as REST and gRPC with official client libraries.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/googleads/google-ads-mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Developer token access-level approval (Basic/Standard) required before production accounts can be used at scale",
+  "evidence_urls": [
+    "https://developers.google.com/google-ads/api/docs/oauth/overview",
+    "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+    "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+    "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+    "https://github.com/googleads/google-ads-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Google published an official open-source MCP server (googleads/google-ads-mcp, verified by fetching the repo) — initial version is read-only/diagnostics-focused and still requires your own developer token (Explorer+ for production) and OAuth credentials. Many community MCPs also exist. The developer token + MCC requirement is the practical hurdle for any multi-tenant toolkit.",
+  "verified": false,
+  "verification_notes": ""
+}

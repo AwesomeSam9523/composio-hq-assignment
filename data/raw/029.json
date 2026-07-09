@@ -1,0 +1,30 @@
+{
+  "id": 29,
+  "app": "Aircall",
+  "category": "Communications and Messaging",
+  "website_hint": "aircall.io",
+  "one_line_description": "Cloud business phone system for sales/support teams with calls, SMS/WhatsApp, and CRM integrations.",
+  "auth_methods": [
+    "Basic auth",
+    "OAuth2"
+  ],
+  "auth_summary": "Customers use HTTP Basic auth with an api_id/api_token pair generated in the Aircall Dashboard; technology partners use OAuth 2.0 with client_id/client_secret issued after signing up to Aircall's partner program.",
+  "access_model": "paid_plan_required",
+  "access_notes": "API keys are generated in the company dashboard, so you need an Aircall account (paid subscription; short free trial available). OAuth credentials require applying via aircall.io/partners/technology/signup and being onboarded by Aircall.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API covering users, teams, numbers, calls (list/transfer/tag/archive), contacts, SMS/messaging, call AI features (transcripts, sentiment, summaries), webhooks, and analytics.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/themobilefirstco/aircall-mcp-server",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "Credentials require a paid Aircall subscription (Basic auth) or partner-program approval (OAuth2)",
+  "evidence_urls": [
+    "https://developer.aircall.io/api-references/",
+    "https://github.com/themobilefirstco/aircall-mcp-server",
+    "https://lobehub.com/mcp/themobilefirstco-aircall-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official API reference confirming both auth modes. The well-known Aircall MCP server (73 tools) is explicitly unofficial, built by a competitor (Allo/The Mobile First Company). API itself is well documented; the gate is account/partner access, not technology.",
+  "verified": false,
+  "verification_notes": ""
+}

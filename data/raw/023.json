@@ -1,0 +1,29 @@
+{
+  "id": 23,
+  "app": "Zoho Cliq",
+  "category": "Communications and Messaging",
+  "website_hint": "zoho.com/cliq",
+  "one_line_description": "Zoho's team chat app with channels, bots, and workflow integrations, part of the Zoho suite.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "The Cliq REST API v2 uses Zoho's standard OAuth 2.0 (register a client in the Zoho API Console, obtain access/refresh tokens with Cliq scopes).",
+  "access_model": "self_serve",
+  "access_notes": "Developers register an application self-serve in the Zoho API Console to get client ID/secret; a free Cliq plan exists, so credentials are obtainable without payment. Regional data centers use different token/API endpoints.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API v2 at cliq.zoho.com/api/v2 covers chats, messages, channels, threads, users, roles, departments, teams, calendars/events, bots, reminders, and file management.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://www.zoho.com/cliq/help/restapi/v2/",
+    "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+    "https://www.zoho.com/mcp/"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official v2 REST docs confirming OAuth2 and a wide endpoint list. Zoho hosts official MCP servers (mcp.zoho.com) that include Cliq. Multi-DC (zoho.com/.in/.eu) endpoints add minor integration complexity.",
+  "verified": false,
+  "verification_notes": ""
+}

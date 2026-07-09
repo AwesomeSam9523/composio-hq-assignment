@@ -1,0 +1,29 @@
+{
+  "id": 94,
+  "app": "Consensus",
+  "category": "AI, Research and Media-native",
+  "website_hint": "consensus.app OAuth requested",
+  "one_line_description": "AI-powered academic search engine that answers questions from 200M+ peer-reviewed research papers.",
+  "auth_methods": [
+    "unclear"
+  ],
+  "auth_summary": "API access is application-gated, and the auth mechanism is not visible in public docs I could confirm (likely API key issued after approval). The official MCP connects Claude/ChatGPT clients to Consensus search.",
+  "access_model": "contact_sales",
+  "access_notes": "The API is 'available by application only' via a Request Access flow at consensus.app/home/api; pricing is per-call (baseline ~$0.10/call plus platform fee) with a custom quote, so no self-serve credentials.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "docs.consensus.app hosts an API reference for programmatic academic paper search/answers; the surface appears focused on search over the research corpus rather than broad resource management.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.consensus.app/docs/mcp",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "API credentials require an application/approval and custom per-call pricing; no self-serve developer signup.",
+  "evidence_urls": [
+    "https://consensus.app/home/api/",
+    "https://docs.consensus.app/reference",
+    "https://docs.consensus.app/docs/mcp"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Caution: several search results (support.goconsensus.com) refer to a DIFFERENT product (goConsensus, a sales demo-automation tool) — ignored those. For consensus.app itself: a real API and an official MCP exist, but the API is application-only, matching the 'OAuth requested' hint in spirit (no open self-serve auth). Exact auth method unconfirmed from official docs.",
+  "verified": false,
+  "verification_notes": ""
+}

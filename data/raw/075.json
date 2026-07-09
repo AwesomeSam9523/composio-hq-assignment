@@ -1,0 +1,31 @@
+{
+  "id": 75,
+  "app": "Asana",
+  "category": "Productivity and Project Management",
+  "website_hint": "developers.asana.com",
+  "one_line_description": "Work management platform for team tasks, projects, portfolios, and goals.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2",
+    "Service account"
+  ],
+  "auth_summary": "API supports personal access tokens from the developer console, OAuth 2.0 (plus OIDC) for multi-user apps, and Enterprise-only service accounts with org-wide access.",
+  "access_model": "self_serve",
+  "access_notes": "PATs and OAuth apps are created self-serve in Asana's developer console on any account; only service accounts are gated (Enterprise tier, super-admin created).",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covering tasks, projects, sections, portfolios, goals, workspaces, users, custom fields, attachments, plus webhooks and batch endpoints.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.asana.com/docs/authentication",
+    "https://developers.asana.com/docs/using-asanas-mcp-server",
+    "https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647"
+  ],
+  "confidence": "high",
+  "agent_notes": "Asana's official MCP V2 server (https://mcp.asana.com/v2/mcp, Streamable HTTP, OAuth) is GA; the V1 SSE endpoint (mcp.asana.com/sse) is deprecated with shutdown announced for late 2026. Service accounts are the only paid-gated auth path.",
+  "verified": false,
+  "verification_notes": ""
+}

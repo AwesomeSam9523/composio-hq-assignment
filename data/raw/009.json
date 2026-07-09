@@ -1,0 +1,32 @@
+{
+  "id": 9,
+  "app": "Copper",
+  "category": "CRM and Sales",
+  "website_hint": "copper.com",
+  "one_line_description": "CRM (formerly ProsperWorks) built around Google Workspace, managing leads, contacts, companies, opportunities, and pipelines directly from Gmail.",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "auth_summary": "API keys are self-generated in the Copper web app (System settings > API Keys) and sent as X-PW-AccessToken + X-PW-UserEmail headers on every request. OAuth2 Authorization Code flow is supported for partner integrations, but registering an OAuth client requires emailing partners@copper.com — it is not self-serve.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "API keys are self-serve inside any Copper account, but the Web API is only available on trial, Professional, and Business plans (not Starter/Basic). A free 14-day trial grants API access; OAuth client_id/client_secret requires contacting Copper's partner team (partners@copper.com).",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API (v1, JSON) at api.copper.com/developer_api/v1 covering leads (incl. bulk ops and conversion), people, companies, opportunities, projects, tasks, activities, tags, custom fields, field layouts, related items, file upload, users/account, and webhooks.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://www.apideck.com/mcp-server/copper",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "OAuth2 app registration is gated behind emailing partners@copper.com, and API access requires a Professional+ (or trial) plan; API-key auth itself is fully self-serve.",
+  "evidence_urls": [
+    "https://developer.copper.com/",
+    "https://developer.copper.com/introduction/authentication.html",
+    "https://developer.copper.com/introduction/oauth/quickstart.html",
+    "https://support.copper.com/en/articles/8823462-api-docs-and-tips",
+    "https://www.apideck.com/mcp-server/copper"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official developer docs directly. Copper's unusual header-pair auth (X-PW-AccessToken + X-PW-UserEmail) reflects its ProsperWorks legacy. No official Copper MCP found; multiple community/aggregator MCPs exist (Apideck, Pipedream, viaSocket, n8n, SyncHub). Rate limits not documented on the pages fetched. Note developer.copper.co (different TLD) is an unrelated crypto company — easy to confuse.",
+  "verified": false,
+  "verification_notes": ""
+}

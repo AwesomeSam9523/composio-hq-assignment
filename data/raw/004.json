@@ -1,0 +1,33 @@
+{
+  "id": 4,
+  "app": "Attio",
+  "category": "CRM and Sales",
+  "website_hint": "attio.com",
+  "one_line_description": "Modern, data-model-flexible CRM for managing companies, people, deals, and custom objects.",
+  "auth_methods": [
+    "OAuth2",
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "Attio's REST API accepts a workspace API key (generated in Workspace Settings > Developers) or an OAuth 2.0 authorization-code flow for third-party apps; either credential is sent as an Authorization: Bearer token on every request.",
+  "access_model": "self_serve",
+  "access_notes": "Any workspace admin can self-serve an API key from Workspace Settings (free plan available); OAuth apps are registered by developers and documented with a public token endpoint and OAuth tutorial — no partner program or sales contact found.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Public REST API (JSON over HTTPS) covering the full CRM data model: objects (standard and custom), records, lists/entries, attributes, notes, tasks, comments, webhooks, and workspace members.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.attio.com/mcp/overview",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.attio.com/rest-api/overview",
+    "https://docs.attio.com/rest-api/tutorials/connect-an-app-through-oauth",
+    "https://docs.attio.com/api-reference/oauth-20/token-endpoint",
+    "https://attio.com/help/apps/other-apps/generating-an-api-key",
+    "https://docs.attio.com/mcp/overview"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Fetched the official REST API overview (confirms public REST API and an OAuth app tutorial); the dedicated authentication page URL I guessed 404'd, so API-key and bearer-token details come from search results citing official Attio docs/help-center pages rather than a page I fetched end-to-end. Attio also ships an official hosted MCP server (OAuth-based, reads auto-approved, writes confirmed). Community MCP servers (e.g. kesslerio/attio-mcp-server) exist as well.",
+  "verified": false,
+  "verification_notes": ""
+}

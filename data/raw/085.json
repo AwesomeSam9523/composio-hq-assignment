@@ -1,0 +1,30 @@
+{
+  "id": 85,
+  "app": "iPayX",
+  "category": "Finance and Fintech",
+  "website_hint": "ipayx.ai/docs",
+  "one_line_description": "FINTRAC-registered FX audit platform that scores foreign-exchange transactions against live mid-market rates to expose hidden bank FX fees.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "Free/paid API keys obtained from ipayx.ai; the MCP server's mid-market-rate tool works without a key while live provider comparisons require a free key. No OAuth or other schemes documented.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Very low friction: sample audit and sandbox with no signup, 5 free lifetime audits without a credit card, free API key for basic tools; paid tiers unlock full API access and white-label embedding. No production compliance gating observed.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "Small, focused surface: REST API + SDKs for FX audits (audit-grade JSON, hash-chain receipts) and an MCP server exposing ~4 tools (audit_fx_fee, compare_providers, score_invoice, get_mid_market_rate).",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/Ipayx-stellar/mcp-fx-audit",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Docs are thin and partly broken (ipayx.ai/docs returned 404); very small/young vendor with a narrow single-purpose API",
+  "evidence_urls": [
+    "https://www.ipayx.ai/",
+    "https://www.ipayx.ai/docs/mcp-server",
+    "https://github.com/Ipayx-stellar/mcp-fx-audit",
+    "https://glama.ai/mcp/connectors/io.github.Ipayx-stellar/fx-audit"
+  ],
+  "confidence": "medium",
+  "agent_notes": "As warned, docs are thin: the direct ipayx.ai/docs URL 404'd, though the homepage advertises a REST API reference and MCP docs, and /docs/mcp-server exists. Name collides with several unrelated 'iPay' payment providers (i-pay.io, ipaygh.com, ipayafrica.com) — this entry is specifically the ipayx.ai FX-audit startup, which is MCP-native (vendor-published GitHub MCP server, listed on Glama/registries). Auth beyond 'get a free key' is not deeply documented; confidence capped at medium.",
+  "verified": false,
+  "verification_notes": ""
+}

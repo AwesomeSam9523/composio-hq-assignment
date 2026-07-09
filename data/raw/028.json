@@ -1,0 +1,29 @@
+{
+  "id": 28,
+  "app": "WhatsApp Business",
+  "category": "Communications and Messaging",
+  "website_hint": "developers.facebook.com/docs/whatsapp",
+  "one_line_description": "Meta's Cloud API for sending and receiving WhatsApp messages programmatically as a business.",
+  "auth_methods": [
+    "Bearer token"
+  ],
+  "auth_summary": "Cloud API calls (Meta Graph API) use bearer access tokens: temporary developer tokens for testing and permanent System User access tokens (with whatsapp_business_messaging / whatsapp_business_management permissions) for production. Not a standard user-facing OAuth2 flow for messaging.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve: register as a Meta developer, create an app with the WhatsApp use case, and get a test number + temporary token immediately. Production sending at scale requires a real phone number, system-user token, and business verification/messaging-limit tiers.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "Graph API endpoints for sending template and free-form messages (within the 24-hour customer service window), media, message templates, phone number and WABA management, plus webhooks for inbound messages and statuses.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/lharries/whatsapp-mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Business verification and template/24-hour-window messaging rules gate production use",
+  "evidence_urls": [
+    "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "https://github.com/lharries/whatsapp-mcp",
+    "https://github.com/mattcoatsworth/Whatsapp-MCP-Server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official get-started docs. Most popular community MCPs (e.g. lharries/whatsapp-mcp) bridge the unofficial WhatsApp Web protocol rather than the Business Cloud API; a Composio toolkit should target the official Cloud API with system-user tokens. Testing is free/self-serve, but real-world messaging requires verified business + approved templates.",
+  "verified": false,
+  "verification_notes": ""
+}

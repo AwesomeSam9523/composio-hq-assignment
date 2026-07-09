@@ -1,0 +1,30 @@
+{
+  "id": 60,
+  "app": "Clay",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "clay.com",
+  "one_line_description": "GTM data enrichment and workflow platform that orchestrates 150+ data providers in spreadsheet-style tables.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "No general public API auth scheme is documented. Inbound webhooks support an optional auth token header; the Enterprise-only People & Company lookup API and the MCP integration are key/account-based (MCP connects via a guided login in Claude/ChatGPT connectors).",
+  "access_model": "contact_sales",
+  "access_notes": "Clay itself is self-serve SaaS, but per Clay's own docs/community answers it 'doesn't offer traditional API endpoints': developers get data in via self-serve webhooks and out via the in-table HTTP API action, while the direct People & Company enrichment API is restricted to Enterprise customers.",
+  "api_surface_type": "Webhook_only",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "Generally available surface is webhook ingestion into tables (50k submissions per webhook) plus an outbound HTTP API action from tables; a proper REST lookup API (people/company) exists only for Enterprise plans.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://www.clay.com/guides/clay-mcp",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "No general-purpose public API — programmatic enrichment access is gated to Enterprise; everything else is webhook-in/HTTP-out around Clay tables.",
+  "evidence_urls": [
+    "https://university.clay.com/docs/webhook-integration-guide",
+    "https://university.clay.com/docs/http-api-integration-overview",
+    "https://www.clay.com/guides/clay-mcp",
+    "https://community.clay.com/x/support/xrudiqsjem3c/what-do-i-have-to-do-to-access-clay-via-api"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Fetched clay.com/guides/clay-mcp: Clay has an official MCP exposing 150+ providers and workflows inside ChatGPT/Claude/Codex (500 free credits on first connect), which is arguably the sanctioned agent path in lieu of a public API. Caution: search results also surfaced an unrelated 'Clay' personal CRM (clay.earth, mcp.clay.earth, clay-inc/clay-mcp on GitHub) — do not conflate the two. Enterprise API details (auth header, endpoints) are not publicly documented.",
+  "verified": false,
+  "verification_notes": ""
+}

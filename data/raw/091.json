@@ -1,0 +1,32 @@
+{
+  "id": 91,
+  "app": "NotebookLM",
+  "category": "AI, Research and Media-native",
+  "website_hint": "cloud.google.com/gemini Enterprise API",
+  "one_line_description": "Google's AI research/notebook tool that answers questions grounded in user-uploaded sources and generates audio overviews; the Enterprise edition has a programmatic API.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "The NotebookLM Enterprise API authenticates with Google Cloud OAuth2 bearer access tokens (e.g. via `gcloud auth print-access-token`) against the Discovery Engine API; users also need the 'Cloud NotebookLM User' IAM role. The consumer NotebookLM product has NO public API at all.",
+  "access_model": "paid_plan_required",
+  "access_notes": "Requires a Google Cloud project with NotebookLM Enterprise set up and per-user NotebookLM Enterprise (Gemini Enterprise) licenses; credentials come from standard Google Cloud auth. No self-serve API for consumer NotebookLM accounts.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST endpoints at *-discoveryengine.googleapis.com/v1alpha covering notebook management (create, get, listRecentlyViewed, batchDelete, share), source/data-source management, and audio overview generation. Marked Preview/Pre-GA (v1alpha).",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/PleasePrompto/notebooklm-mcp",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "API is enterprise-only (Google Cloud project + NotebookLM Enterprise licenses required) and in v1alpha Preview; consumer NotebookLM has no API, so a general-audience toolkit is not possible.",
+  "evidence_urls": [
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-audio-overview",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/overview",
+    "https://github.com/google/mcp/issues/19",
+    "https://github.com/PleasePrompto/notebooklm-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official Google Cloud docs. An official Enterprise API genuinely exists now (notebooks CRUD, sources, audio overviews) but is Pre-GA v1alpha and enterprise-license-gated. Multiple community MCPs exist for consumer NotebookLM but they work via browser automation/unofficial access, not a sanctioned API; there is an open issue asking Google for an official MCP.",
+  "verified": false,
+  "verification_notes": ""
+}

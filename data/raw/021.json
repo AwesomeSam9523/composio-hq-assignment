@@ -1,0 +1,30 @@
+{
+  "id": 21,
+  "app": "Slack",
+  "category": "Communications and Messaging",
+  "website_hint": "slack.com",
+  "one_line_description": "Team messaging and collaboration platform with channels, DMs, huddles, and a large app/bot ecosystem.",
+  "auth_methods": [
+    "OAuth2",
+    "Bot token"
+  ],
+  "auth_summary": "Slack apps authenticate via OAuth 2.0, which issues bot tokens (xoxb), user tokens (xoxp), and app-level tokens; scopes are assigned per app and token rotation is supported.",
+  "access_model": "self_serve",
+  "access_notes": "Developers create an app self-serve at api.slack.com/apps, assign OAuth scopes, and install to a workspace to obtain tokens. Some enterprise workspaces require admin approval to install apps.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "The Web API (HTTP methods like chat.postMessage, conversations.*, users.*) covers messaging, channels, users, files, canvases, plus Events API and Socket Mode for real-time events.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.slack.dev/ai/slack-mcp-server/",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.slack.dev/authentication/",
+    "https://docs.slack.dev/ai/slack-mcp-server/",
+    "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official auth docs. Slack now also ships an official MCP server documented on docs.slack.dev. Composio-style toolkits are well-trodden here; main caveat is per-workspace app installation and admin approval in restricted workspaces.",
+  "verified": false,
+  "verification_notes": ""
+}

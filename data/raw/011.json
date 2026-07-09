@@ -1,0 +1,32 @@
+{
+  "id": 11,
+  "app": "Zendesk",
+  "category": "Support and Helpdesk",
+  "website_hint": "zendesk.com",
+  "one_line_description": "Market-leading customer service platform with ticketing, help center, chat, and voice support.",
+  "auth_methods": [
+    "API key",
+    "Basic auth",
+    "OAuth2"
+  ],
+  "auth_summary": "Supports API tokens (auto-generated in Admin Center, used via basic auth as {email}/token:{api_token}), basic auth with password, and OAuth2 access tokens (Bearer); global OAuth clients are required for apps distributed to multiple Zendesk customers.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve trial signup; API tokens are generated in Admin Center (Apps and integrations > APIs > Zendesk API). OAuth clients can be created per-instance; global OAuth for multi-customer apps requires registration with Zendesk.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Very broad REST API covering ticketing (tickets, users, organizations, macros, triggers, views), Help Center, Talk, Chat, and Sell, with hundreds of documented endpoints.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/reminia/zendesk-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+    "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows-EAP",
+    "https://www.zendesk.com/blog/zendesk-insights/innovation/zendesk-ai-mcp-client/",
+    "https://github.com/reminia/zendesk-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Zendesk announced official MCP Client (early access) and an official MCP Server slated for early access in summer 2026, so official MCP may be imminent but is not GA; multiple community MCP servers exist today. Global OAuth registration adds friction for a multi-tenant Composio integration but per-instance OAuth and API tokens are fully self-serve.",
+  "verified": false,
+  "verification_notes": ""
+}

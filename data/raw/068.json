@@ -1,0 +1,32 @@
+{
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "mongodb.com/docs/atlas/api",
+  "one_line_description": "Managed cloud service for MongoDB clusters with a control-plane Administration API for provisioning and operations.",
+  "auth_methods": [
+    "Service account",
+    "OAuth2",
+    "API key"
+  ],
+  "auth_summary": "The Atlas Administration API supports Service Accounts using OAuth2 client-credentials (client ID + secret exchanged for access tokens, the recommended method) and legacy programmatic API keys (public/private key pair) using HTTP Digest authentication.",
+  "access_model": "self_serve",
+  "access_notes": "Free-tier Atlas accounts can create service accounts or API keys in the org/project settings UI immediately; keys are scoped by Atlas roles the user assigns.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Admin API v2 covers the full control plane: clusters, projects/orgs, database users, network access, backups, alerts, monitoring, and billing. It does not query document data — data access goes through drivers.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/mongodb-js/mongodb-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+    "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/authentication",
+    "https://www.mongodb.com/docs/mcp-server/",
+    "https://github.com/mongodb-js/mongodb-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Digest auth for legacy API keys is unusual (not plain basic/bearer) — HTTP clients must support RFC 7616 digest; service-account OAuth2 avoids this. The old HTTPS Data API for documents was deprecated, so CRUD on documents requires drivers/mongosh (the official MCP server wraps both admin API and database operations). 'Digest' is not in the allowed enum, so it is captured under API key here.",
+  "verified": false,
+  "verification_notes": ""
+}

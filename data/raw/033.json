@@ -1,0 +1,31 @@
+{
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "learn.microsoft.com/linkedin/marketing",
+  "one_line_description": "LinkedIn's Marketing/Advertising API for managing sponsored campaigns, audiences, and ad reporting on LinkedIn.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "3-legged OAuth2 (authorization code flow, member authorization) is required for Marketing APIs; you register a LinkedIn developer app and users grant it access. No API-key option.",
+  "access_model": "admin_approval_required",
+  "access_notes": "You must create a developer app and apply for the Advertising API product via an access-request form; LinkedIn reviews the use case (typically 2-4 weeks, generic data-collection use cases rejected). Access starts at a Development tier, and a further 'Increasing Access' review is needed for standard/production-scale access.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Versioned REST API covering ad accounts, campaign groups, campaigns, creatives, targeting/audiences (Matched Audiences), conversions, lead gen forms, and analytics/reporting.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/danielpopamd/linkedin-ads-mcp",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "Advertising API access is gated behind LinkedIn's application review with business justification; no self-serve production credentials",
+  "evidence_urls": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://developer.linkedin.com/product-catalog/marketing/advertising-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2025-11",
+    "https://github.com/danielpopamd/linkedin-ads-mcp"
+  ],
+  "confidence": "medium",
+  "agent_notes": "No official LinkedIn MCP found; several community MCPs exist (danielpopamd, CData read-only, Zapier-hosted). The gate is real but not a formal paid partner program — ads-management/reporting use cases reportedly do get approved, so an established integrator like Composio could likely obtain access, just not instantly.",
+  "verified": false,
+  "verification_notes": ""
+}

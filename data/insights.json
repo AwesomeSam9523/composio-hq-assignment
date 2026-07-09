@@ -1,0 +1,337 @@
+{
+  "totals": {
+    "apps": 100,
+    "categories": 10,
+    "build_now": 66,
+    "build_with_limits": 19,
+    "buildable_pct": 85.0,
+    "self_serve_pct": 62.0,
+    "gated_pct": 21.0,
+    "official_mcp": 70,
+    "no_public_api": 0
+  },
+  "distributions": {
+    "auth_methods": {
+      "OAuth2": 60,
+      "API key": 55,
+      "Bearer token": 28,
+      "Personal access token": 14,
+      "Basic auth": 12,
+      "JWT": 6,
+      "Private app token": 4,
+      "Bot token": 3,
+      "Service account": 3,
+      "HMAC signature": 2,
+      "None found": 2,
+      "unclear": 1,
+      "CLI/local auth": 1
+    },
+    "access_model": {
+      "self_serve": 62,
+      "trial_or_free_but_limited": 16,
+      "contact_sales": 7,
+      "paid_plan_required": 7,
+      "admin_approval_required": 5,
+      "partner_gated": 2,
+      "unclear": 1
+    },
+    "api_surface_type": {
+      "REST": 86,
+      "REST_and_GraphQL": 7,
+      "GraphQL": 3,
+      "CLI": 2,
+      "Webhook_only": 1,
+      "unclear": 1
+    },
+    "api_surface_breadth": {
+      "broad": 63,
+      "medium": 25,
+      "narrow": 11,
+      "unclear": 1
+    },
+    "mcp_status": {
+      "official_mcp": 70,
+      "community_mcp": 23,
+      "no_mcp_found": 7
+    },
+    "buildability_verdict": {
+      "build_now": 66,
+      "build_with_limits": 19,
+      "needs_partner_or_paid_access": 15
+    },
+    "confidence": {
+      "high": 70,
+      "medium": 29,
+      "low": 1
+    }
+  },
+  "category_matrix": {
+    "CRM and Sales": {
+      "total": 10,
+      "buildability": {
+        "build_with_limits": 2,
+        "build_now": 7,
+        "needs_partner_or_paid_access": 1
+      },
+      "access": {
+        "self_serve": 7,
+        "trial_or_free_but_limited": 2,
+        "contact_sales": 1
+      },
+      "self_serve_pct": 70.0,
+      "build_now_pct": 70.0,
+      "broad_api_pct": 100.0,
+      "official_mcp_pct": 70.0
+    },
+    "Support and Helpdesk": {
+      "total": 10,
+      "buildability": {
+        "build_now": 8,
+        "needs_partner_or_paid_access": 2
+      },
+      "access": {
+        "trial_or_free_but_limited": 6,
+        "self_serve": 2,
+        "contact_sales": 2
+      },
+      "self_serve_pct": 20.0,
+      "build_now_pct": 80.0,
+      "broad_api_pct": 50.0,
+      "official_mcp_pct": 50.0
+    },
+    "Communications and Messaging": {
+      "total": 10,
+      "buildability": {
+        "build_now": 7,
+        "build_with_limits": 2,
+        "needs_partner_or_paid_access": 1
+      },
+      "access": {
+        "self_serve": 6,
+        "trial_or_free_but_limited": 3,
+        "paid_plan_required": 1
+      },
+      "self_serve_pct": 60.0,
+      "build_now_pct": 70.0,
+      "broad_api_pct": 70.0,
+      "official_mcp_pct": 50.0
+    },
+    "Marketing, Ads, Email and Social": {
+      "total": 10,
+      "buildability": {
+        "build_with_limits": 5,
+        "needs_partner_or_paid_access": 1,
+        "build_now": 4
+      },
+      "access": {
+        "admin_approval_required": 5,
+        "self_serve": 4,
+        "trial_or_free_but_limited": 1
+      },
+      "self_serve_pct": 40.0,
+      "build_now_pct": 40.0,
+      "broad_api_pct": 70.0,
+      "official_mcp_pct": 60.0
+    },
+    "Ecommerce": {
+      "total": 10,
+      "buildability": {
+        "build_now": 6,
+        "needs_partner_or_paid_access": 2,
+        "build_with_limits": 2
+      },
+      "access": {
+        "self_serve": 7,
+        "partner_gated": 2,
+        "paid_plan_required": 1
+      },
+      "self_serve_pct": 70.0,
+      "build_now_pct": 60.0,
+      "broad_api_pct": 70.0,
+      "official_mcp_pct": 40.0
+    },
+    "Data, SEO and Scraping": {
+      "total": 10,
+      "buildability": {
+        "build_now": 5,
+        "needs_partner_or_paid_access": 3,
+        "build_with_limits": 2
+      },
+      "access": {
+        "self_serve": 6,
+        "paid_plan_required": 2,
+        "unclear": 1,
+        "contact_sales": 1
+      },
+      "self_serve_pct": 60.0,
+      "build_now_pct": 50.0,
+      "broad_api_pct": 50.0,
+      "official_mcp_pct": 70.0
+    },
+    "Developer, Infra and Data Platforms": {
+      "total": 10,
+      "buildability": {
+        "build_now": 9,
+        "build_with_limits": 1
+      },
+      "access": {
+        "self_serve": 8,
+        "trial_or_free_but_limited": 2
+      },
+      "self_serve_pct": 80.0,
+      "build_now_pct": 90.0,
+      "broad_api_pct": 80.0,
+      "official_mcp_pct": 100.0
+    },
+    "Productivity and Project Management": {
+      "total": 10,
+      "buildability": {
+        "build_now": 9,
+        "build_with_limits": 1
+      },
+      "access": {
+        "self_serve": 9,
+        "trial_or_free_but_limited": 1
+      },
+      "self_serve_pct": 90.0,
+      "build_now_pct": 90.0,
+      "broad_api_pct": 80.0,
+      "official_mcp_pct": 100.0
+    },
+    "Finance and Fintech": {
+      "total": 10,
+      "buildability": {
+        "build_now": 5,
+        "build_with_limits": 3,
+        "needs_partner_or_paid_access": 2
+      },
+      "access": {
+        "self_serve": 7,
+        "contact_sales": 2,
+        "trial_or_free_but_limited": 1
+      },
+      "self_serve_pct": 70.0,
+      "build_now_pct": 50.0,
+      "broad_api_pct": 50.0,
+      "official_mcp_pct": 80.0
+    },
+    "AI, Research and Media-native": {
+      "total": 10,
+      "buildability": {
+        "needs_partner_or_paid_access": 3,
+        "build_now": 6,
+        "build_with_limits": 1
+      },
+      "access": {
+        "paid_plan_required": 3,
+        "self_serve": 6,
+        "contact_sales": 1
+      },
+      "self_serve_pct": 60.0,
+      "build_now_pct": 60.0,
+      "broad_api_pct": 10.0,
+      "official_mcp_pct": 80.0
+    }
+  },
+  "blockers": {
+    "End-user orgs must be on API-enabled editions (Enterprise+/Developer; Professional needs a paid add-on), and legacy Connected App creation is being restricted in favor of External Client Apps.": 1,
+    "OAuth2 app registration is gated behind emailing partners@copper.com, and API access requires a Professional+ (or trial) plan; API-key auth itself is fully self-serve.": 1,
+    "Credentials only exist inside a paid customer DealCloud instance; no self-serve developer account or public sandbox, so Composio would need a customer/partner relationship with Intapp to build and test.": 1,
+    "No self-serve or trial account: getting API credentials requires becoming a paying Pylon customer via a sales-led annual contract.": 1,
+    "Credentials require a paid, sales-led Gladly customer account; no developer sandbox or self-serve signup found, and auth is basic-auth tokens rather than OAuth.": 1,
+    "Narrow addon-based API with per-user API keys and no OAuth app model": 1,
+    "Business verification and template/24-hour-window messaging rules gate production use": 1,
+    "Credentials require a paid Aircall subscription (Basic auth) or partner-program approval (OAuth2)": 1,
+    "Developer token access-level approval (Basic/Standard) required before production accounts can be used at scale": 1,
+    "Meta App Review + Advanced Access (and business verification) required to act on ad accounts outside your own Business Manager": 1,
+    "Advertising API access is gated behind LinkedIn's application review with business justification; no self-serve production credentials": 1,
+    "API surface is partial but broader than contacts/tags: official endpoint index lists contacts, tags, funnels, newsletters, payments/subscriptions, courses, communities, and webhooks": 1,
+    "Trial access has limited rate limits and standard access requires Pinterest's review/approval process": 1,
+    "Meta App Review required for production use with external users; 60-day token lifetime requires refresh handling": 1,
+    "Credentials require a licensed B2C Commerce instance and Account Manager/SLAS admin setup; no self-serve developer sandbox.": 1,
+    "API keys require the merchant's Commerce Advanced plan, and multi-tenant OAuth requires a reviewed client registration with short-lived tokens.": 1,
+    "Developer registration and profile approval through a Professional selling account gate all credentials; PII-restricted roles need extra vetting.": 1,
+    "Small, payments-focused API from a young vendor; primary developer portal is login-gated, and getting an account (and thus a key) requires being onboarded as a FanBasis merchant.": 1,
+    "API credentials require an active paid SE Ranking subscription; no free developer tier.": 1,
+    "API keys are gated behind a paid Ahrefs subscription (formerly Enterprise-only; now reportedly Lite+), and usage consumes paid API units.": 1,
+    "No hosted API \u2014 Composio would have to run the Python CLI in its own execution environment and parse CLI output; results depend on brittle site-detection heuristics.": 1,
+    "Credential acquisition path is unverified \u2014 marketing funnels to a demo call, and pricing/credit terms are not public.": 1,
+    "No general-purpose public API \u2014 programmatic enrichment access is gated to Enterprise; everything else is webhook-in/HTTP-out around Clay tables.": 1,
+    "Paid consumption-based platform after the 30-day trial, account-specific API hostnames, and comparatively heavy credential setup (key-pair/JWT or admin-configured OAuth integration).": 1,
+    "API access is not available on the Free plan, so end users need a paid monday.com plan or trial": 1,
+    "Production API access requires Plaid approval for at least one product; also most valuable data requires end-user Link flows, which need UI hand-off": 1,
+    "No public developer docs or self-serve credentials; requires a Japanese merchant contract with Paygent, and the product's exact identity is ambiguous": 1,
+    "Docs are thin and partly broken (ipayx.ai/docs returned 404); very small/young vendor with a narrow single-purpose API": 1,
+    "Uncertified apps are capped at 25 production company connections; scaling beyond requires Xero App Partner certification": 1,
+    "API keys require a separate paid enterprise contract via a PitchBook account manager; no self-serve credentials or public sandbox signup": 1,
+    "API is enterprise-only (Google Cloud project + NotebookLM Enterprise licenses required) and in v1alpha Preview; consumer NotebookLM has no API, so a general-audience toolkit is not possible.": 1,
+    "Public API and API keys exist but are gated to Enterprise workspaces (account-manager enablement); no self-serve developer access on lower plans": 1,
+    "API credentials require an application/approval and custom per-call pricing; no self-serve developer signup.": 1,
+    "Paid usage-based product (ACU billing) and API keys flow through service-user setup; Enterprise API portions are enterprise-gated.": 1,
+    "none for PAT-based tools; multi-user OAuth requires manually requesting client credentials from Grain": 1
+  },
+  "easy_wins": [
+    "HubSpot",
+    "Pipedrive",
+    "Twenty",
+    "Podio",
+    "Zoho CRM",
+    "Intercom",
+    "Front",
+    "Slack",
+    "Zoho Cliq",
+    "Discord",
+    "Telegram",
+    "GoHighLevel",
+    "Mailchimp",
+    "Klaviyo",
+    "Shopify",
+    "WooCommerce",
+    "BigCommerce",
+    "Magento / Adobe Commerce",
+    "Ecwid",
+    "Gumroad",
+    "DataForSEO",
+    "Apify",
+    "Firecrawl",
+    "Bright Data",
+    "GitHub",
+    "Vercel",
+    "Netlify",
+    "Cloudflare",
+    "Supabase",
+    "Neo4j",
+    "MongoDB Atlas",
+    "Sentry",
+    "Notion",
+    "Airtable",
+    "Linear",
+    "Jira",
+    "Asana",
+    "ClickUp",
+    "Smartsheet",
+    "Stripe",
+    "QuickBooks",
+    "Brex",
+    "Ramp",
+    "Mermaid CLI",
+    "Grain"
+  ],
+  "outreach_needed": [
+    "Ahrefs",
+    "Aircall",
+    "Amazon Selling Partner",
+    "Clay",
+    "Consensus",
+    "DealCloud",
+    "Gladly",
+    "LinkedIn Ads",
+    "NotebookLM",
+    "Otter AI",
+    "Paygent Connect",
+    "PitchBook",
+    "Pylon",
+    "SE Ranking",
+    "Salesforce Commerce Cloud"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Composio buildability research row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "app", "category", "website_hint", "one_line_description",
+    "auth_methods", "auth_summary", "access_model", "access_notes",
+    "api_surface_type", "api_surface_breadth", "api_surface_summary",
+    "mcp_status", "existing_mcp_url", "buildability_verdict", "main_blocker",
+    "evidence_urls", "confidence", "agent_notes", "verified", "verification_notes"
+  ],
+  "properties": {
+    "id": {"type": "integer", "minimum": 1, "maximum": 100},
+    "app": {"type": "string", "minLength": 1},
+    "category": {"type": "string", "minLength": 1},
+    "website_hint": {"type": "string"},
+    "one_line_description": {"type": "string", "minLength": 1},
+    "auth_methods": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "OAuth2", "API key", "Personal access token", "Bearer token",
+          "Basic auth", "Bot token", "JWT", "Private app token",
+          "App password", "Service account", "CLI/local auth",
+          "HMAC signature", "None found", "unclear"
+        ]
+      }
+    },
+    "auth_summary": {"type": "string"},
+    "access_model": {
+      "type": "string",
+      "enum": [
+        "self_serve", "trial_or_free_but_limited", "paid_plan_required",
+        "admin_approval_required", "partner_gated", "contact_sales", "unclear"
+      ]
+    },
+    "access_notes": {"type": "string"},
+    "api_surface_type": {
+      "type": "string",
+      "enum": [
+        "REST", "GraphQL", "REST_and_GraphQL", "SDK_only", "CLI",
+        "Webhook_only", "No_public_API_found", "unclear"
+      ]
+    },
+    "api_surface_breadth": {
+      "type": "string",
+      "enum": ["broad", "medium", "narrow", "unclear"]
+    },
+    "api_surface_summary": {"type": "string"},
+    "mcp_status": {
+      "type": "string",
+      "enum": ["official_mcp", "community_mcp", "no_mcp_found", "unclear"]
+    },
+    "existing_mcp_url": {"type": ["string", "null"]},
+    "buildability_verdict": {
+      "type": "string",
+      "enum": [
+        "build_now", "build_with_limits", "needs_partner_or_paid_access",
+        "not_buildable_today", "unclear"
+      ]
+    },
+    "main_blocker": {"type": "string"},
+    "evidence_urls": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "pattern": "^https?://"}
+    },
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+    "agent_notes": {"type": "string"},
+    "verified": {"type": "boolean"},
+    "verification_notes": {"type": "string"}
+  }
+}

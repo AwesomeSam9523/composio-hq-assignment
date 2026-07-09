@@ -1,0 +1,30 @@
+{
+  "id": 37,
+  "app": "systeme.io",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "systeme.io funnel builder",
+  "one_line_description": "All-in-one funnel builder with email marketing, courses, and automations, exposing a public API for contacts and related resources.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "Public API authenticates with an API key passed in the X-API-Key header; keys are created self-serve in account settings (max 3 per account, with expiration dates). No OAuth found — the docs even solicit feedback on which auth methods to add next.",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve: any account (including the free plan) can create a public API key under Settings > Public API keys. No review or approval process.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "REST API centered on contacts, tags, and contact fields (with cursor pagination and PATCH support); documentation is thin and the developer portal intro documents little beyond contacts/tags — funnels, courses, and payments coverage is unclear.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Narrow, still-evolving API surface (mainly contacts/tags); much of the platform (full funnels, courses, payments) not clearly exposed via API",
+  "evidence_urls": [
+    "https://developer.systeme.io/reference/api",
+    "https://help.systeme.io/article/2329-how-to-use-systeme-io-public-api",
+    "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+    "https://api.systeme.io/documentation"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Surprise: systeme.io ships an official MCP server (contacts, tags, custom fields, newsletters, funnels per their help article) — its MCP appears to cover funnels/newsletters that the public API docs don't clearly document, suggesting docs lag behind capability. I fetched developer.systeme.io/reference/api directly: intro documents only contacts/tags and asks users which auth methods to implement next, so breadth is genuinely unclear. Confidence lowered accordingly.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,30 @@
+{
+  "id": 24,
+  "app": "Lark / Larksuite",
+  "category": "Communications and Messaging",
+  "website_hint": "open.larksuite.com",
+  "one_line_description": "ByteDance's collaboration suite (messaging, docs, calendar, video) with an extensive open platform for apps and bots.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "Server APIs use bearer access tokens: tenant_access_token/app_access_token obtained with the app's App ID + App Secret, and user_access_token obtained via an OAuth/OIDC user authorization flow. Tokens expire and must be refreshed.",
+  "access_model": "self_serve",
+  "access_notes": "Developers create a custom app self-serve in the Lark Developer Console to get App ID/App Secret; API scopes must be requested per app and some require tenant admin approval before use in an organization.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Very broad OpenAPI surface covering messaging (IM), contacts, calendar, docs/sheets/base, approvals, and more, plus events/callbacks; documented at open.larksuite.com.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/larksuite/lark-openapi-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+    "https://github.com/larksuite/lark-openapi-mcp",
+    "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/oidc-access_token/create"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Auth model confirmed from official open.larksuite.com doc pages via search snippets rather than full page fetches. Official MCP exists (larksuite/lark-openapi-mcp on GitHub). Note Feishu (CN) vs Lark (international) have separate consoles/endpoints; scope approval by tenant admins is a mild operational caveat.",
+  "verified": false,
+  "verification_notes": ""
+}

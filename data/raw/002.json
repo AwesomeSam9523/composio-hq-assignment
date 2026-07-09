@@ -1,0 +1,31 @@
+{
+  "id": 2,
+  "app": "HubSpot",
+  "category": "CRM and Sales",
+  "website_hint": "hubspot.com",
+  "one_line_description": "All-in-one CRM platform for marketing, sales, service, and content, with a free tier and extensive automation features.",
+  "auth_methods": [
+    "OAuth2",
+    "Private app token"
+  ],
+  "auth_summary": "HubSpot APIs support exactly two methods: OAuth 2.0 (required for public/multi-account apps and Marketplace listings) and private app access tokens for single-account integrations; both are sent as Authorization: Bearer headers. Legacy API keys were retired in 2022.",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve: create a free HubSpot CRM account and generate a private app access token in settings, or create a free developer account to register an OAuth app. No paid plan or approval needed for basic API access, though some endpoints require paid Hub tiers.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Broad REST API covering CRM objects (contacts, companies, deals, tickets, custom objects), engagements/activities, CRM search, marketing, CMS, conversations, and more; now on a date-based versioning scheme (e.g., /crm/objects/2026-03/contacts).",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developers.hubspot.com/ai-tools/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+    "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "https://developers.hubspot.com/ai-tools/mcp",
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Cleanest case of the two: self-serve free account, two well-documented auth methods, official remote MCP server (OAuth with PKCE) plus a local developer MCP server. Caveats: OAuth access tokens are short-lived (~30 min, refresh-token based), rate limits vary by plan, and some API areas (e.g., certain marketing/CMS features) are gated behind paid Hub tiers. HubSpot is migrating API reference to a new date-based versioning scheme, so endpoint paths in older docs differ from the latest reference.",
+  "verified": false,
+  "verification_notes": ""
+}

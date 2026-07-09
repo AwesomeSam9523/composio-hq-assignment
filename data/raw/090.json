@@ -1,0 +1,30 @@
+{
+  "id": 90,
+  "app": "PitchBook",
+  "category": "Finance and Fintech",
+  "website_hint": "pitchbook.com research API",
+  "one_line_description": "Private-market financial data platform covering companies, deals, investors, funds, and limited partners for VC/PE/M&A research.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "The PitchBook REST API (api.pitchbook.com) authenticates every request with a PB-Token API key in the Authorization header. Keys are issued by PitchBook to contracted API customers.",
+  "access_model": "contact_sales",
+  "access_notes": "API access is a standalone paid contract separate from the PitchBook Platform subscription: clients must contact their PitchBook account manager to purchase API access/credits and request an API key or sandbox key. A test sandbox environment can be provisioned, but nothing is self-serve.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API (v2, documented publicly on Postman) providing read access to PitchBook's database of companies, deals, people, investors, funds, service providers, and limited partners; data retrieval is credit-metered.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://newsroom.morningstar.com/news/news-details/2025/Morningstar-and-PitchBook-Bring-Trusted-Investing-Intelligence-to-Apps-in-ChatGPT/default.aspx",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "API keys require a separate paid enterprise contract via a PitchBook account manager; no self-serve credentials or public sandbox signup",
+  "evidence_urls": [
+    "https://pitchbook.com/help/PitchBook-api",
+    "https://pitchbook.com/products/direct-access-data/api",
+    "https://documenter.getpostman.com/view/5190535/TzCV1iRc",
+    "https://newsroom.morningstar.com/news/news-details/2025/Morningstar-and-PitchBook-Bring-Trusted-Investing-Intelligence-to-Apps-in-ChatGPT/default.aspx"
+  ],
+  "confidence": "medium",
+  "agent_notes": "As predicted, enterprise/contact-sales gated. PitchBook does have vendor-built MCP connectors — Morningstar/PitchBook announced official MCP app integrations with OpenAI/ChatGPT for licensed subscribers — but there is no publicly downloadable/self-hostable official MCP server, and I could not fetch full official API docs (help pages and Postman collection are the public references). Composio could technically build against the REST API, but only customers with an API contract could use it.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,30 @@
+{
+  "id": 96,
+  "app": "Devin",
+  "category": "AI, Research and Media-native",
+  "website_hint": "docs.devin.ai MCP",
+  "one_line_description": "Cognition's autonomous AI software engineer that runs coding sessions, executes tasks in repos, and opens PRs.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "API uses bearer-token auth with API keys from service users (tokens prefixed 'cog_'), sent as 'Authorization: Bearer $DEVIN_API_KEY'. The official MCP server also authenticates with the Devin API key in an Authorization header.",
+  "access_model": "paid_plan_required",
+  "access_notes": "Requires a Devin account (usage-based ACU billing); API keys are created via service users through the Teams or Enterprise quick start paths, and the Enterprise API tier (analytics, audit logs, billing, user management) is enterprise-customers-only.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST Organization API covers sessions, knowledge, playbooks, secrets, scheduling and more, plus a separate Enterprise API for cross-org analytics, audit logs, user management, billing, and infrastructure.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Paid usage-based product (ACU billing) and API keys flow through service-user setup; Enterprise API portions are enterprise-gated.",
+  "evidence_urls": [
+    "https://docs.devin.ai/api-reference/overview",
+    "https://docs.devin.ai/work-with-devin/devin-mcp",
+    "https://mcp.devin.ai/"
+  ],
+  "confidence": "high",
+  "agent_notes": "MCP claim VERIFIED: official hosted MCP at mcp.devin.ai (session management, playbooks, knowledge, scheduling), plus community MCPs (kazuph/mcp-devin). Fetched official API reference overview confirming bearer/API-key auth and API scope; exact minimum plan for API access not stated in docs.",
+  "verified": false,
+  "verification_notes": ""
+}

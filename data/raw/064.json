@@ -1,0 +1,31 @@
+{
+  "id": 64,
+  "app": "Cloudflare",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "developers.cloudflare.com/api",
+  "one_line_description": "CDN, DNS, security, and edge-compute platform (Workers, R2, KV) fronting a large share of the web.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "Recommended auth is scoped API Tokens (user or account-owned, cfut_ prefix) sent as 'Authorization: Bearer'; the legacy Global API Key (X-Auth-Key + X-Auth-Email headers) is still supported. Origin CA keys exist for certificate endpoints.",
+  "access_model": "self_serve",
+  "access_notes": "Free Cloudflare accounts can mint scoped API tokens from the dashboard immediately; tokens can also be created via API. No approval needed.",
+  "api_surface_type": "REST_and_GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API v4 spans the entire product line (~2,500+ endpoints: DNS, zones, Workers, R2, firewall, Zero Trust, etc.), plus a GraphQL Analytics API for metrics.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/cloudflare/mcp-server-cloudflare",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+    "https://developers.cloudflare.com/fundamentals/api/get-started/keys/",
+    "https://developers.cloudflare.com/api/",
+    "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/"
+  ],
+  "confidence": "high",
+  "agent_notes": "Cloudflare runs a catalog of official managed remote MCP servers (OAuth-connected), including a Code Mode server covering the whole API, alongside the open-source repo. Huge API surface means a Composio toolkit needs deliberate endpoint curation.",
+  "verified": false,
+  "verification_notes": ""
+}

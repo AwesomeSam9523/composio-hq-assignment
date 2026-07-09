@@ -1,0 +1,30 @@
+{
+  "id": 79,
+  "app": "Smartsheet",
+  "category": "Productivity and Project Management",
+  "website_hint": "smartsheet.com/developers",
+  "one_line_description": "Enterprise work management platform built around spreadsheet-like sheets, reports, and dashboards.",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "auth_summary": "REST API supports raw access tokens generated in the Smartsheet UI (sent as Bearer in the Authorization header) and 3-legged OAuth 2.0 for user-consent integrations; separate tokens/regions for Gov and EU.",
+  "access_model": "self_serve",
+  "access_notes": "Access tokens are generated self-serve in the Smartsheet UI by any account user; OAuth apps are registered by the developer. Fetched auth docs mention no plan-based API gating, though a Smartsheet account (paid or trial) is needed.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covering sheets, rows, columns, cells (with history), reports, workspaces, discussions/comments, attachments, users, and webhooks.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+    "https://www.smartsheet.com/content-center/smartsheet-mcp-server-now-generally-available"
+  ],
+  "confidence": "high",
+  "agent_notes": "Smartsheet's official MCP server is GA, routes through the REST API, and supports OAuth 2.0 or a personal access token; there's also a direct Smartsheet connector in Claude. I could not confirm from official docs whether API token generation is restricted on any plan tier.",
+  "verified": false,
+  "verification_notes": ""
+}

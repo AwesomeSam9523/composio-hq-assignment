@@ -1,0 +1,30 @@
+{
+  "id": 72,
+  "app": "Airtable",
+  "category": "Productivity and Project Management",
+  "website_hint": "airtable.com/developers",
+  "one_line_description": "Low-code relational database/spreadsheet hybrid for building collaborative apps and workflows.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2"
+  ],
+  "auth_summary": "Web API supports personal access tokens (created at airtable.com/create/tokens) and OAuth 2.0 for third-party integrations; legacy API keys were fully deprecated as of Feb 1, 2024.",
+  "access_model": "self_serve",
+  "access_notes": "PATs are self-serve from the token creation page; OAuth integrations are registered self-serve at /create/oauth. Enterprise admin panel offers service-account-style tokens for enterprise orgs.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST Web API for records CRUD, bases, table/field schema (metadata), views, webhooks, and enterprise admin endpoints, scoped via token scopes and base access.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://airtable.com/developers/web/api/authentication",
+    "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+    "https://github.com/domdomegg/airtable-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Airtable now has an official hosted MCP server (mcp.airtable.com/mcp, OAuth) in addition to well-known community servers like domdomegg/airtable-mcp-server. Key detail for integrations: legacy API keys no longer work; PAT/OAuth only.",
+  "verified": false,
+  "verification_notes": ""
+}

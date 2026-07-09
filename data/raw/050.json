@@ -1,0 +1,30 @@
+{
+  "id": 50,
+  "app": "fanbasis",
+  "category": "Ecommerce",
+  "website_hint": "fanbasis.com",
+  "one_line_description": "Payments and monetization platform for creators and coaching/info businesses: checkouts, subscriptions, and payouts.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "The FanBasis API reference (apidocs.fan) documents API-key-only authentication: every request must include the key in an x-api-key header, with separate sandbox and production keys. No OAuth or other flows are documented.",
+  "access_model": "self_serve",
+  "access_notes": "Per the docs, developers copy their API key from the API Keys section of the FanBasis dashboard — self-serve once you have a FanBasis account (which itself involves onboarding as a creator/business on the platform). A second docs portal (dev-docs.fanbasis.com) is login-gated.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API plus webhooks covering checkout sessions, payments/transactions, subscriptions (renewals, cancellations), customers and saved payment methods, discounts, disputes, and refunds; ~13 webhook event types. A Node checkout SDK (@fanbasis/checkout-sdk) exists on npm.",
+  "mcp_status": "no_mcp_found",
+  "existing_mcp_url": null,
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Small, payments-focused API from a young vendor; primary developer portal is login-gated, and getting an account (and thus a key) requires being onboarded as a FanBasis merchant.",
+  "evidence_urls": [
+    "https://apidocs.fan/",
+    "https://dev-docs.fanbasis.com/",
+    "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+    "https://zapier.com/apps/fanbasis/integrations"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Contrary to the expectation of little/no public API, FanBasis does have a public REST API reference at apidocs.fan (API-key auth, payments/subscriptions/webhooks) and a Zapier integration. Confidence is medium because the main dev-docs.fanbasis.com portal is gated, the apidocs.fan domain's official status is inferred, and there is no way to verify credential issuance without a merchant account. No MCP server found anywhere.",
+  "verified": false,
+  "verification_notes": ""
+}

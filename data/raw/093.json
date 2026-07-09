@@ -1,0 +1,30 @@
+{
+  "id": 93,
+  "app": "Fathom",
+  "category": "AI, Research and Media-native",
+  "website_hint": "fathom.video",
+  "one_line_description": "AI meeting recorder that records, transcribes, and summarizes video calls with action items and highlights.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "Public API authenticates with an API key generated self-serve from the 'API Access' section of user settings. The official hosted MCP uses its own connection flow via api.fathom.ai/mcp.",
+  "access_model": "self_serve",
+  "access_notes": "Any Fathom user can generate an API key from User Settings > API Access; rate limit of 60 calls/minute across all keys.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API at developers.fathom.ai covering meetings, transcripts, AI summaries, action items, and highlights (e.g. include_highlights=true on /meetings), plus webhooks; oriented to reading meeting insights rather than managing recordings.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developers.fathom.ai/mcp-docs",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.fathom.ai/quickstart",
+    "https://help.fathom.video/en/articles/8368641",
+    "https://developers.fathom.ai/mcp-docs",
+    "https://help.fathom.video/en/articles/11497793"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Clean story: self-serve API key + documented public REST API + official MCP (server URL api.fathom.ai/mcp, connectable to Claude/ChatGPT). Details came from official docs snippets in search results; I did not fetch developers.fathom.ai pages directly, so exact endpoint list/plan gating not fully confirmed.",
+  "verified": false,
+  "verification_notes": ""
+}

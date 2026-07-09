@@ -1,0 +1,31 @@
+{
+  "id": 32,
+  "app": "Meta Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "developers.facebook.com/docs/marketing-apis",
+  "one_line_description": "Meta's Marketing API for creating and managing Facebook/Instagram ad campaigns, audiences, creatives, and insights.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "OAuth2 via Facebook Login producing user access tokens (short-lived, exchangeable for 60-day long-lived tokens) with ads_management/ads_read permissions; non-expiring system user tokens from Business Manager are the recommended production pattern. Tokens are sent as Bearer tokens to the Graph API.",
+  "access_model": "admin_approval_required",
+  "access_notes": "Creating a Meta developer app is self-serve and dev-mode works against your own ad accounts immediately. Serving external users requires Meta App Review for ads_management/business_management (Advanced Access, with business verification), and higher rate limits require the 'Marketing API Access Tier' feature (formerly Ads Management Standard Access), qualified via 500+ API calls in 15 days with <15% error rate.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Graph API-based REST surface covering campaigns, ad sets, ads, creatives, custom audiences, targeting, catalogs, and the Insights reporting API across Facebook and Instagram.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://www.facebook.com/business/news/meta-ads-ai-connectors",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Meta App Review + Advanced Access (and business verification) required to act on ad accounts outside your own Business Manager",
+  "evidence_urls": [
+    "https://developers.facebook.com/docs/marketing-api/get-started/authorization",
+    "https://developers.meta.com/blog/updates-to-ads-management-standard-access-feature/",
+    "https://www.facebook.com/business/news/meta-ads-ai-connectors",
+    "https://github.com/pipeboard-co/meta-ads-mcp"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Meta launched official 'Meta Ads AI Connectors' — an MCP server in open beta requiring no developer credentials — plus popular community MCPs (e.g. pipeboard-co/meta-ads-mcp). AMSA was renamed 'Marketing API Access Tier' in May 2026 per Meta's developer blog; docs terminology may be in flux. Auth/access details confirmed via official doc snippets in search results but I did not fully fetch the authorization page.",
+  "verified": false,
+  "verification_notes": ""
+}

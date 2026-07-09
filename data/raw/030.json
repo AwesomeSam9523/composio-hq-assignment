@@ -1,0 +1,32 @@
+{
+  "id": 30,
+  "app": "Vonage",
+  "category": "Communications and Messaging",
+  "website_hint": "developer.vonage.com",
+  "one_line_description": "CPaaS (formerly Nexmo) offering SMS, voice, video, verify, and network APIs.",
+  "auth_methods": [
+    "Basic auth",
+    "API key",
+    "JWT"
+  ],
+  "auth_summary": "APIs authenticate either with the account API key + secret (Base64-encoded in a Basic Authorization header, or as query/body params on older APIs) or with JWTs signed by a Vonage Application's private key; which method applies varies per API (e.g. Verify v2 and Voice favor JWT).",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve signup on the Vonage dashboard issues an API key and secret immediately, with free trial credit; applications (for JWT auth) are also created self-serve in the dashboard. Some network APIs require additional enablement.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST APIs for SMS, Messages (WhatsApp/Viber/MMS), Voice, Verify, Number Insight, Numbers provisioning, Video, and newer network APIs, with SDKs across major languages.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/Vonage/vonage-mcp-server-documentation",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "https://github.com/Vonage/vonage-mcp-server-documentation",
+    "https://developer.vonage.com/en/blog/the-vonage-server-and-tooling-mcp-servers-are-live-on-postman",
+    "https://github.com/Vonage-Community/telephony-mcp-server"
+  ],
+  "confidence": "medium",
+  "agent_notes": "The specific auth doc URL I tried 404'd, but multiple official developer.vonage.com pages surfaced in search confirm API key/secret Basic auth plus application JWT auth. Vonage publishes official MCP servers (documentation MCP under the Vonage org; server/tooling MCPs announced on Postman) and community telephony MCP under Vonage-Community. Per-API auth-method variation is the main integration nuance.",
+  "verified": false,
+  "verification_notes": ""
+}

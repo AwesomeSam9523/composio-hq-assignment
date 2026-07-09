@@ -1,0 +1,32 @@
+{
+  "id": 70,
+  "app": "Sentry",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "docs.sentry.io/api",
+  "one_line_description": "Error monitoring and application performance platform that captures exceptions, stack traces, and traces from apps.",
+  "auth_methods": [
+    "Bearer token",
+    "Personal access token",
+    "OAuth2"
+  ],
+  "auth_summary": "All API requests use bearer-token auth: organization auth tokens (sntrys_, recommended, org-scoped) or personal tokens created in user settings with specific scopes. OAuth2 (authorization code, plus device authorization grant RFC 8628) is supported for third-party apps acting on behalf of users.",
+  "access_model": "self_serve",
+  "access_notes": "Free developer-tier accounts on sentry.io can create org tokens and personal tokens immediately from settings; no approval required.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API at sentry.io/api/0/ covers organizations, projects, teams, issues/events, releases, alerts, and discover queries — most of the product surface.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://mcp.sentry.dev/",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.sentry.io/api/auth/",
+    "https://docs.sentry.io/account/auth-tokens/",
+    "https://mcp.sentry.dev/",
+    "https://github.com/getsentry/sentry-mcp-stdio"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official remote MCP at mcp.sentry.dev supports OAuth login and streamable HTTP (with SSE fallback); the stdio variant (getsentry/sentry-mcp-stdio) is maintained but superseded. Self-hosted Sentry instances need a configurable base URL. Token types (org vs personal vs internal-integration) matter for scoping toolkit actions.",
+  "verified": false,
+  "verification_notes": ""
+}

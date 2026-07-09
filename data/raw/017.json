@@ -1,0 +1,30 @@
+{
+  "id": 17,
+  "app": "Plain",
+  "category": "Support and Helpdesk",
+  "website_hint": "plain.com",
+  "one_line_description": "API-first B2B support platform built for technical teams, with Slack-native support workflows.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "API keys created via Machine Users (Settings > Machine Users) with fine-grained permissions, sent as Authorization: Bearer to the GraphQL endpoint. The official MCP server separately uses OAuth (no API keys needed).",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve workspace signup; API keys are generated in-app from Settings > API Keys / Machine Users with selectable permissions.",
+  "api_surface_type": "GraphQL",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "GraphQL API (core-api.uk.plain.com/graphql/v1) covering threads, customers, tenants, labels, events, and help center content; the official MCP exposes 30 tools across threads, customers, tenants, help center, and workspace.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://help.plain.com/article/mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://www.plain.com/docs/graphql/authentication",
+    "https://help.plain.com/article/mcp-server",
+    "https://www.plain.com/blog/mcp-server",
+    "https://github.com/team-plain/cursor-plugin-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "GraphQL-only API (no REST), which is a minor implementation difference for a toolkit. Official hosted MCP at mcp.plain.com/mcp with OAuth; community MCP servers using API keys also exist. Did not independently verify pricing/trial specifics, but signup and API key creation are documented as in-app self-serve.",
+  "verified": false,
+  "verification_notes": ""
+}

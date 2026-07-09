@@ -1,0 +1,31 @@
+{
+  "id": 62,
+  "app": "Vercel",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "vercel.com/docs/rest-api",
+  "one_line_description": "Frontend cloud platform for deploying and hosting web apps (Next.js et al.) with serverless functions, domains, and edge network.",
+  "auth_methods": [
+    "Bearer token",
+    "API key"
+  ],
+  "auth_summary": "All REST API calls to api.vercel.com authenticate with a Vercel Access Token created in account settings, sent as 'Authorization: Bearer <TOKEN>'; tokens can be scoped to specific teams. Docs also show creating auth tokens programmatically and an SSO token exchange endpoint.",
+  "access_model": "self_serve",
+  "access_notes": "Free Hobby accounts can generate access tokens immediately from account settings (Settings > Tokens); no approval or paid plan needed for API access.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API under api.vercel.com covers deployments, projects, domains, DNS, environment variables, teams, logs, and auth token management.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://vercel.com/docs/rest-api",
+    "https://vercel.com/docs/rest-api/authentication/create-an-auth-token",
+    "https://vercel.com/docs/agent-resources/vercel-mcp",
+    "https://vercel.com/changelog/vercels-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official hosted MCP at mcp.vercel.com is OAuth-based and was launched read-only with an allowlist of approved clients. No user-facing OAuth2 flow documented for the general REST API itself (token-based); integration/marketplace OAuth exists but was not verified here. Team-scoped resources need a teamId query param.",
+  "verified": false,
+  "verification_notes": ""
+}

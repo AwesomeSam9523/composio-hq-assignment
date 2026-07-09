@@ -1,0 +1,29 @@
+{
+  "id": 59,
+  "app": "Waterfall.io",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "waterfall.io contact/company intel",
+  "one_line_description": "B2B data waterfall API aggregating 30+ vendors for contact/company enrichment, email verification, phone numbers, prospecting, and job-change tracking.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "API key passed in an 'x-api-key' header on every request, confirmed in the official docs at docs.waterfall.io.",
+  "access_model": "unclear",
+  "access_notes": "Public docs exist (docs.waterfall.io/v1/introduction) but neither the docs nor the homepage state how keys are issued; the site funnels visitors to 'Book a Call'. A third-party review claims every user gets an API key on signup, but I could not verify a self-serve signup flow from official sources.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API at api.waterfall.io with ~13 endpoints: prospector, contact/company search, contact/company/phone enrichment, email verification, job-change detection, and account/usage reporting; mixes sync and async (webhook-result) operations.",
+  "mcp_status": "no_mcp_found",
+  "existing_mcp_url": null,
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Credential acquisition path is unverified — marketing funnels to a demo call, and pricing/credit terms are not public.",
+  "evidence_urls": [
+    "https://docs.waterfall.io/v1/introduction",
+    "https://www.waterfall.io/",
+    "https://docs.getcargo.ai/integration/waterfall"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Docs are real and reasonably complete (fetched the introduction page: REST, x-api-key, 13 endpoints, llms.txt index), which is better than expected for a thin-docs candidate. Main gaps: no public pricing, no confirmed self-serve signup, no MCP found. Cargo's integration docs reference an 'x-waterfall-api-key' header variant for their connector.",
+  "verified": false,
+  "verification_notes": ""
+}

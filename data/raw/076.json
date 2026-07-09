@@ -1,0 +1,30 @@
+{
+  "id": 76,
+  "app": "Monday.com",
+  "category": "Productivity and Project Management",
+  "website_hint": "developer.monday.com",
+  "one_line_description": "Work OS with customizable boards for project, CRM, and workflow management.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2"
+  ],
+  "auth_summary": "GraphQL API (api.monday.com/v2) authenticates with a personal V2 API token from the Developer Center passed in the Authorization header; monday apps use scoped app tokens/OAuth for marketplace-style integrations.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Tokens are self-serve from the user's Developer Center, but API access is not included on the Free plan; a paid plan (or trial) is required, and rate limits are complexity-based with paid add-ons for more daily calls.",
+  "api_surface_type": "GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "GraphQL API covering boards, items, columns, groups, updates, users, workspaces, docs, and webhooks, with complexity-based rate limiting.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/mondaycom/mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "API access is not available on the Free plan, so end users need a paid monday.com plan or trial",
+  "evidence_urls": [
+    "https://developer.monday.com/api-reference/docs/authentication",
+    "https://github.com/mondaycom/mcp",
+    "https://support.monday.com/hc/en-us/articles/360005144659-Does-monday-com-have-an-API"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official open-source MCP (@mondaydotcomorg/monday-api-mcp) is maintained by monday.com's AI team and uses a MONDAY_TOKEN API token. Auth docs I fetched detail personal tokens; OAuth2 exists for monday apps but I confirmed it only indirectly (fetched page contrasts personal tokens with scoped app tokens).",
+  "verified": false,
+  "verification_notes": ""
+}

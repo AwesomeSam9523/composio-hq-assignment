@@ -1,0 +1,30 @@
+{
+  "id": 26,
+  "app": "Discord",
+  "category": "Communications and Messaging",
+  "website_hint": "discord.com",
+  "one_line_description": "Community chat platform with servers, channels, voice, and a massive bot ecosystem.",
+  "auth_methods": [
+    "Bot token",
+    "OAuth2"
+  ],
+  "auth_summary": "The API accepts an Authorization header with either a bot token ('Bot <token>' from the app's Bot page) or an OAuth2 bearer token ('Bearer <token>') for user-delegated access.",
+  "access_model": "self_serve",
+  "access_notes": "Register an application self-serve in the Discord Developer Portal; bot token is issued immediately. Privileged gateway intents (message content, presence, members) and bots in 100+ servers require verification/approval.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "HTTP REST API (discord.com/api) covering messages, channels, guilds, members, roles, threads, slash commands, plus a Gateway WebSocket API for real-time events.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/SaseQ/discord-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.discord.com/developers/reference",
+    "https://github.com/SaseQ/discord-mcp",
+    "https://github.com/hanweg/mcp-discord"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official API reference (now hosted at docs.discord.com). Many community MCP servers exist; no official Discord MCP found. Caveat for a toolkit: message-content privileged intent and bot verification at scale, and the bot must be invited to each guild.",
+  "verified": false,
+  "verification_notes": ""
+}

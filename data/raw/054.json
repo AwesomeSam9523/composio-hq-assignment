@@ -1,0 +1,30 @@
+{
+  "id": 54,
+  "app": "MrScraper",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "docs.mrscraper.com",
+  "one_line_description": "AI-powered web scraping service with proxies and an API that extracts structured data from URLs via prompts.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "API token obtained from the app Playground, passed via 'x-api-token' header (docs also show 'Authorization: Bearer' and a token query parameter).",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve: create a MrScraper account and grab the API key from the Playground at app.mrscraper.com/playground. Free-trial/free-tier specifics are not clearly documented; usage is credit-based.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API at api.mrscraper.com: prompt-based AI scraping endpoints plus scrapers/extractors and vertical scrapers (e.g., Google), with n8n and similar integrations documented.",
+  "mcp_status": "no_mcp_found",
+  "existing_mcp_url": null,
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.mrscraper.com/docs/getting-started/quickstart",
+    "https://docs.mrscraper.com/docs/getting-started/overview",
+    "https://docs.mrscraper.com/docs/features/activating-api"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Fetched the official quickstart, which confirms REST + x-api-token auth and self-serve key from the Playground. No official or community MrScraper MCP server found (only a third-party Apify actor that uses the mrscraper engine internally). Pricing/free-tier details and full endpoint breadth not fully confirmed.",
+  "verified": false,
+  "verification_notes": ""
+}

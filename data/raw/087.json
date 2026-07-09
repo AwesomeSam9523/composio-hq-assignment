@@ -1,0 +1,30 @@
+{
+  "id": 87,
+  "app": "Xero",
+  "category": "Finance and Fintech",
+  "website_hint": "developer.xero.com",
+  "one_line_description": "Cloud accounting platform for small businesses covering invoicing, bank reconciliation, payroll, and reporting.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "OAuth 2.0 only: standard authorization-code flow (with PKCE support for native apps) for multi-tenant apps, and an OAuth2 client_credentials flow for single-org 'custom connections'. Access tokens expire after 30 minutes with refresh tokens.",
+  "access_model": "self_serve",
+  "access_notes": "Free developer account with a fully functional Demo Company for testing; production works self-serve from day one for up to 25 connected companies. Exceeding 25 connections requires becoming a certified Xero App Partner (multi-checkpoint certification), and custom-connection (client credentials) apps are a separate premium arrangement.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Broad REST APIs: Accounting (invoices, contacts, payments, bank transactions, reports), plus Payroll, Assets, Files, Projects, and Practice Manager APIs, with granular OAuth scopes.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/xeroapi/xero-mcp-server",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Uncertified apps are capped at 25 production company connections; scaling beyond requires Xero App Partner certification",
+  "evidence_urls": [
+    "https://developer.xero.com/documentation/guides/oauth2/overview/",
+    "https://developer.xero.com/documentation/guides/oauth2/client-credentials/",
+    "https://developer.xero.com/documentation/development-accounts/",
+    "https://github.com/xeroapi/xero-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Xero maintains an official MCP server (XeroAPI/xero-mcp-server, npx @xeroapi/xero-mcp-server) using custom-connection OAuth2 client credentials, plus a xero-agent-toolkit repo of agent examples. Note the scope-model migration: custom connections created from April 29, 2026 use new granular V2 scopes.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,30 @@
+{
+  "id": 78,
+  "app": "Coda",
+  "category": "Productivity and Project Management",
+  "website_hint": "coda.io/developers",
+  "one_line_description": "All-in-one doc platform combining documents, tables/databases, and automations.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "Coda API v1 is a REST API authenticated with a static API token sent as 'Authorization: Bearer <token>'; the API reference does not document OAuth for the public API.",
+  "access_model": "self_serve",
+  "access_notes": "API tokens are generated self-serve from Coda account settings (free accounts included); the fetched API reference itself does not walk through token creation.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API for docs (list/create/delete/share/publish), pages, tables, columns, rows (read/insert/upsert/update/delete), formulas, controls, permissions, automations, and account/analytics info.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/orellazri/coda-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.superhuman.com/developers/apis/v1",
+    "https://github.com/orellazri/coda-mcp",
+    "https://github.com/vish288/mcp-coda"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Surprise: coda.io/developers/apis/v1 now 307-redirects to docs.superhuman.com/developers/apis/v1 (Coda is part of Grammarly's Superhuman brand), which adds rebrand/doc-churn risk. No official Coda MCP found, only multiple community servers. Token self-serve acquisition and absence of OAuth were not fully confirmed from the fetched page, hence medium confidence.",
+  "verified": false,
+  "verification_notes": ""
+}

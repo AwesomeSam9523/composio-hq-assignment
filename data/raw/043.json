@@ -1,0 +1,32 @@
+{
+  "id": 43,
+  "app": "BigCommerce",
+  "category": "Ecommerce",
+  "website_hint": "developer.bigcommerce.com",
+  "one_line_description": "SaaS ecommerce platform for online stores with extensive management and storefront APIs.",
+  "auth_methods": [
+    "OAuth2",
+    "API key"
+  ],
+  "auth_summary": "All API accounts are OAuth2-based: single-click apps use the OAuth2 authorization code flow against login.bigcommerce.com to obtain a permanent access_token, while merchants can also self-create store-level API accounts that directly yield an access token sent via the X-Auth-Token header.",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve: developers get free sandbox stores via the BigCommerce developer program, and merchants create store-level API credentials (client id/secret + access token with chosen scopes) directly in the store control panel. Marketplace app listing requires review, but direct API access does not.",
+  "api_surface_type": "REST_and_GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST Management APIs plus a GraphQL Admin API and GraphQL Storefront API, covering catalog, orders, customers, carts/checkout, pricing, webhooks, and store settings.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://www.bigcommerce.com/blog/storefront-mcp/",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.bigcommerce.com/docs/start/authentication",
+    "https://developer.bigcommerce.com/docs/start/authentication/api-accounts",
+    "https://developer.bigcommerce.com/docs/integrations/apps/guide/auth",
+    "https://www.bigcommerce.com/blog/storefront-mcp/",
+    "https://github.com/isaacgounton/bigcommerce-api-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "BigCommerce announced an official Storefront MCP server (shopper-facing: catalog search, cart, checkout handoff); admin-side MCP coverage is community (e.g., isaacgounton/bigcommerce-api-mcp, StackOne). Store-level access tokens make per-user connection simple for Composio.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,29 @@
+{
+  "id": 27,
+  "app": "Telegram",
+  "category": "Communications and Messaging",
+  "website_hint": "core.telegram.org",
+  "one_line_description": "Global messaging app whose Bot API lets developers build bots that send/receive messages, manage chats, and take payments.",
+  "auth_methods": [
+    "Bot token"
+  ],
+  "auth_summary": "The Bot API authenticates with a bot token embedded in the URL (https://api.telegram.org/bot<token>/METHOD), issued free by @BotFather. Full user-account access requires the separate MTProto API with api_id/api_hash (not standard REST auth).",
+  "access_model": "self_serve",
+  "access_notes": "Completely self-serve and free: create a bot via BotFather in the Telegram app and receive the token instantly. MTProto api_id/api_hash are also self-serve via my.telegram.org.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "HTTP-based Bot API covers sending/receiving all message types, inline queries, chat/member administration, polls, payments, and web apps; limited to what bots can see (no arbitrary user-account history without MTProto).",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/sparfenyuk/mcp-telegram",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://core.telegram.org/bots/api",
+    "https://github.com/sparfenyuk/mcp-telegram",
+    "https://github.com/chigwell/telegram-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official Bot API docs. Many community MCP servers exist (both Bot API-based and MTProto/Telethon user-account based); none official from Telegram. A Composio toolkit would realistically be bot-scoped: bots only see chats they are added to.",
+  "verified": false,
+  "verification_notes": ""
+}

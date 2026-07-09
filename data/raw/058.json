@@ -1,0 +1,29 @@
+{
+  "id": 58,
+  "app": "Sherlock",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "github.com/sherlock-project/sherlock",
+  "one_line_description": "Open-source Python CLI that hunts for a username across 400+ social networks by probing public profile URLs.",
+  "auth_methods": [
+    "None found"
+  ],
+  "auth_summary": "No authentication at all: it is a local CLI tool, not a SaaS. It requires no API keys or logins for itself or for the sites it checks — it just requests public profile URLs and inspects responses.",
+  "access_model": "self_serve",
+  "access_notes": "Free and open source (pipx/pip install sherlock-project, git clone, or the official Docker image). No account, credentials, or vendor relationship involved.",
+  "api_surface_type": "CLI",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "Single-purpose CLI: given username(s), it checks 400+ sites and reports where the handle exists, with flags for timeouts, output files, NSFW inclusion, etc. No hosted API of any kind.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/Burnsedia/sherlock-mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "No hosted API — Composio would have to run the Python CLI in its own execution environment and parse CLI output; results depend on brittle site-detection heuristics.",
+  "evidence_urls": [
+    "https://github.com/sherlock-project/sherlock",
+    "https://github.com/Burnsedia/sherlock-mcp",
+    "https://github.com/qKitNp/sherlock_mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Recorded honestly as an OSS CLI, not a SaaS. Several community MCP wrappers exist (Burnsedia/sherlock-mcp, qKitNp/sherlock_mcp, p1atdev/sherlock-mcp); none are official. Note: fewsats/sherlock-mcp is an unrelated 'Sherlock Domains' product. A wrapped toolkit is feasible but requires self-hosting the tool and accepting slow multi-site scans and false positives/negatives.",
+  "verified": false,
+  "verification_notes": ""
+}

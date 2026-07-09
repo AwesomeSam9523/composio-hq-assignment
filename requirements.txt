@@ -1,0 +1,8 @@
+# Streamlit live demo + research pipeline (Gemini reasons, Composio serves tools)
+streamlit>=1.51
+google-genai>=2.11
+composio>=0.17
+composio_gemini>=0.17
+jsonschema>=4.21
+requests>=2.31
+python-dotenv>=1.0

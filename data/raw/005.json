@@ -1,0 +1,31 @@
+{
+  "id": 5,
+  "app": "Twenty",
+  "category": "CRM and Sales",
+  "website_hint": "twenty.com open-source CRM",
+  "one_line_description": "Open-source, self-hostable CRM (Salesforce alternative) with fully customizable objects, available self-hosted or as a cloud service.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "Both REST and GraphQL APIs authenticate with a workspace-generated API key sent as 'Authorization: Bearer YOUR_API_KEY'. Keys are created self-serve in Settings > API & Webhooks and can be scoped to roles; no OAuth2 flow was found in official docs.",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve: self-host the open-source app (GitHub twentyhq/twenty) for free, or use Twenty Cloud; in either case any workspace user with settings access creates an API key in Settings > API & Webhooks.",
+  "api_surface_type": "REST_and_GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Core API (CRUD on people, companies, opportunities, tasks, notes, and any custom objects, with filtering and relation traversal) plus a Metadata API for programmatically managing objects/fields/relations — both exposed over REST and GraphQL, with per-workspace generated schemas and an interactive playground.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/jezweb/twenty-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.twenty.com/developers/extend/api",
+    "https://github.com/twentyhq/twenty",
+    "https://github.com/twentyhq/twenty/issues/12953",
+    "https://github.com/jezweb/twenty-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official API docs directly. No official twentyhq MCP repo found — an open GitHub issue (#12953) requests one, and multiple community MCP servers exist (jezweb/twenty-mcp, mhenry3164/twenty-crm-mcp-server, IgorWarzocha/twenty-mcp-server); one search summary claimed Cloud workspaces ship a native MCP server but I could not verify that on docs.twenty.com, so I classified as community_mcp. Toolkit caveats: schema is per-workspace (custom objects mean dynamic tool generation works best), rate limit ~100 req/min, batches capped at 60 records, and self-hosted instances have per-instance base URLs.",
+  "verified": false,
+  "verification_notes": ""
+}

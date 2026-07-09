@@ -1,0 +1,30 @@
+{
+  "id": 88,
+  "app": "Brex",
+  "category": "Finance and Fintech",
+  "website_hint": "developer.brex.com",
+  "one_line_description": "Corporate card, expense management, and business banking platform for startups and enterprises.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2"
+  ],
+  "auth_summary": "Own-account access uses a scoped 'user token' generated self-serve in the Brex dashboard (Developer > Settings) and sent as an Authorization: Bearer header; OAuth2 (1-hour access tokens with refresh) is used by partner applications to access other Brex customers' accounts.",
+  "access_model": "self_serve",
+  "access_notes": "Any Brex account/card admin can create API tokens with chosen scopes directly from the dashboard — no approval needed for first-party use. Building a multi-customer partner integration requires Brex's OAuth partner setup (launch checklist / partner process). You must be a Brex customer to have credentials at all.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API (api.brex.com) covering users/teams, cards, expenses, transactions and cash accounts, payments, budgets, and webhooks; the official MCP exposes 50+ tools spanning expenses, cards, banking, bills/vendors, travel, and accounting.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developer.brex.com/docs/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.brex.com/guides/authentication",
+    "https://developer.brex.com/guides/quickstart",
+    "https://developer.brex.com/docs/mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched Brex's official MCP docs directly: hosted remote MCP at https://api.brex.com/mcp (beta), supporting OAuth with Dynamic Client Registration or dashboard API keys as Bearer tokens. Tokens expire after 30 days of inactivity. Multi-tenant (OAuth partner) access is the only gated path; single-account toolkit is immediately buildable.",
+  "verified": false,
+  "verification_notes": ""
+}

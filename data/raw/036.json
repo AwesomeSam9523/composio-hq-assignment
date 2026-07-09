@@ -1,0 +1,32 @@
+{
+  "id": 36,
+  "app": "Klaviyo",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "developers.klaviyo.com",
+  "one_line_description": "Customer data and marketing automation platform for email/SMS, with rich APIs for profiles, events, campaigns, and flows.",
+  "auth_methods": [
+    "Private app token",
+    "OAuth2",
+    "API key"
+  ],
+  "auth_summary": "Server-side APIs authenticate via a private API key (pk_-prefixed, sent as 'Authorization: Klaviyo-API-Key ...') with configurable scopes, or via OAuth2 bearer tokens (required for App Marketplace apps, better rate limits); a public API key/site ID is used only for client-side endpoints.",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve: generate private API keys in account settings (free Klaviyo tier available); OAuth apps are created via Klaviyo's developer portal. Marketplace listing has a review, but API credentials themselves are unrestricted.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Versioned JSON:API REST surface covering profiles, lists, segments, events/metrics, campaigns, flows, templates, catalogs, coupons, and reporting.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.klaviyo.com/en/docs/authenticate_",
+    "https://developers.klaviyo.com/en/docs/set_up_oauth",
+    "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+    "https://www.klaviyo.com/blog/introducing-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Klaviyo has a first-class official MCP server (GA since Aug 2025, local + remote variants) documented in its developer docs — one of the most mature official MCPs in this category. Klaviyo is actively steering marketplace apps toward OAuth over private keys.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,31 @@
+{
+  "id": 46,
+  "app": "Squarespace",
+  "category": "Ecommerce",
+  "website_hint": "developers.squarespace.com",
+  "one_line_description": "Website builder with ecommerce features and Commerce APIs for orders, products, and inventory.",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "auth_summary": "Requests use a Bearer header carrying either a site-scoped API key (generated in site Settings > Advanced > Developer API Keys, non-expiring) or an OAuth2 access token (30-minute expiry, 7-day refresh tokens) for registered OAuth clients.",
+  "access_model": "paid_plan_required",
+  "access_notes": "API key generation requires the merchant site to be on the Commerce Advanced plan. OAuth client registration is not self-serve: you submit a form and Squarespace reviews the registration before issuing client_id/client_secret.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "Commerce APIs cover orders, products, inventory, transactions, profiles, and webhooks; there is no comparable public API for general site content/pages.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/BusyBee3333/squarespace-mcp-2026-complete",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "API keys require the merchant's Commerce Advanced plan, and multi-tenant OAuth requires a reviewed client registration with short-lived tokens.",
+  "evidence_urls": [
+    "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "https://developers.squarespace.com/commerce-apis/oauth",
+    "https://developers.squarespace.com/commerce-apis/overview",
+    "https://github.com/BusyBee3333/squarespace-mcp-2026-complete"
+  ],
+  "confidence": "high",
+  "agent_notes": "Buildable today via user-supplied API keys, but only for merchants on the top-tier commerce plan; the OAuth path requires Squarespace's manual review of the client registration. API surface is commerce-only and narrower than Shopify/BigCommerce. Only community MCP found (unofficial GitHub repo).",
+  "verified": false,
+  "verification_notes": ""
+}

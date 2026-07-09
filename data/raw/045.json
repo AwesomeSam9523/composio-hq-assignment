@@ -1,0 +1,32 @@
+{
+  "id": 45,
+  "app": "Magento / Adobe Commerce",
+  "category": "Ecommerce",
+  "website_hint": "developer.adobe.com/commerce",
+  "one_line_description": "Open-source (Magento Open Source) and commercial (Adobe Commerce) ecommerce platform with REST and GraphQL web APIs.",
+  "auth_methods": [
+    "Bearer token",
+    "OAuth2"
+  ],
+  "auth_summary": "Self-hosted Magento/Adobe Commerce supports token-based auth (admin/customer bearer tokens) and admin-created 'Integrations' that generate consumer key/secret + access token pairs signed with OAuth 1.0a (not OAuth2). Adobe Commerce as a Cloud Service instead uses OAuth2 via Adobe IMS, including server-to-server flows.",
+  "access_model": "self_serve",
+  "access_notes": "Anyone can run Magento Open Source for free and create integration/admin tokens in the admin panel self-serve; Adobe Commerce (paid product) works the same way per instance, while the newer Cloud Service requires an Adobe org and IMS-based OAuth2 credentials.",
+  "api_surface_type": "REST_and_GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST and GraphQL APIs cover catalog, carts/checkout, orders, customers, inventory, CMS, promotions, and admin configuration — several hundred REST routes.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/thomastx05/magento-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+    "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+    "https://developer.adobe.com/commerce/webapi/rest/",
+    "https://developer.adobe.com/commerce/webapi/rest/authentication/",
+    "https://github.com/thomastx05/magento-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Auth is fragmented across editions: legacy OAuth 1.0a integrations (not in the allowed enum; noted here), plain bearer admin tokens, and OAuth2/IMS only for the new Cloud Service. Like WooCommerce, connections are per-instance (user supplies their own base URL + token). Multiple community MCP servers exist (magento-mcp, magemcp, Codexpect, CData); no Adobe-official MCP found.",
+  "verified": false,
+  "verification_notes": ""
+}

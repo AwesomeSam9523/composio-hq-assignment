@@ -1,0 +1,31 @@
+{
+  "id": 19,
+  "app": "Gorgias",
+  "category": "Support and Helpdesk",
+  "website_hint": "gorgias.com",
+  "one_line_description": "Ecommerce-focused helpdesk (deep Shopify integration) for support tickets across email, chat, and social.",
+  "auth_methods": [
+    "API key",
+    "Basic auth",
+    "OAuth2"
+  ],
+  "auth_summary": "Private apps authenticate with an API key plus the user's email via HTTP basic auth; OAuth2 is mandatory for public apps distributed through the Gorgias app store.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "API keys are obtained self-serve from a Gorgias account's settings (a paid plan or trial account is required); OAuth2 credentials require going through the app-store setup process.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covering tickets, ticket messages, customers, tags, macros, teams, users, integrations, events, satisfaction surveys, and account settings.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.gorgias.com/reference/authentication",
+    "https://docs.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+    "https://www.gorgias.com/blog/gorgias-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official first-party hosted MCP at mcp.gorgias.com/mcp, available on any paid Gorgias plan. Composio already lists a Gorgias toolkit (composio.dev/toolkits/gorgias appeared in search results). Public OAuth2 apps require the app-store setup process, a mild review-gate for a distributed OAuth integration.",
+  "verified": false,
+  "verification_notes": ""
+}

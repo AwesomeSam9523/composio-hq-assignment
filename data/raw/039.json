@@ -1,0 +1,31 @@
+{
+  "id": 39,
+  "app": "Threads / Meta",
+  "category": "Marketing, Ads, Email and Social",
+  "website_hint": "developers.facebook.com/docs/threads",
+  "one_line_description": "Meta's text-based social network, with a Threads API for publishing posts, managing replies, and reading insights.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "OAuth2 authorization code flow against Threads-specific endpoints: short-lived (1h) user access tokens exchangeable for long-lived 60-day tokens that must be refreshed before expiry; tokens carry Threads permissions (e.g. threads_basic, threads_content_publish).",
+  "access_model": "admin_approval_required",
+  "access_notes": "Create a Meta developer app with the Threads use case — self-serve in development mode (limited test users). Publishing for arbitrary users in production requires Meta App Review with screencast demos per permission (typically a few business days).",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "narrow",
+  "api_surface_summary": "Graph-API-style REST endpoints for creating/publishing threads (text, image, video, carousel), reply management/moderation, user profile info, and post/account insights. No ads or DM surface.",
+  "mcp_status": "community_mcp",
+  "existing_mcp_url": "https://github.com/tttn13/threads-mcp",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Meta App Review required for production use with external users; 60-day token lifetime requires refresh handling",
+  "evidence_urls": [
+    "https://developers.facebook.com/docs/threads/get-started/get-access-tokens-and-permissions/",
+    "https://developers.facebook.com/docs/threads/get-started/",
+    "https://github.com/tttn13/threads-mcp",
+    "https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api"
+  ],
+  "confidence": "medium",
+  "agent_notes": "No official Threads MCP from Meta found — only community servers. Note one prominent GitHub result (quinnjr/threads-mcp) targets 'Threads.com', so vet community options carefully. Auth/token lifecycle confirmed from official docs snippets; I did not fetch the docs pages directly (session limit hit on that fetch).",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,1436 @@
+[
+  {
+    "id": 4,
+    "app": "Attio",
+    "field": "access_model",
+    "original": "self_serve",
+    "verified_value": "self_serve",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://attio.com/help/apps/other-apps/generating-an-api-key",
+    "notes": "Attio help center shows any user can generate an API access token self-serve via Workspace settings > Developers, and Attio has a free plan with self-serve signup."
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.attio.com/rest-api/overview",
+    "notes": "Official docs state 'Attio provides a public REST API which exchanges JSON over HTTPS'; no GraphQL API found in official docs (a third-party blog claiming GraphQL is not corroborated)."
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "field": "auth_methods",
+    "original": [
+      "OAuth2",
+      "API key",
+      "Bearer token"
+    ],
+    "verified_value": [
+      "OAuth2",
+      "API key",
+      "Bearer token"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.attio.com/api-reference/oauth-20/token-endpoint",
+    "notes": "Attio docs confirm two auth paths — workspace access tokens (API keys, sent as Bearer) and OAuth 2.0 with a token endpoint at app.attio.com/oauth/token — matching all three listed methods."
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "field": "buildability_verdict",
+    "original": "build_now",
+    "verified_value": "build_now",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.attio.com/rest-api/overview",
+    "notes": "Self-serve API keys on a free plan, public REST docs, and an official MCP server support build_now."
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "field": "main_blocker",
+    "original": "none",
+    "verified_value": "none",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://attio.com/help/apps/other-apps/generating-an-api-key",
+    "notes": "Found no gating for basic API access; only note is OAuth is required if publishing a multi-workspace integration, which is not a blocker for building."
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.attio.com/mcp/overview",
+    "notes": "Fetched the cited page directly; it describes Attio's own hosted MCP server at mcp.attio.com/mcp, confirming official_mcp."
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "field": "access_model",
+    "original": "trial_or_free_but_limited",
+    "verified_value": "trial_or_free_but_limited",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://support.copper.com/en/articles/8823462-api-docs-and-tips",
+    "notes": "Copper support docs indicate API access is available on trial, Professional, and Business plans — so a free trial gives API access but it is plan-limited, matching the enum."
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.copper.com/introduction/requests.html",
+    "notes": "Developer docs describe a JSON-over-HTTPS REST API with standard HTTP methods and per-minute rate limits."
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "field": "auth_methods",
+    "original": [
+      "API key",
+      "OAuth2"
+    ],
+    "verified_value": [
+      "API key",
+      "OAuth2"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.copper.com/introduction/authentication.html",
+    "notes": "Copper developer docs confirm token-based API key auth (X-PW-AccessToken headers) plus OAuth 2.0 for partner integrations."
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "field": "buildability_verdict",
+    "original": "build_with_limits",
+    "verified_value": "build_with_limits",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.copper.com/introduction/oauth/quickstart.html",
+    "notes": "API-key builds work on a trial/paid plan, but the OAuth quickstart confirms client credentials must be obtained by emailing partners@copper.com, so build_with_limits fits."
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "field": "main_blocker",
+    "original": "OAuth2 app registration gated behind emailing partners@copper.com; API requires Professional+ plan or trial",
+    "verified_value": "OAuth2 app registration gated behind emailing partners@copper.com; API requires Professional+ plan or trial",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.copper.com/introduction/oauth/quickstart.html",
+    "notes": "Quickstart literally links app registration to mailto:partners@copper.com for client_id/client_secret, and support docs confirm the trial/Professional/Business plan gate — both claims check out."
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "field": "mcp_status",
+    "original": "community_mcp",
+    "verified_value": "community_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.apideck.com/mcp-server/copper",
+    "notes": "Fetched the cited page: Apideck (a third-party unified-API vendor, not Copper) offers an MCP server covering Copper; found no official Copper MCP, so community/third-party is correct."
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "field": "access_model",
+    "original": "contact_sales",
+    "verified_value": "contact_sales",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://usepylon.com/pricing",
+    "notes": "Pricing page has no self-serve signup or free trial; every plan's 'Get started' button routes to demo scheduling, confirming a sales-led motion."
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference",
+    "notes": "API reference lists resource-based endpoints (accounts, issues, attachments, /me) over HTTPS with bearer auth — a REST API."
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "field": "auth_methods",
+    "original": [
+      "API key"
+    ],
+    "verified_value": [
+      "API key"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+    "notes": "Pylon docs show API tokens generated in the dashboard and passed as 'Authorization: Bearer <token>' — an API key scheme, matching the original."
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "field": "buildability_verdict",
+    "original": "needs_partner_or_paid_access",
+    "verified_value": "needs_partner_or_paid_access",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://usepylon.com/pricing",
+    "notes": "API tokens are generated inside the dashboard, which requires a paid, sales-onboarded account (no trial/free tier), so needs_partner_or_paid_access is right."
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "field": "main_blocker",
+    "original": "No self-serve or trial account; credentials require paying customer via sales-led annual contract",
+    "verified_value": "No self-serve or trial account; credentials require paying customer via sales-led purchase (Starter/Professional also offer monthly billing)",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://usepylon.com/pricing",
+    "notes": "Substance is correct (no self-serve/trial, paying customer required); the 'annual contract' detail is slightly imprecise since Starter and Professional tiers show monthly billing options, with only Enterprise listed as yearly-only."
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+    "notes": "Fetched the cited page: Pylon's own docs describe its hosted MCP server at mcp.usepylon.com with OAuth 2.0, confirming official_mcp."
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "field": "access_model",
+    "original": "contact_sales",
+    "verified_value": "contact_sales",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.gladly.com/rest/",
+    "notes": "Docs show tokens can only be created inside an existing Gladly instance by a user granted 'API User' permission; there is no public/self-serve signup, and Gladly sells via demo/sales."
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.gladly.com/rest/",
+    "notes": "Gladly's developer portal documents a REST API at developer.gladly.com/rest; no GraphQL surface found."
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "field": "auth_methods",
+    "original": [
+      "API key",
+      "Basic auth"
+    ],
+    "verified_value": [
+      "API key",
+      "Basic auth"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.gladly.com/rest/",
+    "notes": "Gladly REST docs confirm user-associated API tokens passed via Basic Authentication in the Authorization header — both listed methods describe the actual scheme."
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "field": "buildability_verdict",
+    "original": "needs_partner_or_paid_access",
+    "verified_value": "needs_partner_or_paid_access",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.gladly.com/rest/",
+    "notes": "API credentials require an existing customer org plus admin-granted API User permission, so building requires paid/partner access."
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "field": "main_blocker",
+    "original": "Credentials require paid sales-led customer account; no self-serve signup",
+    "verified_value": "Credentials require paid sales-led customer account; no self-serve signup",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.gladly.com/rest/",
+    "notes": "Consistent with docs: tokens are created in-app by designated users of an existing Gladly instance; no developer sandbox or public signup found."
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "field": "mcp_status",
+    "original": "no_mcp_found",
+    "verified_value": "no_mcp_found",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.getguru.com/reference/gladly-mcp",
+    "notes": "Multiple searches found no official Gladly MCP announcement and no community GitHub server; the only hit is a speculative third-party article discussing what a Gladly MCP could look like, supporting no_mcp_found."
+  },
+  {
+    "id": 24,
+    "app": "Lark / Larksuite",
+    "field": "access_model",
+    "original": "self_serve",
+    "verified_value": "self_serve",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+    "notes": "Lark's open platform lets any Lark account (free plan available) create custom apps and obtain app credentials via the developer console with no sales gate; verified via docs flow rather than an explicit pricing statement."
+  },
+  {
+    "id": 24,
+    "app": "Lark / Larksuite",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://open.larksuite.com/document/server-docs/getting-started/terminology",
+    "notes": "Lark Open API is an HTTP/JSON server API where tokens go in request headers of HTTP calls (documented cURL examples) — a REST surface."
+  },
+  {
+    "id": 24,
+    "app": "Lark / Larksuite",
+    "field": "auth_methods",
+    "original": [
+      "OAuth2",
+      "Bearer token"
+    ],
+    "verified_value": [
+      "OAuth2",
+      "Bearer token"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+    "notes": "Lark docs confirm tenant_access_token/app_access_token credentials sent as 'Authorization: Bearer ...' and user_access_token obtained via standard OAuth 2.0 — both listed methods verified."
+  },
+  {
+    "id": 24,
+    "app": "Lark / Larksuite",
+    "field": "buildability_verdict",
+    "original": "build_now",
+    "verified_value": "build_now",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://github.com/larksuite/lark-openapi-mcp",
+    "notes": "Self-serve developer platform, documented OAuth2/Bearer REST API, and an official MCP server together support build_now."
+  },
+  {
+    "id": 24,
+    "app": "Lark / Larksuite",
+    "field": "main_blocker",
+    "original": "none",
+    "verified_value": "none",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+    "notes": "No access gate found for building custom apps; only routine caveats (per-tenant app installation/permission scopes), which do not rise to a blocker."
+  },
+  {
+    "id": 24,
+    "app": "Lark / Larksuite",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://github.com/larksuite/lark-openapi-mcp",
+    "notes": "Verified via GitHub API that the repo exists under the official larksuite org with description 'Lark official OpenAPI MCP', ~757 stars, not archived."
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "field": "access_model",
+    "original": "trial_or_free_but_limited",
+    "verified_value": "trial_or_free_but_limited",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://api.support.vonage.com/hc/en-us/articles/212554438-What-are-the-limitations-of-a-trial-account",
+    "notes": "Self-serve signup with free credit and no card, but trial accounts can only SMS/call the registered and verified test numbers — exactly trial_or_free_but_limited."
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "notes": "Vonage's communications APIs (SMS, Messages, Verify, Voice) are documented as REST APIs on developer.vonage.com, with SDKs layered on top."
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "field": "auth_methods",
+    "original": [
+      "Basic auth",
+      "API key",
+      "JWT"
+    ],
+    "verified_value": [
+      "Basic auth",
+      "API key",
+      "JWT"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "notes": "Official auth concepts page confirms API key/secret via Basic auth and JWT (RS256) as the main methods; digest auth exists only for SIP trunking, so the original is substantively correct."
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "field": "buildability_verdict",
+    "original": "build_now",
+    "verified_value": "build_now",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "notes": "Self-serve signup, free credit, public REST docs, and official SDKs mean an integration can be built immediately."
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "field": "main_blocker",
+    "original": "none",
+    "verified_value": "none",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://api.support.vonage.com/hc/en-us/articles/212554438-What-are-the-limitations-of-a-trial-account",
+    "notes": "Only caveat is trial-mode restrictions on destination numbers until the account is topped up, which is self-serve to remove; 'none' is reasonable."
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://github.com/Vonage/vonage-mcp-server-documentation",
+    "notes": "Repo exists under the official Vonage GitHub org (hosted at documentation-mcp.vonage.dev); note it is a documentation/code-snippet MCP rather than an API-action MCP, but 'official_mcp' is accurate."
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "field": "access_model",
+    "original": "admin_approval_required",
+    "verified_value": "admin_approval_required",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "notes": "Docs confirm apps managing other people's ad accounts need Advanced Access to ads_read/ads_management via App Review, i.e., platform approval; dev-mode-only use is self-serve but production requires approval."
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "notes": "Marketing API is part of the HTTP Graph API, conventionally classified as REST; no GraphQL/SDK-only surface contradicts this."
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "field": "auth_methods",
+    "original": [
+      "OAuth2",
+      "Bearer token"
+    ],
+    "verified_value": [
+      "OAuth2",
+      "Bearer token"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "notes": "Marketing API authorization docs reference the OAuth dialog and access tokens (sent as bearer tokens on Graph API calls), matching OAuth2 + Bearer token."
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "field": "buildability_verdict",
+    "original": "build_with_limits",
+    "verified_value": "build_with_limits",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "notes": "You can build immediately in development mode with Standard access against your own accounts, but Limited-tier rate limits and App Review gating for external accounts justify build_with_limits."
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "field": "main_blocker",
+    "original": "Meta App Review + Advanced Access (business verification) required to act on external ad accounts",
+    "verified_value": "Meta App Review + Advanced Access (business verification) required to act on external ad accounts",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "notes": "Docs explicitly state managing other people's ad accounts requires Advanced Access to ads_read/ads_management via App Review, confirming the blocker."
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.facebook.com/business/news/meta-ads-ai-connectors",
+    "notes": "Meta's own announcement confirms an official Ads MCP server (endpoint mcp.facebook.com/ads) launched April 29, 2026 as part of Meta Ads AI Connectors."
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "field": "access_model",
+    "original": "self_serve",
+    "verified_value": "self_serve",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.systeme.io/reference/api",
+    "notes": "API keys are self-generated from the account dashboard (Settings > MCP & API keys) with no approval process, and systeme.io offers a free plan."
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.systeme.io/reference/api",
+    "notes": "Docs state the API follows RESTful conventions with an OpenAPI spec, JSON, cursor pagination, and merge-patch PATCH support."
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "field": "auth_methods",
+    "original": [
+      "API key"
+    ],
+    "verified_value": [
+      "API key"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.systeme.io/reference/api",
+    "notes": "Official developer docs confirm API key auth via the X-API-Key header, generated in dashboard settings; no OAuth for the public API."
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "field": "buildability_verdict",
+    "original": "build_with_limits",
+    "verified_value": "build_with_limits",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.systeme.io/reference/api",
+    "notes": "Self-serve keys make it buildable today, but rate limits and an API that covers only part of the platform support build_with_limits over build_now."
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "field": "main_blocker",
+    "original": "Narrow, still-evolving API surface (mainly contacts/tags)",
+    "verified_value": "API surface is partial but broader than contacts/tags: official endpoint index lists contacts, tags, funnels, newsletters, payments/subscriptions, courses, communities, and webhooks",
+    "correct": false,
+    "correction_made": true,
+    "evidence": "https://developer.systeme.io/llms.txt",
+    "notes": "The official endpoint index shows roughly ten resource groups (funnels, courses, communities, payments, webhooks, etc.), contradicting the 'mainly contacts/tags' characterization even though the surface is still partial."
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+    "notes": "Official help center and developer.systeme.io/docs/mcp-server document a vendor-provided MCP server using dedicated MCP keys."
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "field": "access_model",
+    "original": "partner_gated",
+    "verified_value": "partner_gated",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+    "notes": "Credentials require Account Manager with Account Administrator/SLAS admin roles tied to a licensed B2C Commerce instance; there is no public self-serve signup or free sandbox, so partner/customer gating is accurate."
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+    "notes": "SCAPI (and legacy OCAPI) are REST/JSON APIs per the official Commerce API guide."
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "field": "auth_methods",
+    "original": [
+      "OAuth2",
+      "JWT"
+    ],
+    "verified_value": [
+      "OAuth2",
+      "JWT"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+    "notes": "Shopper APIs use SLAS (OAuth2 flows issuing JWT access tokens) and Admin APIs use Account Manager OAuth2 client credentials, matching OAuth2 + JWT."
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "field": "buildability_verdict",
+    "original": "needs_partner_or_paid_access",
+    "verified_value": "needs_partner_or_paid_access",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+    "notes": "Consistent with the licensed-instance and Account Manager admin requirements; nothing is buildable without customer/partner credentials."
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "field": "main_blocker",
+    "original": "Credentials require licensed B2C Commerce instance and Account Manager/SLAS admin setup; no self-serve sandbox",
+    "verified_value": "Credentials require licensed B2C Commerce instance and Account Manager/SLAS admin setup; no self-serve sandbox",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-shopper-apis.html",
+    "notes": "Docs confirm SLAS admin setup needs an AM token, Account Administrator role, and SLAS Organization Administrator roles scoped to specific B2C instances."
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "field": "mcp_status",
+    "original": "community_mcp",
+    "verified_value": "community_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://github.com/taurgis/sfcc-dev-mcp",
+    "notes": "taurgis/sfcc-dev-mcp is a community-maintained (non-Salesforce) MCP server for SFCC development with docs and log-analysis tools; no official Salesforce B2C Commerce MCP found."
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "field": "access_model",
+    "original": "self_serve",
+    "verified_value": "self_serve",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://apidocs.fan/",
+    "notes": "Docs say keys are copied from the FanBasis dashboard API Keys section with no approval workflow mentioned, though you must first be an onboarded FanBasis merchant."
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://apidocs.fan/",
+    "notes": "REST/JSON API under /public-api/ with standard HTTP verbs, covering checkout sessions, subscriptions, customers, refunds, discounts, and webhooks."
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "field": "auth_methods",
+    "original": [
+      "API key"
+    ],
+    "verified_value": [
+      "API key"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://apidocs.fan/",
+    "notes": "Public API reference states every request must include the API key in the x-api-key header; no OAuth or bearer tokens."
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "field": "buildability_verdict",
+    "original": "build_with_limits",
+    "verified_value": "build_with_limits",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://apidocs.fan/",
+    "notes": "Self-serve API keys and a public REST reference make it buildable, with limits from the payments-only scope and needing a FanBasis merchant account first."
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "field": "main_blocker",
+    "original": "Small payments-focused API from young vendor; dev portal login-gated; account requires merchant onboarding",
+    "verified_value": "Small payments-focused API from young vendor; dev portal login-gated; account requires merchant onboarding",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://apidocs.fan/",
+    "notes": "Confirmed the API is payments/checkout-focused (merchant of record model), dev-docs.fanbasis.com presents a login page, and enterprise pages funnel to discovery calls; note apidocs.fan itself is publicly readable."
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "field": "mcp_status",
+    "original": "no_mcp_found",
+    "verified_value": "no_mcp_found",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://zapier.com/mcp/fanbasis",
+    "notes": "No FanBasis-hosted or dedicated community MCP is documented on fanbasis.com or apidocs.fan; only Zapier's auto-generated aggregator MCP wrapper exists, so no_mcp_found is defensible though borderline."
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "field": "access_model",
+    "original": "paid_plan_required",
+    "verified_value": "paid_plan_required",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.ahrefs.com/docs/api/reference/introduction",
+    "notes": "Docs state the API is 'available on eligible paid plans' with only a small set of free test queries for development, confirming paid gating."
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.ahrefs.com/docs/api/reference/introduction",
+    "notes": "API v3 is a REST API with an OpenAPI-compatible specification per the official reference introduction."
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "field": "auth_methods",
+    "original": [
+      "API key",
+      "Bearer token"
+    ],
+    "verified_value": [
+      "API key",
+      "Bearer token"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.ahrefs.com/docs/api/reference/introduction",
+    "notes": "Official docs confirm API keys created in Account settings; API v3 keys are sent as Authorization Bearer headers (the hosted MCP additionally uses OAuth sign-in)."
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "field": "buildability_verdict",
+    "original": "needs_partner_or_paid_access",
+    "verified_value": "needs_partner_or_paid_access",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.ahrefs.com/docs/api/reference/introduction",
+    "notes": "API access requires an eligible paid plan and consumes paid API units, so nothing meaningful is buildable without paying; verdict is consistent."
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "field": "main_blocker",
+    "original": "API keys gated behind paid subscription; usage consumes paid API units",
+    "verified_value": "API keys gated behind paid subscription; usage consumes paid API units",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.ahrefs.com/docs/api/reference/introduction",
+    "notes": "Docs confirm both halves: API available only on eligible paid plans and queries consume API units (with limited free test queries)."
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://github.com/ahrefs/ahrefs-mcp-server",
+    "notes": "Ahrefs publishes an official MCP (ahrefs/ahrefs-mcp-server repo and hosted remote server at api.ahrefs.com/mcp/mcp) documented in the cited help article."
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "field": "access_model",
+    "original": "contact_sales",
+    "verified_value": "contact_sales",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://university.clay.com/docs/using-clay-as-an-api",
+    "notes": "The only true data API (Enterprise People & Company API) is Enterprise-only via sales; webhook ingestion is available self-serve on the paid Explorer plan, so paid_plan_required would also be defensible, but contact_sales matches the API-proper story."
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "field": "api_surface_type",
+    "original": "Webhook_only",
+    "verified_value": "Webhook_only",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://university.clay.com/docs/using-clay-as-an-api",
+    "notes": "Clay's docs state it has no traditional public API; the general mechanism is webhook-in to tables plus HTTP-out actions, with only a limited Enterprise-gated lookup API."
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "field": "auth_methods",
+    "original": [
+      "API key"
+    ],
+    "verified_value": [
+      "API key"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://university.clay.com/docs/webhook-integration-guide",
+    "notes": "Clay webhooks use an auth token passed in the request header (shown once at creation) and the Enterprise API is key-based; 'API key' is a fair substantive label."
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "field": "buildability_verdict",
+    "original": "needs_partner_or_paid_access",
+    "verified_value": "needs_partner_or_paid_access",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://university.clay.com/docs/webhook-integration-guide",
+    "notes": "Webhooks require Explorer plan or above and the real lookup API requires Enterprise, so paid/partner access is genuinely needed to build."
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "field": "main_blocker",
+    "original": "No general-purpose public API — programmatic enrichment gated to Enterprise; else webhook-in/HTTP-out around Clay tables",
+    "verified_value": "No general-purpose public API — programmatic enrichment gated to Enterprise; else webhook-in/HTTP-out around Clay tables",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://university.clay.com/docs/using-clay-as-an-api",
+    "notes": "Matches Clay's own docs exactly: no traditional API, Enterprise-only People/Company API, webhook-in plus HTTP-out as the workaround."
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.clay.com/guides/clay-mcp",
+    "notes": "Fetched Clay's own MCP page; it is a first-party Clay MCP connector for ChatGPT/Claude/Codex with 500 free credits on first connection."
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "field": "access_model",
+    "original": "self_serve",
+    "verified_value": "self_serve",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://vercel.com/docs/rest-api/authentication/create-an-auth-token",
+    "notes": "Access tokens are created directly in account settings on any account including free Hobby, with no approval step."
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://vercel.com/docs/rest-api",
+    "notes": "Docs state all endpoints live under https://api.vercel.com and follow REST architecture."
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "field": "auth_methods",
+    "original": [
+      "Bearer token",
+      "API key"
+    ],
+    "verified_value": [
+      "Bearer token"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://vercel.com/docs/rest-api",
+    "notes": "Vercel API auth is a self-created access token sent as Authorization: Bearer; 'API key' is a loose synonym for the same token, so substantively correct."
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "field": "buildability_verdict",
+    "original": "build_now",
+    "verified_value": "build_now",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://vercel.com/docs/rest-api",
+    "notes": "Free self-serve account, instant token creation, documented REST API and official MCP — nothing gates immediate building."
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "field": "main_blocker",
+    "original": "none",
+    "verified_value": "none",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://vercel.com/docs/rest-api",
+    "notes": "Found no access gate; only standard rate limits apply, which do not rise to a blocker."
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://vercel.com/docs/agent-resources/vercel-mcp",
+    "notes": "Fetched the page: Vercel MCP is described as 'Vercel's official MCP server', a remote OAuth MCP at https://mcp.vercel.com."
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "field": "access_model",
+    "original": "trial_or_free_but_limited",
+    "verified_value": "trial_or_free_but_limited",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.snowflake.com/en/user-guide/admin-trial-account",
+    "notes": "Confirmed self-serve 30-day trial (no card required) after which the account is suspended unless converted to paid consumption."
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "notes": "Snowflake publishes a documented REST API (plus SQL API and drivers/SDKs), so REST is the right primary classification."
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "field": "auth_methods",
+    "original": [
+      "OAuth2",
+      "JWT",
+      "Personal access token",
+      "Bearer token"
+    ],
+    "verified_value": [
+      "OAuth2",
+      "JWT",
+      "Personal access token",
+      "Bearer token"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "notes": "Docs list key-pair JWT, OAuth, programmatic access tokens (PAT, sent as Bearer), and workload identity federation; original's items all map correctly (PAT is 'programmatic' not 'personal', a wording nit only)."
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "field": "buildability_verdict",
+    "original": "build_with_limits",
+    "verified_value": "build_with_limits",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.snowflake.com/en/user-guide/admin-trial-account",
+    "notes": "Buildable today on the free trial but account suspends after 30 days/credit depletion without payment, so build_with_limits fits."
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "field": "main_blocker",
+    "original": "Paid consumption platform after 30-day trial; account-specific hostnames; heavy credential setup",
+    "verified_value": "Paid consumption platform after 30-day trial; account-specific hostnames; heavy credential setup",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.snowflake.com/en/user-guide/admin-trial-account",
+    "notes": "Trial suspension after 30 days confirmed; REST endpoints are per-account URLs and auth requires key-pair/OAuth/PAT setup, matching the claim."
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+    "notes": "Fetched the cited page: Snowflake-managed MCP server is a first-party product exposed at an account HTTPS endpoint with OAuth 2.0."
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "field": "access_model",
+    "original": "self_serve",
+    "verified_value": "self_serve",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.superhuman.com/developers/apis/v1",
+    "notes": "API tokens are generated by any user from account settings with no approval or paid plan required; found no contradicting evidence."
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.superhuman.com/developers/apis/v1",
+    "notes": "Docs state 'The Coda API is a RESTful API that lets you programmatically interact with Coda docs.'"
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "field": "auth_methods",
+    "original": [
+      "API key",
+      "Bearer token"
+    ],
+    "verified_value": [
+      "API key",
+      "Bearer token"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.superhuman.com/developers/apis/v1",
+    "notes": "API reference (coda.io/developers/apis/v1, now redirecting to docs.superhuman.com after the Superhuman/Grammarly merger) confirms an API token sent as 'Authorization: Bearer'."
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "field": "buildability_verdict",
+    "original": "build_now",
+    "verified_value": "build_now",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.superhuman.com/developers/apis/v1",
+    "notes": "Self-serve token plus documented REST API means immediate buildability; the MCP correction does not change the verdict."
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "field": "main_blocker",
+    "original": "none",
+    "verified_value": "none",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.superhuman.com/developers/apis/v1",
+    "notes": "No access gate found; worth watching that coda.io API docs now redirect to docs.superhuman.com post-merger, but the API remains live and open."
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "field": "mcp_status",
+    "original": "community_mcp",
+    "verified_value": "official_mcp",
+    "correct": false,
+    "correction_made": true,
+    "evidence": "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP",
+    "notes": "Coda now publishes an official first-party MCP server (beta) at https://coda.io/apis/mcp per its help center, which supersedes the community orellazri/coda-mcp classification."
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "field": "access_model",
+    "original": "self_serve",
+    "verified_value": "self_serve",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "notes": "Tokens and OAuth2 clients are created self-serve in the Harvest ID developer portal with no approval step; Harvest itself has a free trial/free tier signup."
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "notes": "Harvest API v2 is a documented JSON REST API at api.harvestapp.com/v2 with standard resource endpoints."
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "field": "auth_methods",
+    "original": [
+      "Personal access token",
+      "OAuth2"
+    ],
+    "verified_value": [
+      "Personal access token",
+      "OAuth2"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "notes": "Official API v2 docs list exactly two methods: personal access tokens from Harvest ID Developers section, and self-registered OAuth2 apps (auth code and implicit flows)."
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "field": "buildability_verdict",
+    "original": "build_now",
+    "verified_value": "build_now",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "notes": "Self-serve signup, instant PAT creation, and open REST docs mean an integration can be built immediately."
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "field": "main_blocker",
+    "original": "none",
+    "verified_value": "none",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "notes": "Found no gating beyond normal rate limits; 'none' is accurate."
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+    "notes": "The cited Harvest Help Center article (direct fetch 403'd but content confirmed via search) documents a first-party Harvest MCP for timers, expenses, and timesheets."
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "field": "access_model",
+    "original": "self_serve",
+    "verified_value": "self_serve",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/general-api-information",
+    "notes": "Docs confirm users create API keys themselves on the account API Management page with no approval step (note: geographic restrictions apply, e.g. US users must use Binance.US)."
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/general-api-information",
+    "notes": "Confirmed REST API at api.binance.com; a WebSocket API also exists but REST is the primary documented surface and the enum has no WebSocket option."
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "field": "auth_methods",
+    "original": [
+      "API key",
+      "HMAC signature"
+    ],
+    "verified_value": [
+      "API key",
+      "HMAC signature"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/general-api-information",
+    "notes": "Official docs confirm API key plus signed requests; HMAC is the primary scheme though RSA and Ed25519 keys are also supported, so the original is substantively correct if slightly incomplete."
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "field": "buildability_verdict",
+    "original": "build_now",
+    "verified_value": "build_now",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/general-api-information",
+    "notes": "Self-serve keys, public REST docs, and existing community MCP support building today."
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "field": "main_blocker",
+    "original": "none",
+    "verified_value": "none",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/general-api-information",
+    "notes": "No access blocker found in docs; only minor caveats (KYC account required, regional restrictions) that do not block a standard build."
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "field": "mcp_status",
+    "original": "community_mcp",
+    "verified_value": "community_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://github.com/AnalyticAce/binance-mcp-server",
+    "notes": "Repo exists and self-describes as an unofficial community Binance MCP implementation; a search for an official Binance MCP announcement found only third-party servers."
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "field": "access_model",
+    "original": "contact_sales",
+    "verified_value": "contact_sales",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.paygent.co.jp/payment_service/connect/module_type/",
+    "notes": "Paygent's site routes prospects to an inquiry form or sales phone line and gates developer docs behind a contracted-merchant support site."
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "field": "api_surface_type",
+    "original": "unclear",
+    "verified_value": "unclear",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.paygent.co.jp/payment_service/connect/module_type/",
+    "notes": "Site describes module-embed and link (ASP) integration types but publishes no public API spec, so the surface type cannot be confirmed publicly."
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "field": "auth_methods",
+    "original": [
+      "unclear"
+    ],
+    "verified_value": [
+      "unclear"
+    ],
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.paygent.co.jp/payment_service/connect/module_type/",
+    "notes": "Official site exposes no public auth documentation (third-party GitHub integrations suggest merchant ID/connect ID plus client certificate, but no official public spec), so 'unclear' is fair."
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "field": "buildability_verdict",
+    "original": "needs_partner_or_paid_access",
+    "verified_value": "needs_partner_or_paid_access",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.paygent.co.jp/payment_service/connect/module_type/",
+    "notes": "Integration requires a Japanese merchant contract with Paygent before docs or credentials are provided, matching the verdict."
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "field": "main_blocker",
+    "original": "No public developer docs or self-serve credentials; requires Japanese merchant contract with Paygent; product identity ambiguous",
+    "verified_value": "No public developer docs or self-serve credentials; requires Japanese merchant contract with Paygent",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://www.paygent.co.jp/payment_service/connect/module_type/",
+    "notes": "Confirmed: contracted developers are directed to a gated merchant support site and prospects must contact sales; blocker description is substantively accurate."
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "field": "mcp_status",
+    "original": "no_mcp_found",
+    "verified_value": "no_mcp_found",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://github.com/punkpeye/awesome-mcp-servers",
+    "notes": "GitHub/web search for a Paygent MCP server returned no results (nearest hit was unrelated 'payware'), confirming no MCP found."
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "field": "access_model",
+    "original": "paid_plan_required",
+    "verified_value": "paid_plan_required",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "notes": "Public API is 'available for all Enterprise workspaces' (contact account manager if not visible), i.e. gated to the top paid plan; paid_plan_required is substantively right, arguably shading toward contact_sales since Enterprise itself is sales-sold."
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "field": "api_surface_type",
+    "original": "No_public_API_found",
+    "verified_value": "REST",
+    "correct": false,
+    "correction_made": true,
+    "evidence": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "notes": "Otter's official 'Otter.ai Public API' help article (updated April 2026) documents REST endpoints (e.g. GET /conversations with cursor pagination, rate limits, webhooks), contradicting No_public_API_found."
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "field": "auth_methods",
+    "original": [
+      "OAuth2"
+    ],
+    "verified_value": [
+      "API key",
+      "OAuth2"
+    ],
+    "correct": false,
+    "correction_made": true,
+    "evidence": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "notes": "Otter now documents a Public API authenticated with self-generated API keys via Bearer token (created under Integrations > Developer); OAuth2 applies only to the MCP connector, so OAuth2-only is wrong."
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "field": "buildability_verdict",
+    "original": "not_buildable_today",
+    "verified_value": "needs_partner_or_paid_access",
+    "correct": false,
+    "correction_made": true,
+    "evidence": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "notes": "A documented public REST API with API keys exists, so it is buildable — but only for Enterprise workspaces, making needs_partner_or_paid_access the right verdict rather than not_buildable_today."
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "field": "main_blocker",
+    "original": "No public API or API keys; only vendor-sanctioned surface is hosted OAuth MCP server (plan-gated)",
+    "verified_value": "Public API and API keys exist but are gated to Enterprise workspaces (account-manager enablement); no self-serve developer access on lower plans",
+    "correct": false,
+    "correction_made": true,
+    "evidence": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "notes": "The claim 'no public API or API keys' is now factually wrong per Otter's own Public API article; the real blocker is Enterprise-plan gating."
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://otter.ai/blog/otter-mcp-your-meetings-now-power-every-tool-you-use",
+    "notes": "Official Otter MCP confirmed via Otter's own blog and the help-center article cited by the first pass; OAuth-authenticated and gated to Business/Enterprise plans."
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "field": "access_model",
+    "original": "contact_sales",
+    "verified_value": "contact_sales",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://consensus.app/home/api/",
+    "notes": "Consensus API access is by application only with custom per-call quotes (~$0.10/call baseline plus platform fee) and a waitlist — no self-serve developer signup; the MCP connector is self-serve but the API is not."
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "field": "api_surface_type",
+    "original": "REST",
+    "verified_value": "REST",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.consensus.app/docs/mcp",
+    "notes": "docs.consensus.app hosts an API Reference with HTTP endpoints and per-call pricing consistent with a REST API; no contradicting evidence found."
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "field": "auth_methods",
+    "original": [
+      "unclear"
+    ],
+    "verified_value": [
+      "API key"
+    ],
+    "correct": false,
+    "correction_made": true,
+    "evidence": "https://docs.consensus.app/docs/mcp",
+    "notes": "Consensus docs show API access uses an API key sent as 'Authorization: Bearer YOUR_API_KEY' (OAuth is used for the hosted MCP in mainstream clients), so auth is documented rather than unclear."
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "field": "buildability_verdict",
+    "original": "needs_partner_or_paid_access",
+    "verified_value": "needs_partner_or_paid_access",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://consensus.app/home/api/",
+    "notes": "API keys require an approved application and custom-priced agreement, so building on the raw API needs partner/paid access (the free-account MCP path exists but is not general API access)."
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "field": "main_blocker",
+    "original": "API credentials require application/approval and custom per-call pricing; no self-serve developer signup",
+    "verified_value": "API credentials require application/approval and custom per-call pricing; no self-serve developer signup",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://consensus.app/home/api/",
+    "notes": "Confirmed application-only access with waitlist and custom quotes (~$0.10/call baseline), matching the stated blocker."
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "field": "mcp_status",
+    "original": "official_mcp",
+    "verified_value": "official_mcp",
+    "correct": true,
+    "correction_made": false,
+    "evidence": "https://docs.consensus.app/docs/mcp",
+    "notes": "Official docs page describes the vendor-hosted MCP server at mcp.consensus.app/mcp with OAuth for Claude/ChatGPT/Cursor clients — official_mcp confirmed."
+  }
+]

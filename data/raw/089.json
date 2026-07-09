@@ -1,0 +1,30 @@
+{
+  "id": 89,
+  "app": "Ramp",
+  "category": "Finance and Fintech",
+  "website_hint": "docs.ramp.com",
+  "one_line_description": "Corporate card and spend-management platform with expense, bill-pay, and accounting automation.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "OAuth 2.0 only: client_credentials grant for server-to-server access to your own Ramp business (tokens valid ~10 days) and authorization_code grant for user-delegated/partner access; credentials come from a developer app created in the Ramp dashboard with configurable scopes.",
+  "access_model": "self_serve",
+  "access_notes": "A Ramp admin creates a developer app under Settings > Developer to get client_id/secret and enable grant types and scopes — self-serve for Ramp customers. A demo/sandbox environment exists (Ramp's own MCP server defaults to the demo environment via RAMP_ENV). Public partner integrations for other customers use the authorization_code flow.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API at api.ramp.com/developer/v1 covering transactions, cards, users, departments, reimbursements, bills, and related spend-management resources with scope-based access.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/ramp-public/ramp-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.ramp.com/developer-api/v1/authorization",
+    "https://docs.ramp.com/developer-api/v1/guides/oauth",
+    "https://github.com/ramp-public/ramp-mcp",
+    "https://support.ramp.com/hc/en-us/articles/46681939909907-Accessing-the-Developer-API"
+  ],
+  "confidence": "high",
+  "agent_notes": "Ramp publishes an official open-source MCP server under its ramp-public GitHub org (uses client_credentials, builds an ephemeral in-memory SQLite ETL to work around token limits). Composio already documents a Ramp OAuth integration, so this is a proven pattern. Credentials require being a Ramp customer with admin access.",
+  "verified": false,
+  "verification_notes": ""
+}

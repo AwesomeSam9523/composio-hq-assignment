@@ -1,0 +1,30 @@
+{
+  "id": 15,
+  "app": "Pylon",
+  "category": "Support and Helpdesk",
+  "website_hint": "usepylon.com",
+  "one_line_description": "B2B customer support platform unifying Slack, email, and in-app support with account management.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "API tokens created in-app; only Admin users can create API tokens. Public docs confirm token-based access but do not publicly detail the header format; the official MCP server separately uses OAuth 2.0 (AuthKit).",
+  "access_model": "contact_sales",
+  "access_notes": "No free trial or free plan; all tiers are annual contracts starting ~$59/seat/month (3-seat minimum), typically sold via demo. Once a customer, an admin can self-serve create API tokens.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API covering issues, accounts, contacts, messages, attachments, knowledge base, macros, tags, tasks/projects, teams, users/roles, custom fields/objects, surveys, and audit logs.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "No self-serve or trial account: getting API credentials requires becoming a paying Pylon customer via a sales-led annual contract.",
+  "evidence_urls": [
+    "https://docs.usepylon.com/pylon-docs/developer/api",
+    "https://docs.usepylon.com/pylon-docs/developer/api/api-reference",
+    "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+    "https://www.usepylon.com/pricing"
+  ],
+  "confidence": "medium",
+  "agent_notes": "API reference index confirms broad resource coverage, but exact auth header format was not visible in the fetched docs pages (docs use a dynamic query system). Official hosted MCP server exists at mcp.usepylon.com with OAuth. Pricing/trial details came partly from third-party pricing roundups; Pylon reportedly offers occasional limited trial access on request.",
+  "verified": false,
+  "verification_notes": ""
+}

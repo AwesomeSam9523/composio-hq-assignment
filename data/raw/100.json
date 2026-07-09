@@ -1,0 +1,31 @@
+{
+  "id": 100,
+  "app": "Grain",
+  "category": "AI, Research and Media-native",
+  "website_hint": "grain.com meeting notes",
+  "one_line_description": "AI meeting recorder/notetaker that records, transcribes, clips, and summarizes calls for sales and customer teams.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2"
+  ],
+  "auth_summary": "Three documented modes: self-serve Personal Access Tokens (per-user), Workspace Access Tokens (workspace-wide), and OAuth2 Authorization Code with PKCE for third-party integrations (OAuth app credentials must be requested from Grain manually). Tokens are sent as Bearer in the Authorization header.",
+  "access_model": "self_serve",
+  "access_notes": "PATs are generated self-serve at grain.com/app/settings/integrations?tab=api; building a public OAuth integration requires requesting client credentials from Grain through a manual developer-registration process. Rate limit 300 req/min.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "Versioned REST API (current version 2025-10-31, v1 deprecating) covering recordings CRUD, transcripts in JSON/TXT/VTT/SRT, uploads/downloads, clips/highlights, sharing with users/teams, webhooks, and user/team/meeting-type listings.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://grain.com/release-note/06-18-2025",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none for PAT-based tools; multi-user OAuth requires manually requesting client credentials from Grain",
+  "evidence_urls": [
+    "https://developers.grain.com/",
+    "https://grain.com/release-note/06-18-2025",
+    "https://www.pulsemcp.com/servers/grain",
+    "https://nango.dev/docs/integrations/all/grain-api-key"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched developers.grain.com directly: the API is production-grade and versioned, contradicting older third-party claims that it was 'beta, select partners only'. Grain also ships an official remote MCP server (announced in June 2025 release notes) usable via Claude Integrations/mcp-remote.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,30 @@
+{
+  "id": 16,
+  "app": "LiveAgent",
+  "category": "Support and Helpdesk",
+  "website_hint": "liveagent.com",
+  "one_line_description": "Helpdesk software with multichannel ticketing, live chat, and call center features.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "API v3 authenticates via an API key passed in an 'apikey' header; admins create keys (with per-key permissions) under Configuration > System > API. No OAuth2 found.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve free trial signup; admins generate API keys directly from the agent panel. Full interactive API docs are hosted per-account at YOURDOMAIN.ladesk.com/docs/api/v3/.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API v3 covering tickets, chats, calls, agents, contacts, companies, departments, tags, and filters. Cloud accounts are rate-limited to 180 requests/minute per API key.",
+  "mcp_status": "no_mcp_found",
+  "existing_mcp_url": null,
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://support.liveagent.com/802463-REST-API",
+    "https://support.liveagent.com/741982-API-key",
+    "https://support.liveagent.com/911737-API-v3",
+    "https://support.liveagent.com/840770-Complete-API-reference"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Full endpoint reference is only browsable inside a LiveAgent account domain (docs are per-instance), so breadth was assessed from support articles and the Python client repo rather than a public API reference page. No official or community MCP server found in searches.",
+  "verified": false,
+  "verification_notes": ""
+}

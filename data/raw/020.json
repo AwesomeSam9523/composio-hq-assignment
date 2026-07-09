@@ -1,0 +1,30 @@
+{
+  "id": 20,
+  "app": "Gladly",
+  "category": "Support and Helpdesk",
+  "website_hint": "gladly.com",
+  "one_line_description": "Enterprise customer service platform organized around lifelong customer conversations rather than tickets.",
+  "auth_methods": [
+    "API key",
+    "Basic auth"
+  ],
+  "auth_summary": "Token-based HTTP Basic Authentication: API tokens are tied to a designated Gladly user with the 'API User' permission and passed in the Authorization header; a token can perform any API request without restriction. No OAuth2 found.",
+  "access_model": "contact_sales",
+  "access_notes": "Gladly is an enterprise, sales-led product with no self-serve signup; API tokens are generated in-app by users holding the API User permission, so credentials require an existing customer account.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API at developer.gladly.com/rest covering customers, conversations, agents, tasks, payloads/exports, jobs, and webhooks for the Gladly support platform.",
+  "mcp_status": "no_mcp_found",
+  "existing_mcp_url": null,
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "Credentials require a paid, sales-led Gladly customer account; no developer sandbox or self-serve signup found, and auth is basic-auth tokens rather than OAuth.",
+  "evidence_urls": [
+    "https://developer.gladly.com/rest/",
+    "https://help.gladly.com/developer-tutorials/docs/authentication",
+    "https://help.gladly.com/implementation/docs/get-your-api-tokens"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Auth details came from official Gladly help/developer docs surfaced in search results rather than a full fetch of the API reference, so endpoint-level breadth is an estimate. No official or community MCP server found. API tokens are all-or-nothing (no scoping), which is a governance caveat for agent use.",
+  "verified": false,
+  "verification_notes": ""
+}

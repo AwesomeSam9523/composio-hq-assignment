@@ -1,0 +1,33 @@
+{
+  "id": 10,
+  "app": "DealCloud",
+  "category": "CRM and Sales",
+  "website_hint": "api.docs.dealcloud.com",
+  "one_line_description": "Intapp DealCloud is a deal and relationship management platform (CRM + pipeline + relationship intelligence) for private equity, investment banking, and other financial services firms.",
+  "auth_methods": [
+    "OAuth2",
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "OAuth2 Client Credentials flow: a user's API key (enabled in their DealCloud profile after an admin grants the 'API' site-area capability) is exchanged along with client_id and scopes at the site's token endpoint for a bearer access token that expires after 900 seconds.",
+  "access_model": "contact_sales",
+  "access_notes": "API keys are generated inside a customer's DealCloud site (Admin enables API capability for the user group, then the user enables an API key in their profile). There is no self-serve signup or free developer sandbox — DealCloud is an enterprise contact-sales product (reported ~$85k+/yr), and sandboxes are purchased through an Intapp representative.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST APIs covering authentication, user management, schema/metadata discovery, data CRUD (entries, rows, files, reports), backups/exports, publications (real-time event streaming), and relationship-intelligence data import; an official Python SDK is also documented.",
+  "mcp_status": "no_mcp_found",
+  "existing_mcp_url": null,
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "Credentials only exist inside a paid customer DealCloud instance; no self-serve developer account or public sandbox, so Composio would need a customer/partner relationship with Intapp to build and test.",
+  "evidence_urls": [
+    "https://api.docs.dealcloud.com/docs",
+    "https://api.docs.dealcloud.com/docs/token",
+    "https://api.docs.dealcloud.com/docs/apikeys",
+    "https://api.docs.dealcloud.com/sdk/python/authentication",
+    "https://www.intapp.com/dealcloud/enterprise-offering/"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official API docs (api.docs.dealcloud.com) are public and detailed, confirming auth flow and REST surface; the blocker is purely access, not documentation. Each customer site has its own domain-specific token endpoint. Pricing figures (~$85k-$1.4M/yr) come from third-party sources (Vendr/G2), not Intapp. No official or community MCP server found in searches or the MCP registry results. The toolkit design would need to handle per-tenant schemas since DealCloud data models are heavily customized per firm.",
+  "verified": false,
+  "verification_notes": ""
+}

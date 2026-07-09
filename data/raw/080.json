@@ -1,0 +1,30 @@
+{
+  "id": 80,
+  "app": "Harvest",
+  "category": "Productivity and Project Management",
+  "website_hint": "harvestapp.com / help.getharvest.com/api-v2",
+  "one_line_description": "Time tracking, invoicing, and project budget reporting tool for teams.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2"
+  ],
+  "auth_summary": "Harvest API v2 (REST) supports personal access tokens created in the Harvest ID Developers section and OAuth2 (authorization code and implicit flows) for multi-user apps; requests must also send Harvest-Account-Id and User-Agent headers.",
+  "access_model": "self_serve",
+  "access_notes": "PATs and OAuth2 app registration are both self-serve at id.getharvest.com/developers on any Harvest account (free tier/trial available).",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "REST API v2 covering time entries/timers, clients, projects, tasks, users, expenses, invoices, estimates, and reports.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+    "https://github.com/ianaleck/harvest-mcp-server"
+  ],
+  "confidence": "medium",
+  "agent_notes": "Harvest now documents an official 'Harvest MCP' connection in its Help Center for AI assistants (timers, logging hours, budget queries), but the article returned 403 to direct fetch, so I confirmed it only via search snippets and could not verify its endpoint or auth details; many community Harvest MCP servers also exist. API auth/access details are high-confidence from fetched official docs.",
+  "verified": false,
+  "verification_notes": ""
+}

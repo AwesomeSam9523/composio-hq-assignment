@@ -1,0 +1,30 @@
+{
+  "id": 12,
+  "app": "Intercom",
+  "category": "Support and Helpdesk",
+  "website_hint": "intercom.com",
+  "one_line_description": "Customer messaging and support platform with shared inbox, help center, and the Fin AI agent.",
+  "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "Access Tokens (sent as Authorization: Bearer) for private apps against your own workspace, and OAuth2 for public apps accessing other users' Intercom accounts.",
+  "access_model": "self_serve",
+  "access_notes": "Developers create an app in the Developer Hub and automatically receive an Access Token (Configure > Authentication); free development workspaces support building and OAuth testing.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Broad REST API covering contacts, companies, conversations, tickets, articles/help center, admins, teams, tags, segments, events, and messages.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developers.intercom.com/docs/guides/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "https://developers.intercom.com/docs/guides/mcp",
+    "https://github.com/intercom/intercom-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official hosted remote MCP server exists (OAuth or bearer token auth) but currently only supports US-hosted workspaces (EU/AU unsupported). Public OAuth apps go through Intercom's app review only if listed on the App Store; unlisted OAuth apps are possible.",
+  "verified": false,
+  "verification_notes": ""
+}

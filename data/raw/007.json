@@ -1,0 +1,31 @@
+{
+  "id": 7,
+  "app": "Zoho CRM",
+  "category": "CRM and Sales",
+  "website_hint": "zoho.com/crm",
+  "one_line_description": "Zoho CRM is a full-featured sales CRM for managing leads, contacts, deals, and sales automation across the Zoho suite.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "Zoho CRM's API uses OAuth 2.0 exclusively; the docs explicitly note clients must not use password auth. Access tokens last one hour with long-lived refresh tokens; a 'Self Client' type supports backend-only apps without a redirect URL.",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve: register any of five client types (server-based, client-based, mobile, non-browser, self client) at the Zoho Developer Console (api-console.zoho.com) to get Client ID/Secret. A Zoho CRM account is needed; API call credits scale with the CRM edition, and Zoho operates multiple data centers with region-specific API domains.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "v8 REST API spans Metadata APIs (modules, fields, layouts), Core CRUD APIs on all CRM modules, Composite API (batch up to 5 calls), asynchronous Bulk read/write APIs, Notification (webhook) APIs, and SQL-style Query (COQL) APIs.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+    "https://www.zoho.com/crm/developer/docs/api/v8/register-client.html",
+    "https://www.zoho.com/crm/developer/docs/api/v8/",
+    "https://www.zoho.com/mcp/",
+    "https://www.zoho.com/crm/developer/docs/mcp/overview.html"
+  ],
+  "confidence": "high",
+  "agent_notes": "Zoho ships official first-party MCP: a suite-wide Zoho MCP product plus four pre-built Zoho CRM MCP servers (OAuth flow on first tool invocation), supporting Claude, Cursor, VS Code, Windsurf. Integration caveats for a toolkit: multi-DC architecture means tokens/endpoints differ by region (.com, .eu, .in, etc.), and API rate limits are credit-based per edition (limits page not fetched directly - noted from general docs structure).",
+  "verified": false,
+  "verification_notes": ""
+}

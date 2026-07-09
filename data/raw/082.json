@@ -1,0 +1,31 @@
+{
+  "id": 82,
+  "app": "Plaid",
+  "category": "Finance and Fintech",
+  "website_hint": "plaid.com/docs",
+  "one_line_description": "Financial data network that lets apps connect to users' bank accounts for account data, auth, identity, transactions, and payments.",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "auth_summary": "Core API authenticates with client_id + secret sent as headers (PLAID-CLIENT-ID / PLAID-SECRET) or in the request body — effectively an API-key pair. Plaid's Dashboard MCP server uses OAuth2 client_credentials tokens with an mcp:dashboard scope; end-user bank connections flow through Link (with bank-side OAuth), not developer OAuth.",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve Dashboard signup provides Sandbox credentials immediately; Production access requires applying/being approved for at least one Plaid product (compliance/use-case review). Classic fintech split: instant sandbox, gated production.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covering accounts, auth, transactions, identity, investments, liabilities, payment initiation, and Link token flows across Sandbox and Production environments.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://plaid.com/docs/resources/mcp/",
+  "buildability_verdict": "build_with_limits",
+  "main_blocker": "Production API access requires Plaid approval for at least one product; also most valuable data requires end-user Link flows, which need UI hand-off",
+  "evidence_urls": [
+    "https://plaid.com/docs/api/",
+    "https://plaid.com/docs/quickstart/",
+    "https://plaid.com/docs/resources/mcp/",
+    "https://plaid.com/blog/plaid-mcp-ai-assistant-claude/"
+  ],
+  "confidence": "high",
+  "agent_notes": "Plaid has two official MCP servers: a remote Dashboard MCP (api.dashboard.plaid.com/mcp/, Production-approved teams only, OAuth token) focused on integration diagnostics/analytics, and a local dev-toolkit MCP for sandbox/mock data. Neither is a general 'act on bank data' server — end-user data access still goes through Link.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,30 @@
+{
+  "id": 81,
+  "app": "Stripe",
+  "category": "Finance and Fintech",
+  "website_hint": "stripe.com/docs/api",
+  "one_line_description": "Payments infrastructure platform for accepting and managing online payments, billing, subscriptions, and payouts.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "Every API call authenticates with an account-level secret API key (test and live pairs generated at signup); restricted keys (rk_) with scoped permissions are supported for least-privilege access. The hosted MCP server additionally supports OAuth for client connections.",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve: creating a Stripe account instantly yields sandbox/test-mode and live-mode key pairs from the Developers Dashboard. Live-mode payment processing requires standard account activation (business details), but API credentials themselves are self-serve.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Very large REST API covering payments, customers, invoices, subscriptions, products/prices, refunds, disputes, balance, payment links, Connect, and more, with full API reference at docs.stripe.com/api.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.stripe.com/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.stripe.com/keys",
+    "https://docs.stripe.com/api/authentication",
+    "https://docs.stripe.com/api",
+    "https://docs.stripe.com/mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Cleanest case in this batch. Stripe hosts a remote MCP server at mcp.stripe.com (OAuth or API key) with ~23 billing/payments tools, plus docs-search tools. Restricted API keys are a good fit for scoping agent access.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,33 @@
+{
+  "id": 65,
+  "app": "Supabase",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "supabase.com/docs",
+  "one_line_description": "Open-source Firebase alternative: hosted Postgres with auto-generated APIs, auth, storage, and edge functions.",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2",
+    "API key",
+    "JWT"
+  ],
+  "auth_summary": "The platform Management API (api.supabase.com) uses personal access tokens or OAuth2 (OAuth apps registered in org settings, with token refresh endpoint). Project data APIs (PostgREST) use project API keys (anon/service_role) which are JWTs, sent as bearer/apikey headers.",
+  "access_model": "self_serve",
+  "access_notes": "Free-tier accounts generate PATs at supabase.com/dashboard/account/tokens instantly; OAuth apps are self-registered in organization settings.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Management API covers projects, orgs, database config, branches, functions, and secrets; each project additionally exposes auto-generated REST (PostgREST) endpoints over its Postgres data (GraphQL also available per-project via pg_graphql).",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://supabase.com/docs/guides/getting-started/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://supabase.com/docs/reference/api/introduction",
+    "https://supabase.com/docs/guides/integrations/build-a-supabase-oauth-integration",
+    "https://supabase.com/docs/guides/getting-started/mcp",
+    "https://github.com/supabase-community/supabase-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official hosted MCP at mcp.supabase.com/mcp now uses OAuth with dynamic client registration (PAT no longer required). Two distinct planes to model: platform Management API vs per-project data API with project-specific URLs and keys.",
+  "verified": false,
+  "verification_notes": ""
+}

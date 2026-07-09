@@ -1,0 +1,30 @@
+{
+  "id": 13,
+  "app": "Freshdesk",
+  "category": "Support and Helpdesk",
+  "website_hint": "freshdesk.com",
+  "one_line_description": "Freshworks' cloud helpdesk for ticketing, knowledge base, and customer support automation.",
+  "auth_methods": [
+    "API key",
+    "Basic auth"
+  ],
+  "auth_summary": "API key used via HTTP Basic Auth (apikey:X, base64-encoded); every user can copy their personal API key from Profile Settings. No OAuth2 for the core Freshdesk API.",
+  "access_model": "trial_or_free_but_limited",
+  "access_notes": "Self-serve signup (free trial/free tier); the personal API key is available immediately from the user's Profile Settings page in the support portal.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API v2 covering tickets, conversations, contacts, companies, agents, groups, roles, solutions (KB), surveys, time entries, automations, SLA policies, and custom objects.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.freshdesk.com/api/",
+    "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+    "https://github.com/NeuraLegion/freshdesk_mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Official Freshworks MCP server exists but is in beta/Early Access Program limited to selected Enterprise-plan customers and authenticates via API key only; multiple community MCP servers (e.g. NeuraLegion, Enreign, effytech) are freely available. API-key-only auth means per-user credential entry rather than OAuth connect flow.",
+  "verified": false,
+  "verification_notes": ""
+}

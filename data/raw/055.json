@@ -1,0 +1,30 @@
+{
+  "id": 55,
+  "app": "Apify",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "docs.apify.com",
+  "one_line_description": "Cloud platform for running web scraping and automation 'Actors', with thousands of prebuilt scrapers in its marketplace.",
+  "auth_methods": [
+    "API key",
+    "Bearer token"
+  ],
+  "auth_summary": "Personal API token from the Apify Console Integrations page, sent in the Authorization header (recommended) or as a ?token= query parameter; tokens support scoped permissions and expiration dates.",
+  "access_model": "self_serve",
+  "access_notes": "Self-serve signup at console.apify.com; API token is available immediately, and a free plan with monthly platform credits exists (paid plans scale usage).",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API v2 covering the whole platform: run/manage Actors, datasets, key-value stores, request queues, schedules, webhooks, users — plus per-Actor API endpoints and JS/Python API clients.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.apify.com/platform/integrations/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.apify.com/api/v2",
+    "https://docs.apify.com/platform/integrations/api",
+    "https://docs.apify.com/platform/integrations/mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "One of the easiest builds in this set: self-serve token, broad documented REST API, official MCP server documented in Apify's own platform docs. Actor runs consume platform credits, but a free tier exists.",
+  "verified": false,
+  "verification_notes": ""
+}

@@ -1,0 +1,32 @@
+{
+  "id": 3,
+  "app": "Pipedrive",
+  "category": "CRM and Sales",
+  "website_hint": "pipedrive.com",
+  "one_line_description": "Sales-focused CRM for managing deals, pipelines, contacts, and sales activities.",
+  "auth_methods": [
+    "OAuth2",
+    "API key"
+  ],
+  "auth_summary": "Official docs confirm two methods: OAuth 2.0 (authorization code flow with scopes; client_id/client_secret issued when you create an app in Developer Hub) and a per-user API token passed in the x-api-token header. The API token is tied to one user/company and only one can be active at a time.",
+  "access_model": "self_serve",
+  "access_notes": "Free developer sandbox account is self-serve; Developer Hub lets you create a draft app and immediately get client_id/client_secret. API tokens are available to any Pipedrive user from account settings. Public Marketplace listing requires app review, but private/unlisted apps and direct API-token integrations do not.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Mature REST API (v1 plus newer v2 endpoints) covering deals, leads, persons, organizations, activities, products, pipelines/stages, notes, files, users, custom fields, and webhooks.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://support.pipedrive.com/en/article/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+    "https://pipedrive.readme.io/docs/developer-sandbox-account",
+    "https://pipedrive.readme.io/docs/marketplace-app-approval-process",
+    "https://support.pipedrive.com/en/article/mcp",
+    "https://www.pipedrive.com/en/newsroom/pipedrive-launches-native-mcp-server-bringing-crm-workflows-directly-into-ai-assistants"
+  ],
+  "confidence": "high",
+  "agent_notes": "Fetched official auth docs directly. Pipedrive launched a native (official) MCP server on June 30, 2026, available on all plans via OAuth. Only caveat for Composio: a public Marketplace-listed OAuth app must pass Pipedrive's review process, though private apps and API-token access skip it. Composio already lists a Pipedrive toolkit.",
+  "verified": false,
+  "verification_notes": ""
+}

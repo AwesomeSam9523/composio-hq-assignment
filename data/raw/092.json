@@ -1,0 +1,29 @@
+{
+  "id": 92,
+  "app": "Otter AI",
+  "category": "AI, Research and Media-native",
+  "website_hint": "help.otter.ai MCP server",
+  "one_line_description": "AI meeting transcription and notetaking service that records, transcribes, and summarizes meetings.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "Otter has no public REST API or API keys. Its official hosted MCP server (https://mcp.otter.ai/mcp) authenticates MCP clients via an OAuth flow tied to the user's Otter account.",
+  "access_model": "paid_plan_required",
+  "access_notes": "No developer API credentials exist. The official MCP server is reported as gated to Otter Business/Enterprise plans and may require workspace admin provisioning; community MCPs resort to email/password scraping of the private API.",
+  "api_surface_type": "No_public_API_found",
+  "api_surface_breadth": "unclear",
+  "api_surface_summary": "No public REST API is documented. The official MCP exposes meeting-library capabilities (search transcripts, analyze across meetings, surface insights) but only through MCP-compatible AI clients, not a general API.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+  "buildability_verdict": "not_buildable_today",
+  "main_blocker": "No public API or API keys; the only vendor-sanctioned programmatic surface is the hosted OAuth MCP server (plan-gated), and community alternatives rely on unofficial credential-based scraping.",
+  "evidence_urls": [
+    "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+    "https://otter.ai/blog/otter-mcp-your-meetings-now-power-every-tool-you-use",
+    "https://github.com/DarrenZal/otter-mcp"
+  ],
+  "confidence": "medium",
+  "agent_notes": "The 'reportedly has an MCP server' claim VERIFIED: Otter ships an official remote MCP at mcp.otter.ai/mcp with OAuth. However there is no public API for building a classic toolkit; help center states no public API key is available. Based on official help-center/blog pages seen in search results, not fully fetched.",
+  "verified": false,
+  "verification_notes": ""
+}

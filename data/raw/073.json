@@ -1,0 +1,30 @@
+{
+  "id": 73,
+  "app": "Linear",
+  "category": "Productivity and Project Management",
+  "website_hint": "developers.linear.app",
+  "one_line_description": "Issue tracking and project management tool for software teams.",
+  "auth_methods": [
+    "API key",
+    "OAuth2"
+  ],
+  "auth_summary": "Single GraphQL endpoint (api.linear.app/graphql) authenticated with personal API keys (created in Security & access settings) or OAuth2 bearer tokens for multi-user apps.",
+  "access_model": "self_serve",
+  "access_notes": "Any Linear user can self-serve create a personal API key in workspace Security & access settings; OAuth applications are created self-serve in Linear's developer settings.",
+  "api_surface_type": "GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "GraphQL API exposing essentially the full product model: issues, projects, teams, cycles, comments, users, attachments, plus webhooks.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://linear.app/docs/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://linear.app/developers/graphql",
+    "https://linear.app/docs/mcp",
+    "https://linear.app/changelog/2025-05-01-mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "developers.linear.app now redirects to linear.app/developers. Official hosted MCP at mcp.linear.app supports both interactive OAuth and direct Authorization: Bearer with API keys or OAuth tokens. Note personal API keys are sent as 'Authorization: <key>' without the Bearer prefix.",
+  "verified": false,
+  "verification_notes": ""
+}

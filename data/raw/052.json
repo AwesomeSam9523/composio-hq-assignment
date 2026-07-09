@@ -1,0 +1,29 @@
+{
+  "id": 52,
+  "app": "SE Ranking",
+  "category": "Data, SEO and Scraping",
+  "website_hint": "seranking.com/api",
+  "one_line_description": "SEO platform (rank tracking, backlinks, audits, keyword research) with a Data API and a Project API.",
+  "auth_methods": [
+    "API key"
+  ],
+  "auth_summary": "API key created in the account's API Dashboard, sent as 'Authorization: Token YOUR_API_KEY' (or a token parameter). One key authenticates both the Data API and Project API.",
+  "access_model": "paid_plan_required",
+  "access_notes": "Fetched official 'Getting API access' page: all current paid plans (Essential, Pro, Business, Core, Growth, Enterprise) include Data API access with monthly credit allowances (10k-100k); keys are self-generated from the API Dashboard once subscribed. No free API tier documented.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Two REST APIs: Data API (keyword/SERP data, backlinks, website audit, etc., credit-metered) and Project API (manage projects/rankings against subscription limits). Rate limit 5 req/s.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://seranking.com/api/integrations/mcp/",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "API credentials require an active paid SE Ranking subscription; no free developer tier.",
+  "evidence_urls": [
+    "https://seranking.com/api/how-to-get-api/",
+    "https://seranking.com/api/data/getting-started/",
+    "https://seranking.com/api/integrations/mcp/"
+  ],
+  "confidence": "high",
+  "agent_notes": "Docs are open and clear; official MCP page exists in their API docs. Once a customer has any paid plan the integration itself is straightforward key-based auth, so this is buildable for paying users.",
+  "verified": false,
+  "verification_notes": ""
+}

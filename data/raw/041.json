@@ -1,0 +1,32 @@
+{
+  "id": 41,
+  "app": "Shopify",
+  "category": "Ecommerce",
+  "website_hint": "shopify.dev",
+  "one_line_description": "Leading hosted ecommerce platform for building and running online stores.",
+  "auth_methods": [
+    "OAuth2",
+    "Private app token"
+  ],
+  "auth_summary": "OAuth2 (authorization code grant or token exchange) for public apps; custom apps get admin-generated Admin API access tokens installed per store. Static token generation outside the app model has been removed, so all new integrations go through app-based OAuth/token flows.",
+  "access_model": "self_serve",
+  "access_notes": "Free Shopify Partner/dev accounts with development stores are self-serve; merchants can create custom apps in their own admin to generate Admin API access tokens without review. Public app store listing requires Shopify app review, but credentials for direct integration are self-serve.",
+  "api_surface_type": "REST_and_GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "GraphQL Admin API (now the primary API; REST Admin API is legacy) covers products, orders, customers, inventory, fulfillment, discounts, metafields, and more, plus Storefront API and webhooks.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://shopify.dev/docs/apps/build/storefront-mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://shopify.dev/docs/api/usage/authentication",
+    "https://shopify.dev/docs/apps/build/authentication-authorization",
+    "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens/generate-app-access-tokens-admin",
+    "https://shopify.dev/docs/apps/build/storefront-mcp",
+    "https://shopify.dev/docs/apps/build/devmcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Shopify ships official MCP servers (Storefront MCP on every store, Customer Accounts MCP, and a local Dev MCP). Note REST Admin API is deprecated for new public apps in favor of GraphQL, so a new toolkit should target GraphQL Admin API.",
+  "verified": false,
+  "verification_notes": ""
+}

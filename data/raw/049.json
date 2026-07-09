@@ -1,0 +1,30 @@
+{
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "website_hint": "developer-docs.amazon.com/sp-api",
+  "one_line_description": "Amazon's SP-API for sellers and vendors to programmatically manage listings, orders, inventory, fulfillment, and reports on Amazon marketplaces.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "Authorization is OAuth2 via Login with Amazon (LWA): registered applications obtain LWA access tokens (1-hour expiry) on behalf of authorizing selling partners; restricted operations returning PII additionally require Restricted Data Tokens. LWA client secrets rotate every 180 days.",
+  "access_model": "partner_gated",
+  "access_notes": "You must register as an SP-API developer (via a Professional seller/vendor account in Seller/Vendor Central) and have your developer profile approved before creating an app and getting LWA credentials; access to restricted/PII roles requires additional Amazon review, and public apps go through the Selling Partner Appstore authorization workflow.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Dozens of REST API sections: orders, listings, catalog, FBA inventory and fulfillment, feeds, reports, finances, shipping, notifications, Data Kiosk analytics, and more.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/amzn/selling-partner-api-samples",
+  "buildability_verdict": "needs_partner_or_paid_access",
+  "main_blocker": "Developer registration and profile approval through a Professional selling account gate all credentials; PII-restricted roles need extra vetting.",
+  "evidence_urls": [
+    "https://developer-docs.amazon.com/sp-api/docs/authorizing-selling-partner-api-applications",
+    "https://developer.amazonservices.com/start",
+    "https://github.com/amzn/selling-partner-api-samples",
+    "https://github.com/amzn/selling-partner-api-samples/discussions/131"
+  ],
+  "confidence": "high",
+  "agent_notes": "Amazon has published official MCP tooling in its selling-partner-api-samples repo (sp-api-dev-mcp npm package and a Data Kiosk MCP server), though these are developer-tool/sample oriented rather than a hosted production MCP; several community/hosted SP-API MCP servers also exist. Note the older AWS SigV4 signing requirement has been dropped for most operations in favor of pure LWA tokens, but an AWS account is still referenced in parts of the docs.",
+  "verified": false,
+  "verification_notes": ""
+}

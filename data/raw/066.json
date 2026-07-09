@@ -1,0 +1,32 @@
+{
+  "id": 66,
+  "app": "Neo4j",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "neo4j.com/docs/api",
+  "one_line_description": "Native graph database queried with Cypher, available self-managed or as the Aura managed cloud service.",
+  "auth_methods": [
+    "Basic auth",
+    "OAuth2",
+    "Bearer token"
+  ],
+  "auth_summary": "The Aura platform API uses OAuth2 client-credentials (client ID/secret exchanged at /oauth/token for a Bearer token). The data-plane Query API (HTTPS Cypher endpoint /db/{db}/query/v2, and the self-managed HTTP API) uses Basic auth with database username/password, with JWT support planned.",
+  "access_model": "self_serve",
+  "access_notes": "Aura offers a self-serve free tier; API client credentials for the Aura API and database user credentials for the Query API are generated from the Aura console without approval.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "Aura API covers instance lifecycle/management (control plane); the Query API is essentially one HTTPS endpoint that executes arbitrary Cypher, which makes data operations broad in capability but narrow in endpoint surface.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/neo4j/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://neo4j.com/docs/aura/platform/api/authentication/",
+    "https://neo4j.com/docs/query-api/current/authentication-authorization/",
+    "https://neo4j.com/docs/http-api/current/authentication-authorization/",
+    "https://github.com/neo4j/mcp"
+  ],
+  "confidence": "high",
+  "agent_notes": "Two clearly separate APIs: Aura management (OAuth2/Bearer) vs Query API (Basic auth, instance-specific hostname). Official MCP server exists at neo4j/mcp (Go binary, works with Aura/self-managed) plus Neo4j Labs servers at neo4j-contrib/mcp-neo4j. Data-plane tools require per-instance connection details, which complicates a generic hosted toolkit slightly.",
+  "verified": false,
+  "verification_notes": ""
+}

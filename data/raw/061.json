@@ -1,0 +1,32 @@
+{
+  "id": 61,
+  "app": "GitHub",
+  "category": "Developer, Infra and Data Platforms",
+  "website_hint": "docs.github.com/rest",
+  "one_line_description": "Code hosting and collaboration platform for git repositories, issues, pull requests, and CI/CD (Actions).",
+  "auth_methods": [
+    "Personal access token",
+    "OAuth2",
+    "JWT"
+  ],
+  "auth_summary": "REST API accepts fine-grained or classic personal access tokens, OAuth app tokens (OAuth2 authorization code flow), and GitHub App auth (app JWT to mint installation tokens, or user-to-server ghu_ tokens). All are sent as Authorization bearer/token headers.",
+  "access_model": "self_serve",
+  "access_notes": "Any free GitHub account can create a PAT in settings instantly; OAuth apps and GitHub Apps are also self-registered from account/org settings with no approval step.",
+  "api_surface_type": "REST_and_GraphQL",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API covers essentially the whole platform (repos, issues, PRs, Actions, orgs, users, security alerts, projects), plus a full GraphQL v4 API.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/github/github-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+    "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authenticating-to-the-rest-api-with-an-oauth-app",
+    "https://github.com/github/github-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Gold-standard integration target. Official MCP server is available both remote-hosted (api.githubcopilot.com/mcp/ with OAuth) and local via Docker. Composio-style toolkits are straightforward; only nuance is choosing between PAT, OAuth app, and GitHub App installation auth per use case.",
+  "verified": false,
+  "verification_notes": ""
+}

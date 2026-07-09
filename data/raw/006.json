@@ -1,0 +1,30 @@
+{
+  "id": 6,
+  "app": "Podio",
+  "category": "CRM and Sales",
+  "website_hint": "podio.com",
+  "one_line_description": "Progress Podio is a customizable work-management/collaboration platform where teams build no-code apps to track leads, projects, and workflows.",
+  "auth_methods": [
+    "OAuth2"
+  ],
+  "auth_summary": "The Podio API exclusively uses OAuth2 with four flows: server-side (authorization code), client-side (implicit), username/password grant, and an app-authentication flow for single-app access. Access tokens last 8 hours with 28-day refresh tokens, sent as 'Authorization: OAuth2 ACCESS_TOKEN'.",
+  "access_model": "self_serve",
+  "access_notes": "Developers self-serve register an application (API key generator in Podio account settings) to get a Client ID and Client Secret; no partner program or approval process is documented, and Podio offers free/entry plans.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API split into roughly 40+ resource areas: items, applications, tasks, comments, files, hooks (webhooks), organizations, spaces, users, conversations, calendar, search, tags, forms, streams, and more.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://docs.sharefile.com/en-us/podio/using-podio/general-features/podio-mcp-server.html",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developers.podio.com/authentication",
+    "https://developers.podio.com/doc",
+    "https://docs.sharefile.com/en-us/podio/using-podio/general-features/podio-mcp-server.html",
+    "https://www.progress.com/blogs/podio-2025-stability-progress-renewed-foundation"
+  ],
+  "confidence": "high",
+  "agent_notes": "Surprise: Podio now has an official remote MCP server at https://mcp.podio.com/mcp with 22 read/write tools (shared default credentials are limited to ~30-40 requests; own API key recommended). Product ownership moved Citrix -> Progress; despite past uncertainty, Progress's 2025 'Year in Review' confirms active investment and a 2026 roadmap, so platform-abandonment risk appears low. The password grant makes headless service auth easy but is discouraged in the docs.",
+  "verified": false,
+  "verification_notes": ""
+}

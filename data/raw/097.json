@@ -1,0 +1,33 @@
+{
+  "id": 97,
+  "app": "Higgsfield",
+  "category": "AI, Research and Media-native",
+  "website_hint": "higgsfield.ai/cli content suite",
+  "one_line_description": "AI image/video generation suite (30+ models incl. Soul, Veo, Kling, Sora 2) with a cloud API, official CLI, SDKs, and hosted MCP.",
+  "auth_methods": [
+    "API key",
+    "OAuth2",
+    "CLI/local auth"
+  ],
+  "auth_summary": "Cloud API uses API key + secret pairs (HIGGSFIELD_API_KEY / HIGGSFIELD_SECRET from cloud.higgsfield.ai/api-keys); the official CLI uses a device-flow login persisting to ~/.config/higgsfield/credentials.json; the hosted MCP authenticates via browser OAuth against the user's Higgsfield account.",
+  "access_model": "self_serve",
+  "access_notes": "Developers sign up and create API keys at cloud.higgsfield.ai/api-keys, or install the CLI (npm/brew/curl) and run `higgsfield auth login`; generation is credit-based.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "medium",
+  "api_surface_summary": "Cloud REST API plus official Python (higgsfield-client) and Node/TypeScript (higgsfield-js) SDKs and a full CLI covering generation across 30+ image/video models, soul-id characters, product photoshoots, and marketing-studio workflows with polling/webhook-style waits.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://higgsfield.ai/mcp",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://higgsfield.ai/cli",
+    "https://cloud.higgsfield.ai/",
+    "https://github.com/higgsfield-ai/cli",
+    "https://github.com/higgsfield-ai/higgsfield-client",
+    "https://higgsfield.ai/mcp"
+  ],
+  "confidence": "medium",
+  "agent_notes": "The 'has a CLI?' hint VERIFIED: an official open-source CLI exists (github.com/higgsfield-ai/cli, `higgsfield <noun> <verb>` commands), alongside an official hosted MCP at mcp.higgsfield.ai/mcp and self-serve API keys. Note: the old 'higgsfield' GPU-training OSS project is unrelated history; current company is the AI video suite. Docs pages seen via search, not fully fetched.",
+  "verified": false,
+  "verification_notes": ""
+}

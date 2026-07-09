@@ -1,0 +1,33 @@
+{
+  "id": 74,
+  "app": "Jira",
+  "category": "Productivity and Project Management",
+  "website_hint": "developer.atlassian.com",
+  "one_line_description": "Atlassian's issue tracking and agile project management platform for software teams.",
+  "auth_methods": [
+    "OAuth2",
+    "API key",
+    "Basic auth",
+    "JWT"
+  ],
+  "auth_summary": "Jira Cloud REST API supports OAuth 2.0 (3LO) for apps, Basic auth using an Atlassian account API token, JWT for Connect apps, and Forge-managed OAuth 2.0.",
+  "access_model": "self_serve",
+  "access_notes": "API tokens are self-serve from any Atlassian account (id.atlassian.com); OAuth 2.0 (3LO) apps are created self-serve in the Atlassian developer console. Marketplace listing requires review, but plain API access does not.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "Extensive REST APIs (Jira platform v2/v3, Jira Software/Agile, Jira Service Management) covering issues, JQL search, projects, boards, sprints, users, workflows, and webhooks.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://github.com/atlassian/atlassian-mcp-server",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.atlassian.com/cloud/jira/platform/security-overview/",
+    "https://github.com/atlassian/atlassian-mcp-server",
+    "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/use-atlassian-rovo-mcp-server/",
+    "https://www.atlassian.com/blog/announcements/remote-mcp-server"
+  ],
+  "confidence": "high",
+  "agent_notes": "Atlassian's official remote (Rovo) MCP server covers Jira, Confluence, JSM, Bitbucket and Compass, using OAuth 2.1 or API tokens; reported GA Feb 2026. Cloud vs Data Center APIs differ; this research covers Jira Cloud. OAuth 3LO tokens are granular-scoped and site-specific (cloudid-based).",
+  "verified": false,
+  "verification_notes": ""
+}

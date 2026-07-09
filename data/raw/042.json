@@ -1,0 +1,32 @@
+{
+  "id": 42,
+  "app": "WooCommerce",
+  "category": "Ecommerce",
+  "website_hint": "woocommerce.com/document/woocommerce-rest-api",
+  "one_line_description": "Open-source ecommerce plugin for WordPress with a built-in REST API per store.",
+  "auth_methods": [
+    "Basic auth",
+    "API key",
+    "HMAC signature"
+  ],
+  "auth_summary": "Store admins generate consumer key/secret API keys (WooCommerce > Settings > Advanced > REST API) used as HTTP Basic auth credentials over HTTPS; over plain HTTP a one-legged OAuth 1.0a-style HMAC signature scheme is required. No standard OAuth2 flow.",
+  "access_model": "self_serve",
+  "access_notes": "Fully self-serve, but per-store: each merchant generates their own consumer key/secret in wp-admin with read/write scope. There is no central developer portal or app review; the software itself is free and self-hosted.",
+  "api_surface_type": "REST",
+  "api_surface_breadth": "broad",
+  "api_surface_summary": "REST API (v3) covers products, orders, customers, coupons, refunds, shipping, taxes, reports, settings, and webhooks.",
+  "mcp_status": "official_mcp",
+  "existing_mcp_url": "https://developer.woocommerce.com/docs/features/mcp/",
+  "buildability_verdict": "build_now",
+  "main_blocker": "none",
+  "evidence_urls": [
+    "https://developer.woocommerce.com/docs/apis/rest-api/authentication/",
+    "https://developer.woocommerce.com/docs/apis/rest-api/",
+    "https://developer.woocommerce.com/docs/features/mcp/",
+    "https://woocommerce.com/document/woocommerce-rest-api/"
+  ],
+  "confidence": "high",
+  "agent_notes": "WooCommerce now has native/official MCP integration documented in its developer docs (built on the WordPress Abilities system with a local proxy), plus many community MCP servers. Main operational caveat for Composio: credentials are per-store (each user must paste their own site URL + key/secret); connection quality depends on each store's hosting/SSL setup.",
+  "verified": false,
+  "verification_notes": ""
+}
